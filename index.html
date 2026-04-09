@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a740022938 - Personal Portfolio</title>
+    <meta name="description" content="Clean, modern personal portfolio website showcasing projects and skills.">
+    <meta name="keywords" content="portfolio, developer, projects, AGI Model Factory">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="a740022938 - Personal Portfolio">
+    <meta property="og:description" content="Clean, modern personal portfolio website showcasing projects and skills.">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">a740022938</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="themeToggle" class="btn btn-secondary" style="padding: 0.5rem 1rem;">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Building the Future with Code & AI</h1>
+                <p class="hero-subtitle">
+                    Developer passionate about creating innovative solutions, 
+                    exploring artificial intelligence, and building tools that matter.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>
+                    I'm a developer focused on building practical solutions with modern technologies. 
+                    My interests span across full-stack development, AI integration, and creating 
+                    tools that enhance productivity and creativity.
+                </p>
+                <p>
+                    I believe in clean code, thoughtful design, and continuous learning. 
+                    Currently exploring the intersection of traditional software development 
+                    and emerging AI technologies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>AGI Model Factory</h3>
+                    <p>A comprehensive AI model management system for training, evaluation, and deployment of machine learning models.</p>
+                    <div class="project-tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">React</span>
+                        <span class="tag">AI/ML</span>
+                    </div>
+                    <a href="https://github.com/a740022938/AGI-Model-Factory" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;">View on GitHub</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>AI Workbench</h3>
+                    <p>Interactive platform for data visualization, model training, and AI experiment management.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">Data Science</span>
+                    </div>
+                    <a href="https://github.com/a740022938/AI-Workbench" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;">View Project</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>OpenClaw Skills</h3>
+                    <p>Collection of automation skills and tools for the OpenClaw platform, enhancing AI assistant capabilities.</p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">API Integration</span>
+                        <span class="tag">Tools</span>
+                    </div>
+                    <a href="https://github.com/a740022938" target="_blank" class="btn btn-secondary" style="margin-top: 1rem;">Explore Skills</a>
+                </div>
+            </div>
+
+            <!-- AGI Model Factory Highlight -->
+            <div class="agi-highlight">
+                <h2>🚀 AGI Model Factory v1.0.0</h2>
+                <p>
+                    A major milestone achieved! AGI Model Factory is now a fully functional AI model management system 
+                    with training pipelines, evaluation metrics, deployment automation, and comprehensive monitoring.
+                </p>
+                <p>
+                    <strong>Key Features:</strong> Model versioning, automated evaluation, deployment orchestration, 
+                    real-time monitoring, and extensible plugin architecture.
+                </p>
+                <a href="https://github.com/a740022938/AGI-Model-Factory" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem; background-color: white; color: #2563eb;">
+                    Explore the Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+                <p style="text-align: center; margin-top: 2rem; color: var(--text-muted);">
+                    Alternatively, reach out via GitHub or check out my projects for more ways to connect.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem;">a740022938</h3>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem;">
+                    Building tools and solutions at the intersection of code and AI.
+                </p>
+                <ul class="social-links">
+                    <li><a href="https://github.com/a740022938" target="_blank" title="GitHub">🐙</a></li>
+                    <li><a href="#" title="LinkedIn">💼</a></li>
+                    <li><a href="#" title="Twitter">🐦</a></li>
+                    <li><a href="mailto:" title="Email">📧</a></li>
+                </ul>
+                <p class="copyright">
+                    © <span id="currentYear">2026</span> a740022938. All rights reserved.
+                    <br>
+                    Built with clean HTML, CSS, and JavaScript.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
