@@ -102,6 +102,98 @@
         </div>
     </section>
 
+    <!-- AGI Showcase Section -->
+    <section id="showcase" class="section agi-showcase section-shell">
+        <div class="container">
+            <div class="showcase-main panel-card">
+                <div class="showcase-header">
+                    <span class="showcase-pill" data-i18n="showcase.pill">Core Showcase</span>
+                    <span class="showcase-version">v1.0.0</span>
+                </div>
+                <h2 class="showcase-title">AGI Model Factory</h2>
+                <p class="showcase-subtitle" data-i18n="showcase.subtitle_zh">本地 AI 模型全链路运营平台</p>
+                <p class="showcase-description" data-i18n="showcase.description">
+                    覆盖训练、产物管理、评估与部署的完整 AI 工作流系统。
+                </p>
+
+                <div class="showcase-flow" aria-label="Training Artifact Evaluation Deployment">
+                    <div class="showcase-node">
+                        <span class="node-dot"></span>
+                        <strong data-i18n="showcase.flow.training">Training</strong>
+                    </div>
+                    <div class="showcase-link"></div>
+                    <div class="showcase-node">
+                        <span class="node-dot"></span>
+                        <strong data-i18n="showcase.flow.artifact">Artifact</strong>
+                    </div>
+                    <div class="showcase-link"></div>
+                    <div class="showcase-node">
+                        <span class="node-dot"></span>
+                        <strong data-i18n="showcase.flow.evaluation">Evaluation</strong>
+                    </div>
+                    <div class="showcase-link"></div>
+                    <div class="showcase-node">
+                        <span class="node-dot"></span>
+                        <strong data-i18n="showcase.flow.deployment">Deployment</strong>
+                    </div>
+                </div>
+
+                <div class="showcase-capabilities">
+                    <article class="cap-card mini-card">
+                        <h4 data-i18n="showcase.cap.training.title">Training Center</h4>
+                        <p data-i18n="showcase.cap.training.desc">统一训练任务编排与资源管理。</p>
+                        <span class="cap-status" data-i18n="showcase.cap.training.status">ACTIVE</span>
+                    </article>
+                    <article class="cap-card mini-card">
+                        <h4 data-i18n="showcase.cap.artifacts.title">Artifacts Center</h4>
+                        <p data-i18n="showcase.cap.artifacts.desc">模型产物追踪、版本管理与审计。</p>
+                        <span class="cap-status" data-i18n="showcase.cap.artifacts.status">READY</span>
+                    </article>
+                    <article class="cap-card mini-card">
+                        <h4 data-i18n="showcase.cap.evaluations.title">Evaluations</h4>
+                        <p data-i18n="showcase.cap.evaluations.desc">自动评估、基准对比与质量门禁。</p>
+                        <span class="cap-status" data-i18n="showcase.cap.evaluations.status">RUNNING</span>
+                    </article>
+                    <article class="cap-card mini-card">
+                        <h4 data-i18n="showcase.cap.deployments.title">Deployments</h4>
+                        <p data-i18n="showcase.cap.deployments.desc">发布策略、灰度通道与回滚保护。</p>
+                        <span class="cap-status" data-i18n="showcase.cap.deployments.status">STANDBY</span>
+                    </article>
+                    <article class="cap-card mini-card">
+                        <h4 data-i18n="showcase.cap.datasets.title">Datasets</h4>
+                        <p data-i18n="showcase.cap.datasets.desc">数据集生命周期与质量追踪管理。</p>
+                        <span class="cap-status" data-i18n="showcase.cap.datasets.status">SYNCED</span>
+                    </article>
+                    <article class="cap-card mini-card">
+                        <h4 data-i18n="showcase.cap.templates.title">Templates</h4>
+                        <p data-i18n="showcase.cap.templates.desc">工作流模板化复用，加速交付效率。</p>
+                        <span class="cap-status" data-i18n="showcase.cap.templates.status">AVAILABLE</span>
+                    </article>
+                </div>
+
+                <div class="showcase-console mini-card">
+                    <div class="console-row">
+                        <span data-i18n="showcase.console.system">SYSTEM STATUS</span>
+                        <strong data-i18n="showcase.console.system_value">ONLINE</strong>
+                    </div>
+                    <div class="console-grid">
+                        <div><span data-i18n="showcase.console.training">Training</span><strong data-i18n="showcase.console.training_value">ACTIVE</strong></div>
+                        <div><span data-i18n="showcase.console.artifacts">Artifacts</span><strong data-i18n="showcase.console.artifacts_value">READY</strong></div>
+                        <div><span data-i18n="showcase.console.evaluation">Evaluation</span><strong data-i18n="showcase.console.evaluation_value">RUNNING</strong></div>
+                        <div><span data-i18n="showcase.console.deployment">Deployment</span><strong data-i18n="showcase.console.deployment_value">STANDBY</strong></div>
+                    </div>
+                    <p class="console-version">version: v1.0.0</p>
+                </div>
+
+                <div class="showcase-cta">
+                    <a href="https://github.com/a740022938/AGI-Model-Factory" target="_blank" class="btn btn-primary" data-i18n="showcase.cta.explore">Explore System</a>
+                    <a href="#projects" class="btn btn-secondary" data-i18n="showcase.cta.architecture">View Architecture</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="showcase.cta.more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="section about section-shell">
         <div class="container">
@@ -204,69 +296,6 @@
                 </article>
             </div>
 
-            <!-- AGI Model Factory Highlight -->
-            <div class="agi-highlight panel-card" id="agi-factory">
-                <div class="agi-topbar">
-                    <span class="agi-badge" data-i18n="agi.badge">CORE MODULE</span>
-                    <span class="agi-version" data-i18n="agi.version">VERSION 1.0.0</span>
-                </div>
-
-                <h2>AGI Model Factory</h2>
-                <p data-i18n="agi.desc">
-                    The centerpiece of this site: a production-minded AGI platform that connects
-                    training workflows, artifact lifecycle, automated evaluation, and release deployment.
-                </p>
-
-                <div class="agi-pipeline">
-                    <div class="pipeline-step">
-                        <span class="step-id">01</span>
-                        <strong data-i18n="agi.pipeline_1_title">Training</strong>
-                        <small data-i18n="agi.pipeline_1_desc">Dataset + Fine-tune</small>
-                    </div>
-                    <div class="pipeline-step">
-                        <span class="step-id">02</span>
-                        <strong data-i18n="agi.pipeline_2_title">Artifact</strong>
-                        <small data-i18n="agi.pipeline_2_desc">Version + Registry</small>
-                    </div>
-                    <div class="pipeline-step">
-                        <span class="step-id">03</span>
-                        <strong data-i18n="agi.pipeline_3_title">Evaluation</strong>
-                        <small data-i18n="agi.pipeline_3_desc">Score + Guardrails</small>
-                    </div>
-                    <div class="pipeline-step">
-                        <span class="step-id">04</span>
-                        <strong data-i18n="agi.pipeline_4_title">Deployment</strong>
-                        <small data-i18n="agi.pipeline_4_desc">Serve + Observe</small>
-                    </div>
-                </div>
-
-                <div class="agi-console">
-                    <div class="console-item mini-card">
-                        <span class="console-label" data-i18n="agi.console_1_label">SYSTEM</span>
-                        <strong data-i18n="agi.console_1_value">Operational</strong>
-                        <small data-i18n="agi.console_1_desc">health: stable</small>
-                    </div>
-                    <div class="console-item mini-card">
-                        <span class="console-label" data-i18n="agi.console_2_label">PIPELINES</span>
-                        <strong data-i18n="agi.console_2_value">12 Active</strong>
-                        <small data-i18n="agi.console_2_desc">auto-scheduler on</small>
-                    </div>
-                    <div class="console-item mini-card">
-                        <span class="console-label" data-i18n="agi.console_3_label">OBSERVABILITY</span>
-                        <strong data-i18n="agi.console_3_value">Realtime Metrics</strong>
-                        <small data-i18n="agi.console_3_desc">latency + drift watch</small>
-                    </div>
-                    <div class="console-item mini-card">
-                        <span class="console-label" data-i18n="agi.console_4_label">RELEASE</span>
-                        <strong data-i18n="agi.console_4_value">Progressive Rollout</strong>
-                        <small data-i18n="agi.console_4_desc">safe deployment path</small>
-                    </div>
-                </div>
-
-                <a href="https://github.com/a740022938/AGI-Model-Factory" target="_blank" class="btn btn-primary agi-cta" data-i18n="agi.cta">
-                    Enter AGI Model Factory
-                </a>
-            </div>
         </div>
     </section>
 

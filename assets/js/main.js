@@ -78,7 +78,7 @@ function initContactForm(i18n) {
 
 function initRevealAnimations({ reducedMotion }) {
   const targets = document.querySelectorAll(
-    ".about-content, .project-card, .agi-highlight, .contact-form, .footer-content"
+    ".showcase-main, .about-content, .project-card, .contact-form, .footer-content"
   );
 
   if (reducedMotion || !('IntersectionObserver' in window)) {

@@ -73,6 +73,42 @@
           cta: "浏览技能"
         }
       },
+      showcase: {
+        pill: "核心展示",
+        subtitle_zh: "本地 AI 模型全链路运营平台",
+        description: "覆盖训练、产物管理、评估与部署的完整 AI 工作流系统。",
+        flow: {
+          training: "Training",
+          artifact: "Artifact",
+          evaluation: "Evaluation",
+          deployment: "Deployment"
+        },
+        cap: {
+          training: { title: "Training Center", desc: "统一训练任务编排与资源管理。", status: "ACTIVE" },
+          artifacts: { title: "Artifacts Center", desc: "模型产物追踪、版本管理与审计。", status: "READY" },
+          evaluations: { title: "Evaluations", desc: "自动评估、基准对比与质量门禁。", status: "RUNNING" },
+          deployments: { title: "Deployments", desc: "发布策略、灰度通道与回滚保护。", status: "STANDBY" },
+          datasets: { title: "Datasets", desc: "数据集生命周期与质量追踪管理。", status: "SYNCED" },
+          templates: { title: "Templates", desc: "工作流模板化复用，加速交付效率。", status: "AVAILABLE" }
+        },
+        console: {
+          system: "SYSTEM STATUS",
+          system_value: "ONLINE",
+          training: "Training",
+          training_value: "ACTIVE",
+          artifacts: "Artifacts",
+          artifacts_value: "READY",
+          evaluation: "Evaluation",
+          evaluation_value: "RUNNING",
+          deployment: "Deployment",
+          deployment_value: "STANDBY"
+        },
+        cta: {
+          explore: "Explore System",
+          architecture: "View Architecture",
+          more: "Learn More"
+        }
+      },
       agi: {
         badge: "核心模块",
         version: "版本 1.0.0",
@@ -200,6 +236,42 @@
           cta: "Explore Skills"
         }
       },
+      showcase: {
+        pill: "Core Showcase",
+        subtitle_zh: "A Local AI Operations Platform",
+        description: "A full lifecycle system covering training, artifact management, evaluation, and deployment.",
+        flow: {
+          training: "Training",
+          artifact: "Artifact",
+          evaluation: "Evaluation",
+          deployment: "Deployment"
+        },
+        cap: {
+          training: { title: "Training Center", desc: "Unified orchestration and resource control for model training.", status: "ACTIVE" },
+          artifacts: { title: "Artifacts Center", desc: "Artifact tracking, version governance, and audit visibility.", status: "READY" },
+          evaluations: { title: "Evaluations", desc: "Automated scoring, benchmark comparison, and quality gates.", status: "RUNNING" },
+          deployments: { title: "Deployments", desc: "Release strategies, staged rollout channels, and rollback safety.", status: "STANDBY" },
+          datasets: { title: "Datasets", desc: "Lifecycle management and quality traceability for datasets.", status: "SYNCED" },
+          templates: { title: "Templates", desc: "Reusable workflow templates to accelerate delivery.", status: "AVAILABLE" }
+        },
+        console: {
+          system: "SYSTEM STATUS",
+          system_value: "ONLINE",
+          training: "Training",
+          training_value: "ACTIVE",
+          artifacts: "Artifacts",
+          artifacts_value: "READY",
+          evaluation: "Evaluation",
+          evaluation_value: "RUNNING",
+          deployment: "Deployment",
+          deployment_value: "STANDBY"
+        },
+        cta: {
+          explore: "Explore System",
+          architecture: "View Architecture",
+          more: "Learn More"
+        }
+      },
       agi: {
         badge: "CORE MODULE",
         version: "VERSION 1.0.0",
@@ -325,6 +397,42 @@
           meta_1: "Task Orchestration",
           meta_2: "Guarded Execution",
           cta: "Explore Skills"
+        }
+      },
+      showcase: {
+        pill: "Core Showcase",
+        subtitle_zh: "ローカル AI モデル運用プラットフォーム",
+        description: "Training、Artifact、Evaluation、Deployment を一体化したフルライフサイクルシステム。",
+        flow: {
+          training: "Training",
+          artifact: "Artifact",
+          evaluation: "Evaluation",
+          deployment: "Deployment"
+        },
+        cap: {
+          training: { title: "Training Center", desc: "トレーニング実行とリソース制御を統合。", status: "ACTIVE" },
+          artifacts: { title: "Artifacts Center", desc: "アーティファクト追跡、バージョン管理、監査対応。", status: "READY" },
+          evaluations: { title: "Evaluations", desc: "自動評価とベンチマーク比較、品質ゲート。", status: "RUNNING" },
+          deployments: { title: "Deployments", desc: "リリース戦略、段階配信、ロールバック保護。", status: "STANDBY" },
+          datasets: { title: "Datasets", desc: "データセットのライフサイクルと品質追跡。", status: "SYNCED" },
+          templates: { title: "Templates", desc: "ワークフローテンプレートで実装速度を向上。", status: "AVAILABLE" }
+        },
+        console: {
+          system: "SYSTEM STATUS",
+          system_value: "ONLINE",
+          training: "Training",
+          training_value: "ACTIVE",
+          artifacts: "Artifacts",
+          artifacts_value: "READY",
+          evaluation: "Evaluation",
+          evaluation_value: "RUNNING",
+          deployment: "Deployment",
+          deployment_value: "STANDBY"
+        },
+        cta: {
+          explore: "Explore System",
+          architecture: "View Architecture",
+          more: "Learn More"
         }
       },
       agi: {
