@@ -214,8 +214,26 @@ function initWeChatModal(i18n) {
   if (!trigger || !modal || !closeButton) return;
 
   let lastFocusedElement = null;
+  let qrBound = false;
 
   const open = () => {
+    if (qrImage && !qrImage.getAttribute('src')) {
+      const targetSrc = qrImage.dataset.qrSrc || '';
+      if (targetSrc) {
+        qrImage.setAttribute('src', targetSrc);
+      }
+    }
+
+    if (qrImage && !qrBound) {
+      qrBound = true;
+      qrImage.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+      });
+      qrImage.addEventListener('dragstart', (event) => {
+        event.preventDefault();
+      });
+    }
+
     lastFocusedElement = document.activeElement;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');

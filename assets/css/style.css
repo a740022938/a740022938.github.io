@@ -1064,17 +1064,24 @@ a:hover {
 
 .wechat-qr-wrap {
   width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 0.9rem;
   padding: 0.78rem;
   background: linear-gradient(180deg, rgba(244, 249, 255, 0.96), rgba(228, 240, 255, 0.96));
   border: 1px solid rgba(117, 173, 255, 0.35);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wechat-qr-wrap img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   border-radius: 0.58rem;
+  object-fit: cover;
+  object-position: center 56%;
 }
 
 .wechat-qr-fallback {
