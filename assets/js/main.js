@@ -1,13 +1,21 @@
-// Main JavaScript - AI Tech Version
+// Main JavaScript - Final Premium AI Edition
 document.addEventListener("DOMContentLoaded", () => {
+  const context = {
+    reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    isMobile: window.matchMedia("(max-width: 768px)").matches,
+  };
+
   initSmoothScrolling();
   initContactForm();
-  initRevealAnimations();
+  initRevealAnimations(context);
   initNavbarOnScroll();
   initThemeToggle();
   initFooterYear();
-  initParticleNetwork();
-  console.log("%cAI portfolio system online.", "color:#69d8ff;font-weight:bold;");
+  initScrollSpy();
+  initPointerAmbient(context);
+  initParticleNetwork(context);
+
+  console.log("%cAI factory interface online.", "color:#7ff5ff;font-weight:700;");
 });
 
 function initSmoothScrolling() {
@@ -16,10 +24,11 @@ function initSmoothScrolling() {
       event.preventDefault();
       const targetId = anchor.getAttribute("href");
       if (!targetId || targetId === "#") return;
-      const targetElement = document.querySelector(targetId);
-      if (!targetElement) return;
+      const target = document.querySelector(targetId);
+      if (!target) return;
+
       window.scrollTo({
-        top: targetElement.offsetTop - 76,
+        top: target.offsetTop - 82,
         behavior: "smooth",
       });
     });
@@ -27,27 +36,32 @@ function initSmoothScrolling() {
 }
 
 function initContactForm() {
-  const contactForm = document.getElementById("contactForm");
-  if (!contactForm) return;
-  contactForm.addEventListener("submit", (event) => {
+  const form = document.getElementById("contactForm");
+  if (!form) return;
+
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
+    const data = Object.fromEntries(new FormData(form));
+
     if (!data.name || !data.email || !data.message) {
       alert("Please fill in all required fields.");
       return;
     }
-    alert("Message queued. Thanks for reaching out.");
-    contactForm.reset();
+
+    alert("Instruction received. I will get back to you soon.");
+    form.reset();
   });
 }
 
-function initRevealAnimations() {
-  const targets = document.querySelectorAll(".project-card, .agi-highlight, .contact-form");
-  if (!("IntersectionObserver" in window)) {
-    targets.forEach((target) => {
-      target.style.opacity = "1";
-      target.style.transform = "translateY(0)";
+function initRevealAnimations({ reducedMotion }) {
+  const targets = document.querySelectorAll(
+    ".about-content, .project-card, .agi-highlight, .contact-form, .footer-content"
+  );
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    targets.forEach((node) => {
+      node.style.opacity = "1";
+      node.style.transform = "translateY(0)";
     });
     return;
   }
@@ -62,14 +76,14 @@ function initRevealAnimations() {
         self.unobserve(node);
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    { threshold: 0.14, rootMargin: "0px 0px -50px 0px" }
   );
 
-  targets.forEach((target, index) => {
-    target.style.opacity = "0";
-    target.style.transform = "translateY(22px)";
-    target.style.transition = `opacity 520ms ease ${index * 50}ms, transform 520ms ease ${index * 50}ms`;
-    observer.observe(target);
+  targets.forEach((node, index) => {
+    node.style.opacity = "0";
+    node.style.transform = "translateY(22px)";
+    node.style.transition = `opacity 560ms ease ${index * 55}ms, transform 560ms ease ${index * 55}ms`;
+    observer.observe(node);
   });
 }
 
@@ -77,32 +91,22 @@ function initNavbarOnScroll() {
   const navbar = document.querySelector(".navbar");
   if (!navbar) return;
 
-  const applyNavbarState = () => {
-    const isLight = document.documentElement.getAttribute("data-theme") === "light";
-    if (window.scrollY > 40) {
-      navbar.style.backgroundColor = isLight ? "rgba(255, 255, 255, 0.93)" : "rgba(5, 10, 21, 0.9)";
-      navbar.style.boxShadow = isLight
-        ? "0 12px 28px -18px rgba(15,23,42,0.35)"
-        : "0 18px 34px -22px rgba(6,14,32,0.95)";
-    } else {
-      navbar.style.backgroundColor = isLight ? "rgba(255, 255, 255, 0.82)" : "rgba(6, 10, 20, 0.72)";
-      navbar.style.boxShadow = "none";
-    }
+  const apply = () => {
+    navbar.classList.toggle("is-scrolled", window.scrollY > 28);
   };
 
-  window.addEventListener("scroll", applyNavbarState, { passive: true });
-  window.addEventListener("themechange", applyNavbarState);
-  applyNavbarState();
+  window.addEventListener("scroll", apply, { passive: true });
+  apply();
 }
 
 function initThemeToggle() {
-  const themeToggle = document.getElementById("themeToggle");
-  if (!themeToggle) return;
+  const toggle = document.getElementById("themeToggle");
+  if (!toggle) return;
 
-  const updateButtonIcon = () => {
+  const setLabel = () => {
     const isLight = document.documentElement.getAttribute("data-theme") === "light";
-    themeToggle.textContent = isLight ? "🌙" : "☀️";
-    themeToggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+    toggle.textContent = isLight ? "Dark UI" : "Light UI";
+    toggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
   };
 
   const savedTheme = localStorage.getItem("theme");
@@ -111,9 +115,10 @@ function initThemeToggle() {
   } else {
     document.documentElement.removeAttribute("data-theme");
   }
-  updateButtonIcon();
 
-  themeToggle.addEventListener("click", () => {
+  setLabel();
+
+  toggle.addEventListener("click", () => {
     const isLight = document.documentElement.getAttribute("data-theme") === "light";
     if (isLight) {
       document.documentElement.removeAttribute("data-theme");
@@ -122,103 +127,236 @@ function initThemeToggle() {
       document.documentElement.setAttribute("data-theme", "light");
       localStorage.setItem("theme", "light");
     }
-    updateButtonIcon();
+    setLabel();
     window.dispatchEvent(new Event("themechange"));
   });
 }
 
 function initFooterYear() {
-  const yearElement = document.getElementById("currentYear");
-  if (yearElement) yearElement.textContent = String(new Date().getFullYear());
+  const yearNode = document.getElementById("currentYear");
+  if (yearNode) yearNode.textContent = String(new Date().getFullYear());
 }
 
-function initParticleNetwork() {
+function initScrollSpy() {
+  const links = Array.from(document.querySelectorAll(".nav-links a[data-nav-target]"));
+  if (!links.length || !("IntersectionObserver" in window)) return;
+
+  const sectionById = new Map();
+  links.forEach((link) => {
+    const id = link.dataset.navTarget;
+    const section = document.getElementById(id);
+    if (section) sectionById.set(section, link);
+  });
+
+  const activate = (activeLink) => {
+    links.forEach((link) => {
+      link.classList.toggle("is-active", link === activeLink);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (!visible.length) return;
+      const link = sectionById.get(visible[0].target);
+      if (link) activate(link);
+    },
+    { rootMargin: "-35% 0px -45% 0px", threshold: [0.2, 0.35, 0.5, 0.75] }
+  );
+
+  sectionById.forEach((_, section) => observer.observe(section));
+}
+
+function initPointerAmbient({ reducedMotion, isMobile }) {
+  if (reducedMotion || isMobile) return;
+
+  let frame = 0;
+  const update = (x, y) => {
+    if (frame) return;
+    frame = requestAnimationFrame(() => {
+      const px = (x / window.innerWidth) * 100;
+      const py = (y / window.innerHeight) * 100;
+      document.body.style.setProperty("--pointer-x", `${px.toFixed(2)}%`);
+      document.body.style.setProperty("--pointer-y", `${py.toFixed(2)}%`);
+      frame = 0;
+    });
+  };
+
+  window.addEventListener(
+    "pointermove",
+    (event) => {
+      update(event.clientX, event.clientY);
+    },
+    { passive: true }
+  );
+}
+
+function initParticleNetwork({ reducedMotion, isMobile }) {
   const canvas = document.getElementById("particleCanvas");
   if (!canvas) return;
 
-  const context = canvas.getContext("2d", { alpha: true });
-  if (!context) return;
+  const ctx = canvas.getContext("2d", { alpha: true });
+  if (!ctx) return;
 
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
-  const particleCount = reducedMotion ? 18 : isMobile ? 34 : 64;
-  const maxLinkDistance = isMobile ? 92 : 128;
-  const pointerRadius = isMobile ? 88 : 132;
   const pointer = { x: -9999, y: -9999, active: false };
-  let particles = [];
-  let animationFrame = 0;
+  const particleCount = reducedMotion ? 14 : isMobile ? 30 : 72;
+  const maxLinkDistance = isMobile ? 92 : 142;
+  const pointerRadius = isMobile ? 92 : 142;
+  const streamCount = reducedMotion ? 1 : isMobile ? 2 : 3;
+
   let width = 0;
   let height = 0;
   let ratio = 1;
+  let animationFrame = 0;
+  let particles = [];
+  let streams = [];
+  let isRunning = false;
 
-  const getThemeColors = () => {
-    const style = getComputedStyle(document.documentElement);
+  const randomBetween = (min, max) => Math.random() * (max - min) + min;
+
+  const hexToRgb = (hex) => {
+    const value = hex.replace("#", "").trim();
+    if (![3, 6].includes(value.length)) return null;
+    const full = value.length === 3 ? value.split("").map((ch) => ch + ch).join("") : value;
+    const int = parseInt(full, 16);
+    if (Number.isNaN(int)) return null;
     return {
-      dot: (style.getPropertyValue("--color-accent-soft") || "#7af2ff").trim(),
-      line: (style.getPropertyValue("--color-primary") || "#39c7ff").trim(),
-      glow: (style.getPropertyValue("--color-accent") || "#bb6cff").trim(),
+      r: (int >> 16) & 255,
+      g: (int >> 8) & 255,
+      b: int & 255,
     };
   };
 
-  let colors = getThemeColors();
+  const colorToRgba = (color, alpha, fallback) => {
+    const rgb = hexToRgb(color);
+    if (!rgb) return fallback;
+    return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+  };
 
-  const randomBetween = (min, max) => Math.random() * (max - min) + min;
+  const getColors = () => {
+    const styles = getComputedStyle(document.documentElement);
+    const dot = (styles.getPropertyValue("--color-accent-soft") || "#7ff5ff").trim();
+    const line = (styles.getPropertyValue("--color-primary") || "#49d9ff").trim();
+    const glow = (styles.getPropertyValue("--color-accent") || "#b86bff").trim();
+
+    return {
+      dot,
+      line,
+      glow,
+      dotSoft: colorToRgba(dot, 0.75, "rgba(127, 245, 255, 0.75)"),
+      lineSoft: colorToRgba(line, reducedMotion ? 0.2 : 0.34, "rgba(73, 217, 255, 0.34)"),
+      glowSoft: colorToRgba(glow, 0.22, "rgba(184, 107, 255, 0.22)"),
+      streamA: colorToRgba(line, reducedMotion ? 0.08 : 0.16, "rgba(73, 217, 255, 0.16)"),
+      streamB: colorToRgba(glow, reducedMotion ? 0.06 : 0.13, "rgba(184, 107, 255, 0.13)"),
+    };
+  };
+
+  let colors = getColors();
 
   const createParticle = () => ({
     x: randomBetween(0, width),
     y: randomBetween(0, height),
-    vx: randomBetween(-0.22, 0.22),
-    vy: randomBetween(-0.22, 0.22),
-    r: randomBetween(0.7, 1.8),
+    vx: randomBetween(-0.24, 0.24),
+    vy: randomBetween(-0.24, 0.24),
+    r: randomBetween(0.7, 1.85),
   });
+
+  const createStreams = () =>
+    Array.from({ length: streamCount }, (_, index) => ({
+      baseY: height * randomBetween(0.18, 0.82),
+      amplitude: randomBetween(18, 52) * (isMobile ? 0.75 : 1),
+      speed: randomBetween(0.0025, 0.0055),
+      phase: randomBetween(0, Math.PI * 2),
+      curve: randomBetween(0.0025, 0.0055),
+      width: randomBetween(1.2, 2.1),
+      tint: index % 2 === 0 ? "streamA" : "streamB",
+    }));
 
   const resize = () => {
     ratio = Math.min(window.devicePixelRatio || 1, 2);
     width = window.innerWidth;
     height = window.innerHeight;
+
     canvas.width = Math.floor(width * ratio);
     canvas.height = Math.floor(height * ratio);
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
-    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
     particles = Array.from({ length: particleCount }, createParticle);
+    streams = createStreams();
   };
 
-  const updateParticle = (particle) => {
+  const updateParticle = (p) => {
     if (!reducedMotion && pointer.active) {
-      const dx = pointer.x - particle.x;
-      const dy = pointer.y - particle.y;
+      const dx = pointer.x - p.x;
+      const dy = pointer.y - p.y;
       const distance = Math.hypot(dx, dy);
+
       if (distance < pointerRadius && distance > 1) {
         const force = (pointerRadius - distance) / pointerRadius;
-        particle.vx -= (dx / distance) * force * 0.012;
-        particle.vy -= (dy / distance) * force * 0.012;
+        p.vx -= (dx / distance) * force * 0.011;
+        p.vy -= (dy / distance) * force * 0.011;
       }
     }
 
-    particle.x += particle.vx;
-    particle.y += particle.vy;
-    particle.vx *= 0.992;
-    particle.vy *= 0.992;
+    p.x += p.vx;
+    p.y += p.vy;
 
-    if (particle.x < -10) particle.x = width + 10;
-    if (particle.x > width + 10) particle.x = -10;
-    if (particle.y < -10) particle.y = height + 10;
-    if (particle.y > height + 10) particle.y = -10;
+    p.vx *= 0.992;
+    p.vy *= 0.992;
+
+    if (p.x < -12) p.x = width + 12;
+    if (p.x > width + 12) p.x = -12;
+    if (p.y < -12) p.y = height + 12;
+    if (p.y > height + 12) p.y = -12;
   };
 
-  const draw = () => {
-    context.clearRect(0, 0, width, height);
-    context.globalCompositeOperation = "lighter";
+  const drawStreams = () => {
+    streams.forEach((stream) => {
+      stream.phase += stream.speed;
 
+      const gradient = ctx.createLinearGradient(0, stream.baseY - stream.amplitude, width, stream.baseY + stream.amplitude);
+      gradient.addColorStop(0, "transparent");
+      gradient.addColorStop(0.28, colors[stream.tint]);
+      gradient.addColorStop(0.72, colors[stream.tint]);
+      gradient.addColorStop(1, "transparent");
+
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = stream.width;
+      ctx.beginPath();
+
+      let isFirst = true;
+      for (let x = -20; x <= width + 20; x += 24) {
+        const y =
+          stream.baseY +
+          Math.sin(x * stream.curve + stream.phase) * stream.amplitude +
+          Math.cos(x * stream.curve * 0.6 + stream.phase * 1.2) * stream.amplitude * 0.35;
+
+        if (isFirst) {
+          ctx.moveTo(x, y);
+          isFirst = false;
+        } else {
+          ctx.lineTo(x, y);
+        }
+      }
+
+      ctx.stroke();
+    });
+  };
+
+  const drawParticles = () => {
     for (let i = 0; i < particles.length; i++) {
       const p1 = particles[i];
       updateParticle(p1);
 
-      context.beginPath();
-      context.fillStyle = `${colors.dot}cc`;
-      context.arc(p1.x, p1.y, p1.r, 0, Math.PI * 2);
-      context.fill();
+      ctx.beginPath();
+      ctx.fillStyle = colors.dotSoft;
+      ctx.arc(p1.x, p1.y, p1.r, 0, Math.PI * 2);
+      ctx.fill();
 
       for (let j = i + 1; j < particles.length; j++) {
         const p2 = particles[j];
@@ -227,28 +365,51 @@ function initParticleNetwork() {
         const dist = Math.hypot(dx, dy);
         if (dist > maxLinkDistance) continue;
 
-        const alpha = (1 - dist / maxLinkDistance) * (reducedMotion ? 0.18 : 0.32);
-        context.strokeStyle = `rgba(105, 216, 255, ${alpha})`;
-        context.lineWidth = 1;
-        context.beginPath();
-        context.moveTo(p1.x, p1.y);
-        context.lineTo(p2.x, p2.y);
-        context.stroke();
+        const alpha = (1 - dist / maxLinkDistance) * (reducedMotion ? 0.18 : 0.34);
+        ctx.strokeStyle = colors.lineSoft.replace(/\d*\.?\d+\)$/, `${alpha.toFixed(3)})`);
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.lineTo(p2.x, p2.y);
+        ctx.stroke();
       }
     }
+  };
 
-    if (!reducedMotion && pointer.active) {
-      const gradient = context.createRadialGradient(pointer.x, pointer.y, 4, pointer.x, pointer.y, pointerRadius);
-      gradient.addColorStop(0, `${colors.glow}33`);
-      gradient.addColorStop(1, "transparent");
-      context.fillStyle = gradient;
-      context.beginPath();
-      context.arc(pointer.x, pointer.y, pointerRadius, 0, Math.PI * 2);
-      context.fill();
-    }
+  const drawPointerGlow = () => {
+    if (reducedMotion || !pointer.active) return;
 
-    context.globalCompositeOperation = "source-over";
-    animationFrame = requestAnimationFrame(draw);
+    const gradient = ctx.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, pointerRadius);
+    gradient.addColorStop(0, colors.glowSoft);
+    gradient.addColorStop(1, "transparent");
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(pointer.x, pointer.y, pointerRadius, 0, Math.PI * 2);
+    ctx.fill();
+  };
+
+  const drawFrame = () => {
+    ctx.clearRect(0, 0, width, height);
+    ctx.globalCompositeOperation = "lighter";
+
+    drawStreams();
+    drawParticles();
+    drawPointerGlow();
+
+    ctx.globalCompositeOperation = "source-over";
+    animationFrame = requestAnimationFrame(drawFrame);
+  };
+
+  const start = () => {
+    if (isRunning) return;
+    isRunning = true;
+    drawFrame();
+  };
+
+  const stop = () => {
+    if (!isRunning) return;
+    isRunning = false;
+    cancelAnimationFrame(animationFrame);
   };
 
   window.addEventListener("mousemove", (event) => {
@@ -261,18 +422,22 @@ function initParticleNetwork() {
     pointer.active = false;
   });
 
-  window.addEventListener("resize", resize);
-  window.addEventListener("themechange", () => {
-    colors = getThemeColors();
+  window.addEventListener("resize", () => {
+    resize();
   });
+
+  window.addEventListener("themechange", () => {
+    colors = getColors();
+  });
+
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
-      cancelAnimationFrame(animationFrame);
+      stop();
       return;
     }
-    draw();
+    start();
   });
 
   resize();
-  draw();
+  start();
 }

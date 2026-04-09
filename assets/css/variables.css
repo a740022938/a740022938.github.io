@@ -1,35 +1,38 @@
 /* CSS Variables for Theme Switching */
 :root {
-  /* Colors - Dark Tech Theme */
-  --color-primary: #39c7ff;
-  --color-primary-dark: #19aee4;
-  --color-secondary: #7f9cff;
-  --color-accent: #bb6cff;
-  --color-accent-soft: #7af2ff;
+  /* Core Palette */
+  --color-primary: #49d9ff;
+  --color-primary-dark: #18b3e1;
+  --color-secondary: #8e9dff;
+  --color-accent: #b86bff;
+  --color-accent-soft: #7ff5ff;
+  --color-signal: #3bffb4;
 
-  /* Background Colors */
-  --bg-primary: #060a14;
-  --bg-secondary: #0a1122;
-  --bg-tertiary: #111b33;
-  --bg-panel: #0b1326;
+  /* Background */
+  --bg-primary: #04070f;
+  --bg-secondary: #0a1224;
+  --bg-tertiary: #111d38;
+  --bg-panel: #0a152c;
 
-  /* Text Colors */
-  --text-primary: #e9f1ff;
-  --text-secondary: #b8c9ee;
-  --text-muted: #88a0c8;
-  --text-inverse: #04070d;
+  /* Text */
+  --text-primary: #edf4ff;
+  --text-secondary: #b9caec;
+  --text-muted: #86a2cd;
+  --text-inverse: #04111f;
 
   /* Borders */
-  --border-color: rgba(73, 120, 214, 0.4);
-  --border-glow: rgba(57, 199, 255, 0.6);
-  --border-radius: 0.5rem;
+  --border-color: rgba(93, 140, 230, 0.34);
+  --border-color-strong: rgba(130, 195, 255, 0.52);
+  --border-glow: rgba(73, 217, 255, 0.64);
+  --border-radius: 0.6rem;
   --border-radius-lg: 1rem;
+  --border-radius-xl: 1.35rem;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.25);
-  --shadow-md: 0 6px 20px -4px rgb(0 0 0 / 0.35);
-  --shadow-lg: 0 18px 45px -12px rgb(7 13 32 / 0.85);
-  --shadow-glow: 0 0 20px rgb(57 199 255 / 0.22), 0 0 50px rgb(187 108 255 / 0.12);
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 0.26);
+  --shadow-md: 0 14px 30px -16px rgb(3 8 22 / 0.92);
+  --shadow-lg: 0 30px 58px -24px rgb(3 8 22 / 0.95);
+  --shadow-glow: 0 0 24px rgb(73 217 255 / 0.21), 0 0 66px rgb(184 107 255 / 0.13);
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -38,39 +41,43 @@
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
+  --spacing-3xl: 4.5rem;
 
   /* Typography */
   --font-family: "Segoe UI", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", "Cascadia Code", "SF Mono", monospace;
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-normal: 300ms ease;
-  --transition-slow: 500ms ease;
+  /* Motion */
+  --transition-fast: 160ms ease;
+  --transition-normal: 320ms ease;
+  --transition-slow: 520ms ease;
 }
 
 /* Optional Light Theme */
 [data-theme="light"] {
-  --color-primary: #1d4ed8;
-  --color-primary-dark: #1e40af;
-  --color-secondary: #64748b;
+  --color-primary: #1e66f5;
+  --color-primary-dark: #194fbc;
+  --color-secondary: #6c7aff;
   --color-accent: #8b5cf6;
   --color-accent-soft: #06b6d4;
+  --color-signal: #059669;
 
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-tertiary: #eef2ff;
+  --bg-primary: #f7fbff;
+  --bg-secondary: #edf4ff;
+  --bg-tertiary: #e3ecfb;
   --bg-panel: #ffffff;
 
-  --text-primary: #1e293b;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
+  --text-primary: #1a2842;
+  --text-secondary: #405372;
+  --text-muted: #5f7697;
   --text-inverse: #ffffff;
 
-  --border-color: #dbe4f4;
-  --border-glow: rgba(29, 78, 216, 0.35);
-  --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.08);
-  --shadow-md: 0 10px 25px -10px rgb(15 23 42 / 0.2);
-  --shadow-lg: 0 20px 45px -18px rgb(37 99 235 / 0.22);
+  --border-color: rgba(68, 107, 183, 0.22);
+  --border-color-strong: rgba(30, 102, 245, 0.42);
+  --border-glow: rgba(30, 102, 245, 0.3);
+
+  --shadow-sm: 0 2px 8px rgb(15 23 42 / 0.08);
+  --shadow-md: 0 12px 30px -18px rgb(15 23 42 / 0.22);
+  --shadow-lg: 0 22px 50px -22px rgb(30 102 245 / 0.24);
   --shadow-glow: 0 0 0 transparent;
 }
