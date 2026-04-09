@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>姚金龙的AI工厂</title>
-    <meta name="description" content="姚金龙的AI工厂：AI 项目、AGI 实验与自动化产品展示。">
+    <title data-i18n="meta.title">姚金龙的AI工厂</title>
+    <meta name="description" content="姚金龙的AI工厂：AI 项目、AGI 实验与自动化产品展示。" data-i18n-content="meta.description">
     <meta name="keywords" content="portfolio, AI, AGI, developer, projects, dark tech, futuristic">
 
     <!-- CSS -->
@@ -15,8 +15,8 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="姚金龙的AI工厂">
-    <meta property="og:description" content="姚金龙的AI工厂：AI 项目、AGI 实验与自动化产品展示。">
+    <meta property="og:title" content="姚金龙的AI工厂" data-i18n-content="meta.title">
+    <meta property="og:description" content="姚金龙的AI工厂：AI 项目、AGI 实验与自动化产品展示。" data-i18n-content="meta.description">
     <meta property="og:type" content="website">
 </head>
 <body>
@@ -32,15 +32,27 @@
         <div class="container nav-container">
             <a href="#home" class="logo">
                 <span class="logo-mark">YL</span>
-                <span class="logo-text">姚金龙的AI工厂</span>
+                <span class="logo-text" data-i18n="brand.name">姚金龙的AI工厂</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#home" class="is-active" data-nav-target="home">Home</a></li>
-                <li><a href="#about" data-nav-target="about">About</a></li>
-                <li><a href="#projects" data-nav-target="projects">Projects</a></li>
-                <li><a href="#contact" data-nav-target="contact">Contact</a></li>
-                <li><button id="themeToggle" class="btn btn-secondary theme-btn" aria-label="Switch to light theme">Light UI</button></li>
-            </ul>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li class="nav-item"><a href="#home" class="is-active" data-nav-target="home" data-i18n="nav.home">首页</a></li>
+                    <li class="nav-item"><a href="#about" data-nav-target="about" data-i18n="nav.about">关于</a></li>
+                    <li class="nav-item"><a href="#projects" data-nav-target="projects" data-i18n="nav.projects">项目</a></li>
+                    <li class="nav-item"><a href="#contact" data-nav-target="contact" data-i18n="nav.contact">联系</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="lang-switch" role="group" aria-label="Language Switcher" data-i18n-aria-label="nav.lang_switch_aria">
+                        <button type="button" class="lang-btn is-active" data-lang="zh">ZH</button>
+                        <button type="button" class="lang-btn" data-lang="en">EN</button>
+                        <button type="button" class="lang-btn" data-lang="ja">JP</button>
+                    </div>
+                    <button id="wechatTrigger" class="btn btn-secondary nav-wechat" type="button" data-i18n="nav.wechat">WeChat</button>
+                    <button id="themeToggle" class="btn btn-secondary theme-btn" type="button" aria-label="Switch theme">Light UI</button>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -52,38 +64,38 @@
             <div class="hero-content panel-card">
                 <div class="system-status">
                     <span class="status-dot" aria-hidden="true"></span>
-                    <span class="status-label">AI SYSTEM ONLINE</span>
+                    <span class="status-label" data-i18n="hero.status_online">AI SYSTEM ONLINE</span>
                     <span class="status-divider" aria-hidden="true"></span>
-                    <span class="status-note">Control Plane Stable</span>
+                    <span class="status-note" data-i18n="hero.status_note">Control Plane Stable</span>
                 </div>
 
                 <h1 class="hero-title">
-                    <span class="hero-title-main">姚金龙的AI工厂</span>
-                    <span class="hero-title-sub">AGI Systems • Automation • Intelligent Delivery</span>
+                    <span class="hero-title-main" data-i18n="hero.title_main">姚金龙的AI工厂</span>
+                    <span class="hero-title-sub" data-i18n="hero.title_sub">AGI Systems • Automation • Intelligent Delivery</span>
                 </h1>
 
-                <p class="hero-subtitle">
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
                     Premium engineering studio focused on AI-native systems, automation pipelines,
                     and product-grade delivery for high-impact workflows.
                 </p>
 
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">Explore Project Matrix</a>
-                    <a href="#contact" class="btn btn-secondary">Open Command Channel</a>
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero.cta_projects">Explore Project Matrix</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta_contact">Open Command Channel</a>
                 </div>
 
                 <div class="hero-metrics">
                     <article class="metric mini-card">
-                        <span class="metric-label">Factory Uptime</span>
-                        <strong>99.98%</strong>
+                        <span class="metric-label" data-i18n="hero.metric_uptime_label">Factory Uptime</span>
+                        <strong data-i18n="hero.metric_uptime_value">99.98%</strong>
                     </article>
                     <article class="metric mini-card">
-                        <span class="metric-label">Active Build Tracks</span>
-                        <strong>12 Pipelines</strong>
+                        <span class="metric-label" data-i18n="hero.metric_tracks_label">Active Build Tracks</span>
+                        <strong data-i18n="hero.metric_tracks_value">12 Pipelines</strong>
                     </article>
                     <article class="metric mini-card">
-                        <span class="metric-label">Execution Mode</span>
-                        <strong>Local + Cloud Hybrid</strong>
+                        <span class="metric-label" data-i18n="hero.metric_mode_label">Execution Mode</span>
+                        <strong data-i18n="hero.metric_mode_value">Local + Cloud Hybrid</strong>
                     </article>
                 </div>
             </div>
@@ -93,23 +105,23 @@
     <!-- About Section -->
     <section id="about" class="section about section-shell">
         <div class="container">
-            <p class="section-kicker">Builder Profile</p>
-            <h2 class="section-title">Builder Behind The Factory</h2>
+            <p class="section-kicker" data-i18n="about.kicker">Builder Profile</p>
+            <h2 class="section-title" data-i18n="about.title">Builder Behind The Factory</h2>
             <div class="about-content panel-card">
-                <p>
+                <p data-i18n="about.p1">
                     I design and ship practical AI systems with production-minded architecture.
                     My focus is turning model capability into stable products with strong observability,
                     clean interfaces, and reliable automation.
                 </p>
-                <p>
+                <p data-i18n="about.p2">
                     I work across full-stack engineering, workflow orchestration, and AI integration.
                     The goal is simple: build systems that look sharp, run smoothly, and solve real problems.
                 </p>
                 <div class="about-grid">
-                    <span class="about-chip">Full-Stack Engineering</span>
-                    <span class="about-chip">AI Integration</span>
-                    <span class="about-chip">Automation Systems</span>
-                    <span class="about-chip">Product Delivery</span>
+                    <span class="about-chip" data-i18n="about.chip_1">Full-Stack Engineering</span>
+                    <span class="about-chip" data-i18n="about.chip_2">AI Integration</span>
+                    <span class="about-chip" data-i18n="about.chip_3">Automation Systems</span>
+                    <span class="about-chip" data-i18n="about.chip_4">Product Delivery</span>
                 </div>
             </div>
         </div>
@@ -118,23 +130,23 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects section-shell">
         <div class="container">
-            <p class="section-kicker">Project Matrix</p>
-            <h2 class="section-title">Featured Systems</h2>
+            <p class="section-kicker" data-i18n="projects.kicker">Project Matrix</p>
+            <h2 class="section-title" data-i18n="projects.title">Featured Systems</h2>
 
             <div class="projects-grid">
                 <article class="project-card panel-card">
                     <div class="project-head">
                         <span class="project-icon">P01</span>
-                        <span class="project-state">Flagship</span>
+                        <span class="project-state" data-i18n="projects.p1.state">Flagship</span>
                     </div>
                     <h3>AGI Model Factory</h3>
-                    <p>
+                    <p data-i18n="projects.p1.desc">
                         Comprehensive model lifecycle system for training, evaluation,
                         release governance, and deployment automation.
                     </p>
                     <div class="project-meta">
-                        <span>Model Ops Platform</span>
-                        <span>Pipeline Automation</span>
+                        <span data-i18n="projects.p1.meta_1">Model Ops Platform</span>
+                        <span data-i18n="projects.p1.meta_2">Pipeline Automation</span>
                     </div>
                     <div class="project-tags">
                         <span class="tag">TypeScript</span>
@@ -142,22 +154,22 @@
                         <span class="tag">React</span>
                         <span class="tag">AI/ML</span>
                     </div>
-                    <a href="https://github.com/a740022938/AGI-Model-Factory" target="_blank" class="btn btn-secondary btn-inline">View on GitHub</a>
+                    <a href="https://github.com/a740022938/AGI-Model-Factory" target="_blank" class="btn btn-secondary btn-inline" data-i18n="projects.p1.cta">View on GitHub</a>
                 </article>
 
                 <article class="project-card panel-card">
                     <div class="project-head">
                         <span class="project-icon">P02</span>
-                        <span class="project-state">Lab System</span>
+                        <span class="project-state" data-i18n="projects.p2.state">Lab System</span>
                     </div>
                     <h3>AI Workbench</h3>
-                    <p>
+                    <p data-i18n="projects.p2.desc">
                         Interactive experimentation environment for datasets, model runs,
                         and visual analytics with reproducible workflows.
                     </p>
                     <div class="project-meta">
-                        <span>Experiment Console</span>
-                        <span>Visual Analytics</span>
+                        <span data-i18n="projects.p2.meta_1">Experiment Console</span>
+                        <span data-i18n="projects.p2.meta_2">Visual Analytics</span>
                     </div>
                     <div class="project-tags">
                         <span class="tag">Python</span>
@@ -165,22 +177,22 @@
                         <span class="tag">Vue.js</span>
                         <span class="tag">Data Science</span>
                     </div>
-                    <a href="https://github.com/a740022938/AI-Workbench" target="_blank" class="btn btn-secondary btn-inline">View Project</a>
+                    <a href="https://github.com/a740022938/AI-Workbench" target="_blank" class="btn btn-secondary btn-inline" data-i18n="projects.p2.cta">View Project</a>
                 </article>
 
                 <article class="project-card panel-card">
                     <div class="project-head">
                         <span class="project-icon">P03</span>
-                        <span class="project-state">Automation Stack</span>
+                        <span class="project-state" data-i18n="projects.p3.state">Automation Stack</span>
                     </div>
                     <h3>OpenClaw Skills</h3>
-                    <p>
+                    <p data-i18n="projects.p3.desc">
                         Curated automation skills for robust AI assistant execution,
                         including safeguards, orchestration, and delivery templates.
                     </p>
                     <div class="project-meta">
-                        <span>Task Orchestration</span>
-                        <span>Guarded Execution</span>
+                        <span data-i18n="projects.p3.meta_1">Task Orchestration</span>
+                        <span data-i18n="projects.p3.meta_2">Guarded Execution</span>
                     </div>
                     <div class="project-tags">
                         <span class="tag">JavaScript</span>
@@ -188,19 +200,19 @@
                         <span class="tag">API Integration</span>
                         <span class="tag">Tooling</span>
                     </div>
-                    <a href="https://github.com/a740022938" target="_blank" class="btn btn-secondary btn-inline">Explore Skills</a>
+                    <a href="https://github.com/a740022938" target="_blank" class="btn btn-secondary btn-inline" data-i18n="projects.p3.cta">Explore Skills</a>
                 </article>
             </div>
 
             <!-- AGI Model Factory Highlight -->
             <div class="agi-highlight panel-card" id="agi-factory">
                 <div class="agi-topbar">
-                    <span class="agi-badge">CORE MODULE</span>
-                    <span class="agi-version">VERSION 1.0.0</span>
+                    <span class="agi-badge" data-i18n="agi.badge">CORE MODULE</span>
+                    <span class="agi-version" data-i18n="agi.version">VERSION 1.0.0</span>
                 </div>
 
                 <h2>AGI Model Factory</h2>
-                <p>
+                <p data-i18n="agi.desc">
                     The centerpiece of this site: a production-minded AGI platform that connects
                     training workflows, artifact lifecycle, automated evaluation, and release deployment.
                 </p>
@@ -208,50 +220,50 @@
                 <div class="agi-pipeline">
                     <div class="pipeline-step">
                         <span class="step-id">01</span>
-                        <strong>Training</strong>
-                        <small>Dataset + Fine-tune</small>
+                        <strong data-i18n="agi.pipeline_1_title">Training</strong>
+                        <small data-i18n="agi.pipeline_1_desc">Dataset + Fine-tune</small>
                     </div>
                     <div class="pipeline-step">
                         <span class="step-id">02</span>
-                        <strong>Artifact</strong>
-                        <small>Version + Registry</small>
+                        <strong data-i18n="agi.pipeline_2_title">Artifact</strong>
+                        <small data-i18n="agi.pipeline_2_desc">Version + Registry</small>
                     </div>
                     <div class="pipeline-step">
                         <span class="step-id">03</span>
-                        <strong>Evaluation</strong>
-                        <small>Score + Guardrails</small>
+                        <strong data-i18n="agi.pipeline_3_title">Evaluation</strong>
+                        <small data-i18n="agi.pipeline_3_desc">Score + Guardrails</small>
                     </div>
                     <div class="pipeline-step">
                         <span class="step-id">04</span>
-                        <strong>Deployment</strong>
-                        <small>Serve + Observe</small>
+                        <strong data-i18n="agi.pipeline_4_title">Deployment</strong>
+                        <small data-i18n="agi.pipeline_4_desc">Serve + Observe</small>
                     </div>
                 </div>
 
                 <div class="agi-console">
                     <div class="console-item mini-card">
-                        <span class="console-label">SYSTEM</span>
-                        <strong>Operational</strong>
-                        <small>health: stable</small>
+                        <span class="console-label" data-i18n="agi.console_1_label">SYSTEM</span>
+                        <strong data-i18n="agi.console_1_value">Operational</strong>
+                        <small data-i18n="agi.console_1_desc">health: stable</small>
                     </div>
                     <div class="console-item mini-card">
-                        <span class="console-label">PIPELINES</span>
-                        <strong>12 Active</strong>
-                        <small>auto-scheduler on</small>
+                        <span class="console-label" data-i18n="agi.console_2_label">PIPELINES</span>
+                        <strong data-i18n="agi.console_2_value">12 Active</strong>
+                        <small data-i18n="agi.console_2_desc">auto-scheduler on</small>
                     </div>
                     <div class="console-item mini-card">
-                        <span class="console-label">OBSERVABILITY</span>
-                        <strong>Realtime Metrics</strong>
-                        <small>latency + drift watch</small>
+                        <span class="console-label" data-i18n="agi.console_3_label">OBSERVABILITY</span>
+                        <strong data-i18n="agi.console_3_value">Realtime Metrics</strong>
+                        <small data-i18n="agi.console_3_desc">latency + drift watch</small>
                     </div>
                     <div class="console-item mini-card">
-                        <span class="console-label">RELEASE</span>
-                        <strong>Progressive Rollout</strong>
-                        <small>safe deployment path</small>
+                        <span class="console-label" data-i18n="agi.console_4_label">RELEASE</span>
+                        <strong data-i18n="agi.console_4_value">Progressive Rollout</strong>
+                        <small data-i18n="agi.console_4_desc">safe deployment path</small>
                     </div>
                 </div>
 
-                <a href="https://github.com/a740022938/AGI-Model-Factory" target="_blank" class="btn btn-primary agi-cta">
+                <a href="https://github.com/a740022938/AGI-Model-Factory" target="_blank" class="btn btn-primary agi-cta" data-i18n="agi.cta">
                     Enter AGI Model Factory
                 </a>
             </div>
@@ -261,26 +273,26 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact section-shell">
         <div class="container">
-            <p class="section-kicker">Command Channel</p>
-            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-kicker" data-i18n="contact.kicker">Command Channel</p>
+            <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
             <div class="contact-form panel-card">
-                <p class="contact-intro">Drop a command and I will respond with a practical execution path.</p>
+                <p class="contact-intro" data-i18n="contact.intro">Drop a command and I will respond with a practical execution path.</p>
                 <form id="contactForm">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your name">
+                        <label for="name" data-i18n="contact.name_label">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name" data-i18n-placeholder="contact.name_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        <label for="email" data-i18n="contact.email_label">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com" data-i18n-placeholder="contact.email_placeholder">
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Describe your project, automation goal, or AI workflow challenge."></textarea>
+                        <label for="message" data-i18n="contact.message_label">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Describe your project, automation goal, or AI workflow challenge." data-i18n-placeholder="contact.message_placeholder"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary contact-submit">Send Instruction</button>
+                    <button type="submit" class="btn btn-primary contact-submit" data-i18n="contact.submit">Send Instruction</button>
                 </form>
-                <p class="contact-alt">
+                <p class="contact-alt" data-i18n="contact.alt">
                     You can also reach me via GitHub for collaboration on AGI and automation systems.
                 </p>
             </div>
@@ -292,8 +304,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-line" aria-hidden="true"></div>
-                <h3>姚金龙的AI工厂</h3>
-                <p>
+                <h3 data-i18n="brand.name">姚金龙的AI工厂</h3>
+                <p data-i18n="footer.desc">
                     Building systems at the intersection of AI capability,
                     software engineering, and high-reliability automation.
                 </p>
@@ -304,15 +316,30 @@
                     <li><a href="mailto:" title="Email">@</a></li>
                 </ul>
                 <p class="copyright">
-                    © <span id="currentYear">2026</span> 姚金龙的AI工厂. All rights reserved.
+                    © <span id="currentYear">2026</span> <span data-i18n="footer.copyright_brand">姚金龙的AI工厂.</span> <span data-i18n="footer.copyright_rights">All rights reserved.</span>
                     <br>
-                    Built with HTML, CSS, JavaScript, and disciplined execution.
+                    <span data-i18n="footer.built">Built with HTML, CSS, JavaScript, and disciplined execution.</span>
                 </p>
             </div>
         </div>
     </footer>
 
+    <!-- WeChat Modal -->
+    <div id="wechatModal" class="wechat-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="wechatModalTitle">
+        <div class="wechat-modal__backdrop" data-wechat-close></div>
+        <div class="wechat-modal__panel panel-card">
+            <button type="button" id="wechatModalClose" class="wechat-modal__close" data-wechat-close aria-label="Close" data-i18n-aria-label="wechat.close_aria">✕</button>
+            <h3 id="wechatModalTitle" data-i18n="wechat.modal_title">WeChat</h3>
+            <p class="wechat-modal__hint" data-i18n="wechat.scan_hint">Scan to connect</p>
+            <div class="wechat-qr-wrap">
+                <img id="wechatQrImage" src="assets/images/wechat_qr.png" alt="WeChat QR" loading="lazy" data-i18n-alt="wechat.qr_alt">
+                <p id="wechatQrFallback" class="wechat-qr-fallback" hidden data-i18n="wechat.image_missing">Please place your QR image at assets/images/wechat_qr.png</p>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -26,6 +26,10 @@ body {
     var(--bg-primary);
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 #particleCanvas {
   position: fixed;
   inset: 0;
@@ -267,6 +271,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .logo {
@@ -297,11 +302,59 @@ a:hover {
   letter-spacing: 0.01em;
 }
 
+.nav-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .nav-links {
   display: flex;
   gap: 1.55rem;
   align-items: center;
   list-style: none;
+}
+
+.nav-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.52rem;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18rem;
+  padding: 0.18rem;
+  border-radius: 999px;
+  border: 1px solid rgba(104, 152, 236, 0.54);
+  background: linear-gradient(160deg, rgba(13, 24, 48, 0.76), rgba(8, 14, 28, 0.78));
+  box-shadow: inset 0 0 16px rgba(55, 108, 188, 0.16);
+}
+
+.lang-btn {
+  min-width: 2.05rem;
+  height: 1.7rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: #aec8ee;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lang-btn:hover {
+  color: #f2f8ff;
+  border-color: rgba(123, 206, 255, 0.52);
+}
+
+.lang-btn.is-active {
+  color: #052239;
+  background: linear-gradient(135deg, rgba(143, 239, 255, 0.95), rgba(165, 143, 255, 0.96));
+  box-shadow: 0 0 16px rgba(74, 168, 255, 0.28);
 }
 
 .nav-links a {
@@ -339,6 +392,13 @@ a:hover {
 .theme-btn {
   padding: 0.52rem 0.9rem;
   font-size: 0.8rem;
+  min-width: 4.9rem;
+}
+
+.nav-wechat {
+  padding: 0.52rem 0.9rem;
+  font-size: 0.8rem;
+  min-width: 4.4rem;
 }
 
 /* Buttons */
@@ -848,6 +908,94 @@ a:hover {
   color: var(--text-muted);
 }
 
+/* WeChat Modal */
+.wechat-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms ease;
+}
+
+.wechat-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wechat-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 8, 17, 0.72);
+  backdrop-filter: blur(9px);
+}
+
+.wechat-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(420px, 92vw);
+  padding: 1.2rem;
+  transform: translateY(10px) scale(0.97);
+  transition: transform 280ms ease;
+}
+
+.wechat-modal.is-open .wechat-modal__panel {
+  transform: translateY(0) scale(1);
+}
+
+.wechat-modal__panel:hover {
+  transform: translateY(0) scale(1);
+}
+
+.wechat-modal__close {
+  position: absolute;
+  top: 0.68rem;
+  right: 0.68rem;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(115, 172, 255, 0.52);
+  border-radius: 0.58rem;
+  background: linear-gradient(175deg, rgba(14, 24, 47, 0.9), rgba(8, 14, 28, 0.92));
+  color: #d6e7ff;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.wechat-modal__close:hover {
+  border-color: rgba(141, 225, 255, 0.9);
+  color: #f7fcff;
+  box-shadow: 0 0 20px rgba(88, 196, 255, 0.22);
+}
+
+.wechat-modal__hint {
+  color: #b9cff3;
+  margin-bottom: 0.75rem;
+}
+
+.wechat-qr-wrap {
+  width: 100%;
+  border-radius: 0.9rem;
+  padding: 0.78rem;
+  background: linear-gradient(180deg, rgba(244, 249, 255, 0.96), rgba(228, 240, 255, 0.96));
+  border: 1px solid rgba(117, 173, 255, 0.35);
+}
+
+.wechat-qr-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.58rem;
+}
+
+.wechat-qr-fallback {
+  color: #1f3f66;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
 /* Footer */
 .footer {
   position: relative;
@@ -1046,8 +1194,16 @@ a:hover {
     padding: 0 var(--spacing-lg);
   }
 
+  .nav-right {
+    gap: 0.7rem;
+  }
+
   .nav-links {
-    gap: 1rem;
+    gap: 0.95rem;
+  }
+
+  .nav-actions {
+    gap: 0.38rem;
   }
 
   .hero-content {
@@ -1066,6 +1222,22 @@ a:hover {
 
   .nav-links {
     display: none;
+  }
+
+  .nav-right {
+    margin-left: auto;
+  }
+
+  .lang-btn {
+    min-width: 1.9rem;
+    height: 1.6rem;
+  }
+
+  .nav-wechat,
+  .theme-btn {
+    min-width: 3.9rem;
+    padding: 0.45rem 0.72rem;
+    font-size: 0.72rem;
   }
 
   .hero {
@@ -1105,6 +1277,11 @@ a:hover {
 
   .bg-pulse {
     opacity: 0.26;
+  }
+
+  .wechat-modal__panel {
+    width: min(420px, 94vw);
+    padding: 1rem;
   }
 }
 

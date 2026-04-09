@@ -5,18 +5,41 @@ document.addEventListener("DOMContentLoaded", () => {
     isMobile: window.matchMedia("(max-width: 768px)").matches,
   };
 
+  const i18n = window.SiteI18n || null;
+  if (i18n && typeof i18n.init === "function") {
+    i18n.init();
+  }
+
+  initLanguageSwitcher(i18n);
   initSmoothScrolling();
-  initContactForm();
+  initContactForm(i18n);
   initRevealAnimations(context);
   initNavbarOnScroll();
-  initThemeToggle();
+  initThemeToggle(i18n);
   initFooterYear();
   initScrollSpy();
+  initWeChatModal(i18n);
   initPointerAmbient(context);
   initParticleNetwork(context);
 
   console.log("%cAI factory interface online.", "color:#7ff5ff;font-weight:700;");
 });
+
+function t(i18n, key, fallback) {
+  if (!i18n || typeof i18n.t !== "function") return fallback;
+  const value = i18n.t(key);
+  return value && value !== key ? value : fallback;
+}
+
+function initLanguageSwitcher(i18n) {
+  if (!i18n || typeof i18n.applyLanguage !== "function") return;
+
+  document.querySelectorAll("[data-lang]").forEach((button) => {
+    button.addEventListener("click", () => {
+      i18n.applyLanguage(button.dataset.lang || "zh");
+    });
+  });
+}
 
 function initSmoothScrolling() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -35,7 +58,7 @@ function initSmoothScrolling() {
   });
 }
 
-function initContactForm() {
+function initContactForm(i18n) {
   const form = document.getElementById("contactForm");
   if (!form) return;
 
@@ -44,11 +67,11 @@ function initContactForm() {
     const data = Object.fromEntries(new FormData(form));
 
     if (!data.name || !data.email || !data.message) {
-      alert("Please fill in all required fields.");
+      alert(t(i18n, "alerts.required", "Please fill in all required fields."));
       return;
     }
 
-    alert("Instruction received. I will get back to you soon.");
+    alert(t(i18n, "alerts.success", "Instruction received. I will get back to you soon."));
     form.reset();
   });
 }
@@ -58,10 +81,10 @@ function initRevealAnimations({ reducedMotion }) {
     ".about-content, .project-card, .agi-highlight, .contact-form, .footer-content"
   );
 
-  if (reducedMotion || !("IntersectionObserver" in window)) {
+  if (reducedMotion || !('IntersectionObserver' in window)) {
     targets.forEach((node) => {
-      node.style.opacity = "1";
-      node.style.transform = "translateY(0)";
+      node.style.opacity = '1';
+      node.style.transform = 'translateY(0)';
     });
     return;
   }
@@ -71,75 +94,87 @@ function initRevealAnimations({ reducedMotion }) {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         const node = entry.target;
-        node.style.opacity = "1";
-        node.style.transform = "translateY(0)";
+        node.style.opacity = '1';
+        node.style.transform = 'translateY(0)';
         self.unobserve(node);
       });
     },
-    { threshold: 0.14, rootMargin: "0px 0px -50px 0px" }
+    { threshold: 0.14, rootMargin: '0px 0px -50px 0px' }
   );
 
   targets.forEach((node, index) => {
-    node.style.opacity = "0";
-    node.style.transform = "translateY(22px)";
+    node.style.opacity = '0';
+    node.style.transform = 'translateY(22px)';
     node.style.transition = `opacity 560ms ease ${index * 55}ms, transform 560ms ease ${index * 55}ms`;
     observer.observe(node);
   });
 }
 
 function initNavbarOnScroll() {
-  const navbar = document.querySelector(".navbar");
+  const navbar = document.querySelector('.navbar');
   if (!navbar) return;
 
   const apply = () => {
-    navbar.classList.toggle("is-scrolled", window.scrollY > 28);
+    navbar.classList.toggle('is-scrolled', window.scrollY > 28);
   };
 
-  window.addEventListener("scroll", apply, { passive: true });
+  window.addEventListener('scroll', apply, { passive: true });
   apply();
 }
 
-function initThemeToggle() {
-  const toggle = document.getElementById("themeToggle");
+function initThemeToggle(i18n) {
+  const toggle = document.getElementById('themeToggle');
   if (!toggle) return;
+  const THEME_KEY = 'theme-preference';
 
-  const setLabel = () => {
-    const isLight = document.documentElement.getAttribute("data-theme") === "light";
-    toggle.textContent = isLight ? "Dark UI" : "Light UI";
-    toggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+  const updateLabel = () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const text = isLight
+      ? t(i18n, 'nav.theme_to_dark', 'Dark UI')
+      : t(i18n, 'nav.theme_to_light', 'Light UI');
+    const aria = isLight
+      ? t(i18n, 'nav.theme_to_dark_aria', 'Switch to dark interface')
+      : t(i18n, 'nav.theme_to_light_aria', 'Switch to light interface');
+
+    toggle.textContent = text;
+    toggle.setAttribute('aria-label', aria);
   };
 
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") {
-    document.documentElement.setAttribute("data-theme", "light");
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
   } else {
-    document.documentElement.removeAttribute("data-theme");
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem(THEME_KEY, 'dark');
   }
 
-  setLabel();
+  updateLabel();
 
-  toggle.addEventListener("click", () => {
-    const isLight = document.documentElement.getAttribute("data-theme") === "light";
+  toggle.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
     if (isLight) {
-      document.documentElement.removeAttribute("data-theme");
-      localStorage.setItem("theme", "dark");
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem(THEME_KEY, 'dark');
     } else {
-      document.documentElement.setAttribute("data-theme", "light");
-      localStorage.setItem("theme", "light");
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem(THEME_KEY, 'light');
     }
-    setLabel();
-    window.dispatchEvent(new Event("themechange"));
+
+    updateLabel();
+    window.dispatchEvent(new Event('themechange'));
   });
+
+  document.addEventListener('languagechange', updateLabel);
 }
 
 function initFooterYear() {
-  const yearNode = document.getElementById("currentYear");
+  const yearNode = document.getElementById('currentYear');
   if (yearNode) yearNode.textContent = String(new Date().getFullYear());
 }
 
 function initScrollSpy() {
-  const links = Array.from(document.querySelectorAll(".nav-links a[data-nav-target]"));
-  if (!links.length || !("IntersectionObserver" in window)) return;
+  const links = Array.from(document.querySelectorAll('.nav-links a[data-nav-target]'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
 
   const sectionById = new Map();
   links.forEach((link) => {
@@ -150,7 +185,7 @@ function initScrollSpy() {
 
   const activate = (activeLink) => {
     links.forEach((link) => {
-      link.classList.toggle("is-active", link === activeLink);
+      link.classList.toggle('is-active', link === activeLink);
     });
   };
 
@@ -163,10 +198,62 @@ function initScrollSpy() {
       const link = sectionById.get(visible[0].target);
       if (link) activate(link);
     },
-    { rootMargin: "-35% 0px -45% 0px", threshold: [0.2, 0.35, 0.5, 0.75] }
+    { rootMargin: '-35% 0px -45% 0px', threshold: [0.2, 0.35, 0.5, 0.75] }
   );
 
   sectionById.forEach((_, section) => observer.observe(section));
+}
+
+function initWeChatModal(i18n) {
+  const trigger = document.getElementById('wechatTrigger');
+  const modal = document.getElementById('wechatModal');
+  const closeButton = document.getElementById('wechatModalClose');
+  const qrImage = document.getElementById('wechatQrImage');
+  const qrFallback = document.getElementById('wechatQrFallback');
+
+  if (!trigger || !modal || !closeButton) return;
+
+  let lastFocusedElement = null;
+
+  const open = () => {
+    lastFocusedElement = document.activeElement;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    closeButton.focus();
+  };
+
+  const close = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+    }
+  };
+
+  trigger.addEventListener('click', open);
+
+  modal.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target instanceof HTMLElement && target.hasAttribute('data-wechat-close')) {
+      close();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+      close();
+    }
+  });
+
+  if (qrImage && qrFallback) {
+    qrImage.addEventListener('error', () => {
+      qrImage.style.display = 'none';
+      qrFallback.hidden = false;
+      qrFallback.textContent = t(i18n, 'wechat.image_missing', 'Please place your QR image at assets/images/wechat_qr.png');
+    });
+  }
 }
 
 function initPointerAmbient({ reducedMotion, isMobile }) {
@@ -178,14 +265,14 @@ function initPointerAmbient({ reducedMotion, isMobile }) {
     frame = requestAnimationFrame(() => {
       const px = (x / window.innerWidth) * 100;
       const py = (y / window.innerHeight) * 100;
-      document.body.style.setProperty("--pointer-x", `${px.toFixed(2)}%`);
-      document.body.style.setProperty("--pointer-y", `${py.toFixed(2)}%`);
+      document.body.style.setProperty('--pointer-x', `${px.toFixed(2)}%`);
+      document.body.style.setProperty('--pointer-y', `${py.toFixed(2)}%`);
       frame = 0;
     });
   };
 
   window.addEventListener(
-    "pointermove",
+    'pointermove',
     (event) => {
       update(event.clientX, event.clientY);
     },
@@ -194,10 +281,10 @@ function initPointerAmbient({ reducedMotion, isMobile }) {
 }
 
 function initParticleNetwork({ reducedMotion, isMobile }) {
-  const canvas = document.getElementById("particleCanvas");
+  const canvas = document.getElementById('particleCanvas');
   if (!canvas) return;
 
-  const ctx = canvas.getContext("2d", { alpha: true });
+  const ctx = canvas.getContext('2d', { alpha: true });
   if (!ctx) return;
 
   const pointer = { x: -9999, y: -9999, active: false };
@@ -217,9 +304,9 @@ function initParticleNetwork({ reducedMotion, isMobile }) {
   const randomBetween = (min, max) => Math.random() * (max - min) + min;
 
   const hexToRgb = (hex) => {
-    const value = hex.replace("#", "").trim();
+    const value = hex.replace('#', '').trim();
     if (![3, 6].includes(value.length)) return null;
-    const full = value.length === 3 ? value.split("").map((ch) => ch + ch).join("") : value;
+    const full = value.length === 3 ? value.split('').map((part) => part + part).join('') : value;
     const int = parseInt(full, 16);
     if (Number.isNaN(int)) return null;
     return {
@@ -229,27 +316,29 @@ function initParticleNetwork({ reducedMotion, isMobile }) {
     };
   };
 
-  const colorToRgba = (color, alpha, fallback) => {
-    const rgb = hexToRgb(color);
+  const colorToRgba = (rgb, alpha, fallback) => {
     if (!rgb) return fallback;
     return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
   };
 
   const getColors = () => {
     const styles = getComputedStyle(document.documentElement);
-    const dot = (styles.getPropertyValue("--color-accent-soft") || "#7ff5ff").trim();
-    const line = (styles.getPropertyValue("--color-primary") || "#49d9ff").trim();
-    const glow = (styles.getPropertyValue("--color-accent") || "#b86bff").trim();
+    const dotHex = (styles.getPropertyValue('--color-accent-soft') || '#7ff5ff').trim();
+    const lineHex = (styles.getPropertyValue('--color-primary') || '#49d9ff').trim();
+    const glowHex = (styles.getPropertyValue('--color-accent') || '#b86bff').trim();
+
+    const dotRgb = hexToRgb(dotHex) || { r: 127, g: 245, b: 255 };
+    const lineRgb = hexToRgb(lineHex) || { r: 73, g: 217, b: 255 };
+    const glowRgb = hexToRgb(glowHex) || { r: 184, g: 107, b: 255 };
 
     return {
-      dot,
-      line,
-      glow,
-      dotSoft: colorToRgba(dot, 0.75, "rgba(127, 245, 255, 0.75)"),
-      lineSoft: colorToRgba(line, reducedMotion ? 0.2 : 0.34, "rgba(73, 217, 255, 0.34)"),
-      glowSoft: colorToRgba(glow, 0.22, "rgba(184, 107, 255, 0.22)"),
-      streamA: colorToRgba(line, reducedMotion ? 0.08 : 0.16, "rgba(73, 217, 255, 0.16)"),
-      streamB: colorToRgba(glow, reducedMotion ? 0.06 : 0.13, "rgba(184, 107, 255, 0.13)"),
+      dotRgb,
+      lineRgb,
+      glowRgb,
+      dotSoft: colorToRgba(dotRgb, 0.75, 'rgba(127, 245, 255, 0.75)'),
+      glowSoft: colorToRgba(glowRgb, 0.22, 'rgba(184, 107, 255, 0.22)'),
+      streamA: colorToRgba(lineRgb, reducedMotion ? 0.08 : 0.16, 'rgba(73, 217, 255, 0.16)'),
+      streamB: colorToRgba(glowRgb, reducedMotion ? 0.06 : 0.13, 'rgba(184, 107, 255, 0.13)'),
     };
   };
 
@@ -271,7 +360,7 @@ function initParticleNetwork({ reducedMotion, isMobile }) {
       phase: randomBetween(0, Math.PI * 2),
       curve: randomBetween(0.0025, 0.0055),
       width: randomBetween(1.2, 2.1),
-      tint: index % 2 === 0 ? "streamA" : "streamB",
+      tint: index % 2 === 0 ? 'streamA' : 'streamB',
     }));
 
   const resize = () => {
@@ -290,29 +379,29 @@ function initParticleNetwork({ reducedMotion, isMobile }) {
     streams = createStreams();
   };
 
-  const updateParticle = (p) => {
+  const updateParticle = (particle) => {
     if (!reducedMotion && pointer.active) {
-      const dx = pointer.x - p.x;
-      const dy = pointer.y - p.y;
+      const dx = pointer.x - particle.x;
+      const dy = pointer.y - particle.y;
       const distance = Math.hypot(dx, dy);
 
       if (distance < pointerRadius && distance > 1) {
         const force = (pointerRadius - distance) / pointerRadius;
-        p.vx -= (dx / distance) * force * 0.011;
-        p.vy -= (dy / distance) * force * 0.011;
+        particle.vx -= (dx / distance) * force * 0.011;
+        particle.vy -= (dy / distance) * force * 0.011;
       }
     }
 
-    p.x += p.vx;
-    p.y += p.vy;
+    particle.x += particle.vx;
+    particle.y += particle.vy;
 
-    p.vx *= 0.992;
-    p.vy *= 0.992;
+    particle.vx *= 0.992;
+    particle.vy *= 0.992;
 
-    if (p.x < -12) p.x = width + 12;
-    if (p.x > width + 12) p.x = -12;
-    if (p.y < -12) p.y = height + 12;
-    if (p.y > height + 12) p.y = -12;
+    if (particle.x < -12) particle.x = width + 12;
+    if (particle.x > width + 12) particle.x = -12;
+    if (particle.y < -12) particle.y = height + 12;
+    if (particle.y > height + 12) particle.y = -12;
   };
 
   const drawStreams = () => {
@@ -320,10 +409,10 @@ function initParticleNetwork({ reducedMotion, isMobile }) {
       stream.phase += stream.speed;
 
       const gradient = ctx.createLinearGradient(0, stream.baseY - stream.amplitude, width, stream.baseY + stream.amplitude);
-      gradient.addColorStop(0, "transparent");
+      gradient.addColorStop(0, 'transparent');
       gradient.addColorStop(0.28, colors[stream.tint]);
       gradient.addColorStop(0.72, colors[stream.tint]);
-      gradient.addColorStop(1, "transparent");
+      gradient.addColorStop(1, 'transparent');
 
       ctx.strokeStyle = gradient;
       ctx.lineWidth = stream.width;
@@ -362,11 +451,11 @@ function initParticleNetwork({ reducedMotion, isMobile }) {
         const p2 = particles[j];
         const dx = p1.x - p2.x;
         const dy = p1.y - p2.y;
-        const dist = Math.hypot(dx, dy);
-        if (dist > maxLinkDistance) continue;
+        const distance = Math.hypot(dx, dy);
+        if (distance > maxLinkDistance) continue;
 
-        const alpha = (1 - dist / maxLinkDistance) * (reducedMotion ? 0.18 : 0.34);
-        ctx.strokeStyle = colors.lineSoft.replace(/\d*\.?\d+\)$/, `${alpha.toFixed(3)})`);
+        const alpha = (1 - distance / maxLinkDistance) * (reducedMotion ? 0.18 : 0.34);
+        ctx.strokeStyle = colorToRgba(colors.lineRgb, alpha.toFixed(3), 'rgba(73, 217, 255, 0.34)');
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(p1.x, p1.y);
@@ -381,7 +470,7 @@ function initParticleNetwork({ reducedMotion, isMobile }) {
 
     const gradient = ctx.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, pointerRadius);
     gradient.addColorStop(0, colors.glowSoft);
-    gradient.addColorStop(1, "transparent");
+    gradient.addColorStop(1, 'transparent');
     ctx.fillStyle = gradient;
     ctx.beginPath();
     ctx.arc(pointer.x, pointer.y, pointerRadius, 0, Math.PI * 2);
@@ -390,13 +479,13 @@ function initParticleNetwork({ reducedMotion, isMobile }) {
 
   const drawFrame = () => {
     ctx.clearRect(0, 0, width, height);
-    ctx.globalCompositeOperation = "lighter";
+    ctx.globalCompositeOperation = 'lighter';
 
     drawStreams();
     drawParticles();
     drawPointerGlow();
 
-    ctx.globalCompositeOperation = "source-over";
+    ctx.globalCompositeOperation = 'source-over';
     animationFrame = requestAnimationFrame(drawFrame);
   };
 
@@ -412,25 +501,23 @@ function initParticleNetwork({ reducedMotion, isMobile }) {
     cancelAnimationFrame(animationFrame);
   };
 
-  window.addEventListener("mousemove", (event) => {
+  window.addEventListener('mousemove', (event) => {
     pointer.x = event.clientX;
     pointer.y = event.clientY;
     pointer.active = true;
   });
 
-  window.addEventListener("mouseleave", () => {
+  window.addEventListener('mouseleave', () => {
     pointer.active = false;
   });
 
-  window.addEventListener("resize", () => {
-    resize();
-  });
+  window.addEventListener('resize', resize);
 
-  window.addEventListener("themechange", () => {
+  window.addEventListener('themechange', () => {
     colors = getColors();
   });
 
-  document.addEventListener("visibilitychange", () => {
+  document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       stop();
       return;
