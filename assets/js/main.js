@@ -208,30 +208,72 @@ function initWeChatModal(i18n) {
   const trigger = document.getElementById('wechatTrigger');
   const modal = document.getElementById('wechatModal');
   const closeButton = document.getElementById('wechatModalClose');
-  const qrImage = document.getElementById('wechatQrImage');
+  const qrCanvas = document.getElementById('wechatQrCanvas');
+  const qrMaskedImage = document.getElementById('wechatQrMaskedImage');
   const qrFallback = document.getElementById('wechatQrFallback');
 
   if (!trigger || !modal || !closeButton) return;
 
   let lastFocusedElement = null;
-  let qrBound = false;
+  let decoded = false;
+  let canvasBound = false;
 
-  const open = () => {
-    if (qrImage && !qrImage.getAttribute('src')) {
-      const targetSrc = qrImage.dataset.qrSrc || '';
-      if (targetSrc) {
-        qrImage.setAttribute('src', targetSrc);
-      }
+  const decodeMaskedQrToCanvas = () => {
+    if (!qrCanvas || !qrMaskedImage || decoded) return;
+    if (!qrMaskedImage.getAttribute('src')) {
+      const targetSrc = qrMaskedImage.dataset.qrSrc || '';
+      if (targetSrc) qrMaskedImage.setAttribute('src', targetSrc);
     }
 
-    if (qrImage && !qrBound) {
-      qrBound = true;
-      qrImage.addEventListener('contextmenu', (event) => {
-        event.preventDefault();
-      });
-      qrImage.addEventListener('dragstart', (event) => {
-        event.preventDefault();
-      });
+    const tiles = 8;
+    const tileSize = 64;
+    const n = tiles * tiles;
+    const mul = 5;
+    const add = 11;
+
+    const render = () => {
+      const source = document.createElement('canvas');
+      source.width = 512;
+      source.height = 512;
+      const sctx = source.getContext('2d');
+      const dctx = qrCanvas.getContext('2d');
+      if (!sctx || !dctx) return;
+
+      sctx.drawImage(qrMaskedImage, 0, 0, 512, 512);
+      dctx.clearRect(0, 0, 512, 512);
+
+      for (let i = 0; i < n; i++) {
+        const j = (i * mul + add) % n;
+        const sx = (j % tiles) * tileSize;
+        const sy = Math.floor(j / tiles) * tileSize;
+        const dx = (i % tiles) * tileSize;
+        const dy = Math.floor(i / tiles) * tileSize;
+        dctx.drawImage(source, sx, sy, tileSize, tileSize, dx, dy, tileSize, tileSize);
+      }
+
+      decoded = true;
+    };
+
+    if (qrMaskedImage.complete && qrMaskedImage.naturalWidth > 0) {
+      render();
+      return;
+    }
+
+    qrMaskedImage.onload = render;
+    qrMaskedImage.onerror = () => {
+      if (qrCanvas) qrCanvas.style.display = 'none';
+      if (qrFallback) {
+        qrFallback.hidden = false;
+        qrFallback.textContent = t(i18n, 'wechat.image_missing', 'Please place your QR image at assets/images/wechat_qr_masked.png');
+      }
+    };
+  };
+
+  const open = () => {
+    decodeMaskedQrToCanvas();
+    if (qrCanvas && !canvasBound) {
+      canvasBound = true;
+      qrCanvas.addEventListener('contextmenu', (event) => event.preventDefault());
     }
 
     lastFocusedElement = document.activeElement;
@@ -265,13 +307,6 @@ function initWeChatModal(i18n) {
     }
   });
 
-  if (qrImage && qrFallback) {
-    qrImage.addEventListener('error', () => {
-      qrImage.style.display = 'none';
-      qrFallback.hidden = false;
-      qrFallback.textContent = t(i18n, 'wechat.image_missing', 'Please place your QR image at assets/images/wechat_qr.png');
-    });
-  }
 }
 
 function initPointerAmbient({ reducedMotion, isMobile }) {

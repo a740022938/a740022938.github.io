@@ -361,7 +361,8 @@
             <h3 id="wechatModalTitle" data-i18n="wechat.modal_title">WeChat</h3>
             <p class="wechat-modal__hint" data-i18n="wechat.scan_hint">Scan to connect</p>
             <div class="wechat-qr-wrap">
-                <img id="wechatQrImage" src="" data-qr-src="assets/images/wechat_qr.png" alt="WeChat QR" loading="lazy" data-i18n-alt="wechat.qr_alt" referrerpolicy="no-referrer">
+                <canvas id="wechatQrCanvas" width="512" height="512" aria-label="WeChat QR" data-i18n-aria-label="wechat.qr_alt"></canvas>
+                <img id="wechatQrMaskedImage" src="" data-qr-src="assets/images/wechat_qr_masked.png" alt="" loading="lazy" hidden referrerpolicy="no-referrer">
                 <p id="wechatQrFallback" class="wechat-qr-fallback" hidden data-i18n="wechat.image_missing">Please place your QR image at assets/images/wechat_qr.png</p>
             </div>
         </div>
