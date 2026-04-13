@@ -5,11 +5,11 @@
   const dictionary = {
     zh: {
       meta: {
-        title: "姚金龙的AI工厂",
-        description: "姚金龙的AI工厂：AI 项目、AGI 实验与自动化产品展示。"
+        title: "AGI Model Factory",
+        description: "AGI Model Factory：本地优先的 AI 系统平台，聚焦任务治理、训练评估闭环、审计归档与可控扩展。"
       },
       brand: {
-        name: "姚金龙的AI工厂"
+        name: "AGI Model Factory"
       },
       nav: {
         home: "首页",
@@ -26,11 +26,11 @@
       hero: {
         status_online: "AI SYSTEM ONLINE",
         status_note: "控制平面稳定",
-        title_main: "姚金龙的AI工厂",
+        title_main: "AGI Model Factory",
         title_sub: "AGI 系统 • 自动化 • 智能交付",
-        subtitle: "专注 AI 原生系统、自动化流水线与产品级落地交付，面向高价值业务场景构建可运行的智能平台。",
-        cta_projects: "查看项目矩阵",
-        cta_contact: "打开联络通道",
+        subtitle: "本地优先的 AI 系统平台，围绕任务治理、模板执行、训练评估闭环、审计归档与可控扩展持续演进。",
+        cta_projects: "查看平台能力面",
+        cta_contact: "打开联系通道",
         metric_uptime_label: "系统可用率",
         metric_uptime_value: "99.98%",
         metric_tracks_label: "活跃构建链路",
@@ -49,32 +49,32 @@
         chip_4: "产品交付"
       },
       projects: {
-        kicker: "项目矩阵",
-        title: "核心系统",
+        kicker: "平台能力面",
+        title: "AGI Model Factory 主线",
         p1: {
-          state: "旗舰项目",
+          state: "核心平台",
           desc: "覆盖训练、评估、版本治理与自动部署的全生命周期模型平台。",
-          meta_1: "Model Ops 平台",
-          meta_2: "流水线自动化",
-          cta: "查看 GitHub"
+          meta_1: "任务到交付主链路",
+          meta_2: "治理与审计闭环",
+          cta: "申请访问"
         },
         p2: {
-          state: "实验系统",
-          desc: "面向数据集、模型实验与可视分析的交互式工作台，支持可复现实验流程。",
-          meta_1: "实验控制台",
-          meta_2: "可视化分析",
-          cta: "查看项目"
+          state: "现有能力",
+          desc: "任务治理、知识沉淀、自动回流、成本路由等能力已形成稳定联动，并持续打磨产品可读性。",
+          meta_1: "统一控制台",
+          meta_2: "跨页面联动",
+          cta: "查看核心能力"
         },
         p3: {
-          state: "自动化栈",
-          desc: "为 AI 助手执行场景打造的技能集合，包含保护机制、编排能力与交付模板。",
-          meta_1: "任务编排",
-          meta_2: "安全执行",
-          cta: "浏览技能"
+          state: "未来展望",
+          desc: "OpenClaw 作为未来方向：聚焦数字员工协同、受控工具调用、可审计执行与插件式接入。",
+          meta_1: "数字员工协同",
+          meta_2: "可审计执行",
+          cta: "交流路线图"
         }
       },
       showcase: {
-        pill: "核心展示",
+        pill: "产品核心",
         subtitle_zh: "本地 AI 模型全链路运营平台",
         description: "覆盖训练、产物管理、评估与部署的完整 AI 工作流系统。",
         flow: {
@@ -104,9 +104,9 @@
           deployment_value: "STANDBY"
         },
         cta: {
-          explore: "Explore System",
-          architecture: "View Architecture",
-          more: "Learn More"
+          explore: "查看平台范围",
+          architecture: "查看运行原则",
+          more: "申请私有演示"
         }
       },
       agi: {
@@ -146,11 +146,11 @@
         message_label: "消息",
         message_placeholder: "描述你的项目目标、自动化诉求或 AI 工作流问题。",
         submit: "发送指令",
-        alt: "你也可以通过 GitHub 与我联系，交流 AGI 与自动化系统合作。"
+        alt: "也可通过 WeChat 对接合作需求，采用私有交付与受控访问方式推进。"
       },
       footer: {
-        desc: "在 AI 能力、软件工程与高可靠自动化的交叉点持续构建系统。",
-        copyright_brand: "姚金龙的AI工厂.",
+        desc: "以任务治理、工程执行与审计归档为基础，持续构建可交付的 AI 系统。",
+        copyright_brand: "AGI Model Factory.",
         copyright_rights: "保留所有权利。",
         built: "使用 HTML、CSS、JavaScript 构建，并坚持工程化执行。"
       },
@@ -168,11 +168,11 @@
     },
     en: {
       meta: {
-        title: "Yao Jinlong AI Factory",
-        description: "Yao Jinlong AI Factory: AI projects, AGI experiments, and automation platform showcase."
+        title: "AGI Model Factory",
+        description: "AGI Model Factory: a local-first AI platform focused on task governance, training-evaluation closure, auditable archives, and controlled extensibility."
       },
       brand: {
-        name: "Yao Jinlong AI Factory"
+        name: "AGI Model Factory"
       },
       nav: {
         home: "Home",
@@ -189,11 +189,11 @@
       hero: {
         status_online: "AI SYSTEM ONLINE",
         status_note: "Control Plane Stable",
-        title_main: "Yao Jinlong AI Factory",
+        title_main: "AGI Model Factory",
         title_sub: "AGI Systems • Automation • Intelligent Delivery",
-        subtitle: "Premium engineering studio focused on AI-native systems, automation pipelines, and product-grade delivery for high-impact workflows.",
-        cta_projects: "Explore Project Matrix",
-        cta_contact: "Open Command Channel",
+        subtitle: "A local-first AI platform focused on task governance, template execution, training-evaluation closure, audit archives, and controlled extension.",
+        cta_projects: "Explore Platform Surfaces",
+        cta_contact: "Open Contact Channel",
         metric_uptime_label: "Factory Uptime",
         metric_uptime_value: "99.98%",
         metric_tracks_label: "Active Build Tracks",
@@ -212,32 +212,32 @@
         chip_4: "Product Delivery"
       },
       projects: {
-        kicker: "Project Matrix",
-        title: "Featured Systems",
+        kicker: "Platform Surfaces",
+        title: "AGI Model Factory Focus",
         p1: {
-          state: "Flagship",
+          state: "Core Platform",
           desc: "Comprehensive model lifecycle system for training, evaluation, release governance, and deployment automation.",
-          meta_1: "Model Ops Platform",
-          meta_2: "Pipeline Automation",
-          cta: "View on GitHub"
+          meta_1: "Task-to-delivery mainline",
+          meta_2: "Governance + audit closure",
+          cta: "Request Access"
         },
         p2: {
-          state: "Lab System",
-          desc: "Interactive experimentation environment for datasets, model runs, and visual analytics with reproducible workflows.",
-          meta_1: "Experiment Console",
-          meta_2: "Visual Analytics",
-          cta: "View Project"
+          state: "Current Capabilities",
+          desc: "Task governance, knowledge center, automatic feedback loop, and cost routing are now operating as a coherent product surface.",
+          meta_1: "Unified console",
+          meta_2: "Cross-page linkage",
+          cta: "View Core Surface"
         },
         p3: {
-          state: "Automation Stack",
-          desc: "Curated automation skills for robust AI assistant execution, including safeguards, orchestration, and delivery templates.",
-          meta_1: "Task Orchestration",
-          meta_2: "Guarded Execution",
-          cta: "Explore Skills"
+          state: "Future Outlook",
+          desc: "OpenClaw is a future direction for digital-worker collaboration, controlled tool invocation, auditable execution, and plugin-style integration.",
+          meta_1: "Digital-worker synergy",
+          meta_2: "Auditable execution",
+          cta: "Discuss Roadmap"
         }
       },
       showcase: {
-        pill: "Core Showcase",
+        pill: "Product Core",
         subtitle_zh: "A Local AI Operations Platform",
         description: "A full lifecycle system covering training, artifact management, evaluation, and deployment.",
         flow: {
@@ -267,9 +267,9 @@
           deployment_value: "STANDBY"
         },
         cta: {
-          explore: "Explore System",
-          architecture: "View Architecture",
-          more: "Learn More"
+          explore: "View Platform Scope",
+          architecture: "See Operating Principles",
+          more: "Request Private Demo"
         }
       },
       agi: {
@@ -309,11 +309,11 @@
         message_label: "Message",
         message_placeholder: "Describe your project, automation goal, or AI workflow challenge.",
         submit: "Send Instruction",
-        alt: "You can also reach me via GitHub for collaboration on AGI and automation systems."
+        alt: "You can also connect via WeChat for private delivery and controlled-access collaboration."
       },
       footer: {
-        desc: "Building systems at the intersection of AI capability, software engineering, and high-reliability automation.",
-        copyright_brand: "Yao Jinlong AI Factory.",
+        desc: "Building delivery-grade AI systems with clear governance, disciplined execution, and auditable outcomes.",
+        copyright_brand: "AGI Model Factory.",
         copyright_rights: "All rights reserved.",
         built: "Built with HTML, CSS, JavaScript, and disciplined execution."
       },
@@ -331,11 +331,11 @@
     },
     ja: {
       meta: {
-        title: "姚金龍AIファクトリー",
-        description: "姚金龍AIファクトリー: AI プロジェクト、AGI 実験、自動化プラットフォームの紹介。"
+        title: "AGI Model Factory",
+        description: "AGI Model Factory: タスク統治、学習評価の閉ループ、監査アーカイブ、制御可能な拡張に焦点を当てたローカル優先の AI プラットフォーム。"
       },
       brand: {
-        name: "姚金龍AIファクトリー"
+        name: "AGI Model Factory"
       },
       nav: {
         home: "ホーム",
@@ -352,10 +352,10 @@
       hero: {
         status_online: "AI SYSTEM ONLINE",
         status_note: "Control Plane Stable",
-        title_main: "姚金龍AIファクトリー",
+        title_main: "AGI Model Factory",
         title_sub: "AGI Systems • Automation • Intelligent Delivery",
         subtitle: "AIネイティブなシステム、オートメーション基盤、プロダクト品質の実装を重視したエンジニアリングサイトです。",
-        cta_projects: "プロジェクトを見る",
+        cta_projects: "プラットフォームを見る",
         cta_contact: "連絡チャネルを開く",
         metric_uptime_label: "稼働率",
         metric_uptime_value: "99.98%",
@@ -375,32 +375,32 @@
         chip_4: "Product Delivery"
       },
       projects: {
-        kicker: "Project Matrix",
-        title: "Featured Systems",
+        kicker: "Platform Surfaces",
+        title: "AGI Model Factory Focus",
         p1: {
-          state: "Flagship",
+          state: "Core Platform",
           desc: "Comprehensive model lifecycle system for training, evaluation, release governance, and deployment automation.",
           meta_1: "Model Ops Platform",
           meta_2: "Pipeline Automation",
-          cta: "View on GitHub"
+          cta: "Request Access"
         },
         p2: {
-          state: "Lab System",
-          desc: "Interactive experimentation environment for datasets, model runs, and visual analytics with reproducible workflows.",
-          meta_1: "Experiment Console",
-          meta_2: "Visual Analytics",
-          cta: "View Project"
+          state: "Current Capabilities",
+          desc: "Task governance, knowledge center, automatic feedback loop, and cost routing are now operating as a coherent product surface.",
+          meta_1: "Unified console",
+          meta_2: "Cross-page linkage",
+          cta: "View Core Surface"
         },
         p3: {
-          state: "Automation Stack",
-          desc: "Curated automation skills for robust AI assistant execution, including safeguards, orchestration, and delivery templates.",
-          meta_1: "Task Orchestration",
-          meta_2: "Guarded Execution",
-          cta: "Explore Skills"
+          state: "Future Outlook",
+          desc: "OpenClaw is a future direction for digital-worker collaboration, controlled tool invocation, auditable execution, and plugin-style integration.",
+          meta_1: "Digital-worker synergy",
+          meta_2: "Auditable execution",
+          cta: "Discuss Roadmap"
         }
       },
       showcase: {
-        pill: "Core Showcase",
+        pill: "Product Core",
         subtitle_zh: "ローカル AI モデル運用プラットフォーム",
         description: "Training、Artifact、Evaluation、Deployment を一体化したフルライフサイクルシステム。",
         flow: {
@@ -430,9 +430,9 @@
           deployment_value: "STANDBY"
         },
         cta: {
-          explore: "Explore System",
-          architecture: "View Architecture",
-          more: "Learn More"
+          explore: "View Platform Scope",
+          architecture: "See Operating Principles",
+          more: "Request Private Demo"
         }
       },
       agi: {
@@ -472,11 +472,11 @@
         message_label: "Message",
         message_placeholder: "Describe your project, automation goal, or AI workflow challenge.",
         submit: "Send Instruction",
-        alt: "You can also reach me via GitHub for collaboration on AGI and automation systems."
+        alt: "You can also connect via WeChat for private delivery and controlled-access collaboration."
       },
       footer: {
         desc: "Building systems at the intersection of AI capability, software engineering, and high-reliability automation.",
-        copyright_brand: "姚金龍AIファクトリー.",
+        copyright_brand: "AGI Model Factory.",
         copyright_rights: "All rights reserved.",
         built: "Built with HTML, CSS, JavaScript, and disciplined execution."
       },
