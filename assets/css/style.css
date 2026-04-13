@@ -696,6 +696,19 @@ a:hover {
   min-height: 4.4rem;
 }
 
+.project-concept {
+  margin: 0.72rem 0 0;
+  padding: 0.42rem;
+  border-radius: 0.78rem;
+}
+
+.project-concept-img {
+  width: 100%;
+  display: block;
+  border-radius: 0.62rem;
+  border: 1px solid rgba(109, 165, 244, 0.38);
+}
+
 .project-meta {
   display: flex;
   flex-wrap: wrap;
@@ -785,6 +798,27 @@ a:hover {
   color: #cce0ff;
   max-width: 920px;
   margin-bottom: 1rem;
+}
+
+.concept-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 0.9rem 0 0.85rem;
+}
+
+.concept-visual-card {
+  margin: 0;
+  padding: 0.48rem;
+  border-radius: 0.9rem;
+}
+
+.concept-visual-img {
+  width: 100%;
+  display: block;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(110, 165, 245, 0.42);
+  background: rgba(7, 13, 25, 0.78);
 }
 
 .showcase-flow {
@@ -1312,6 +1346,10 @@ a:hover {
   .console-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .concept-visual-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1389,7 +1427,8 @@ a:hover {
 
   .showcase-flow,
   .showcase-capabilities,
-  .console-grid {
+  .console-grid,
+  .concept-visual-grid {
     grid-template-columns: 1fr;
   }
 

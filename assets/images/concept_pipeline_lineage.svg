@@ -1,0 +1,54 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071322"/>
+      <stop offset="1" stop-color="#0E1E34"/>
+    </linearGradient>
+    <linearGradient id="path" x1="100" y1="350" x2="1100" y2="350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67DDFE"/>
+      <stop offset="1" stop-color="#B480FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" rx="24" fill="url(#bg)"/>
+  <rect x="30" y="30" width="1140" height="640" rx="20" stroke="#2D507E"/>
+
+  <text x="100" y="98" fill="#E3EEFF" font-family="Segoe UI" font-size="30" font-weight="700">Vision Mainline Concept</text>
+  <text x="100" y="130" fill="#9ABFE8" font-family="Segoe UI" font-size="18">detect -> handoff -> segment -> verify -> track -> rules</text>
+
+  <path d="M120 350H1080" stroke="url(#path)" stroke-width="6" stroke-linecap="round"/>
+
+  <g font-family="Segoe UI" font-weight="700">
+    <circle cx="170" cy="350" r="56" fill="#123253" stroke="#70DFFF" stroke-width="2"/>
+    <text x="135" y="356" fill="#DBEEFF" font-size="20">detect</text>
+
+    <circle cx="350" cy="350" r="56" fill="#14395E" stroke="#70DFFF" stroke-width="2"/>
+    <text x="313" y="356" fill="#DBEEFF" font-size="20">handoff</text>
+
+    <circle cx="530" cy="350" r="56" fill="#154064" stroke="#78C8FF" stroke-width="2"/>
+    <text x="494" y="356" fill="#DBEEFF" font-size="20">segment</text>
+
+    <circle cx="710" cy="350" r="56" fill="#174A70" stroke="#89B8FF" stroke-width="2"/>
+    <text x="680" y="356" fill="#DBEEFF" font-size="20">verify</text>
+
+    <circle cx="890" cy="350" r="56" fill="#1B537A" stroke="#9EAAFF" stroke-width="2"/>
+    <text x="864" y="356" fill="#DBEEFF" font-size="20">track</text>
+
+    <circle cx="1070" cy="350" r="56" fill="#205A82" stroke="#B480FF" stroke-width="2"/>
+    <text x="1048" y="356" fill="#DBEEFF" font-size="20">rules</text>
+  </g>
+
+  <g fill="#A7C9EE" font-family="Segoe UI" font-size="15">
+    <text x="120" y="450">detector model / run / output</text>
+    <text x="300" y="450">handoff artifact / bridge</text>
+    <text x="485" y="450">segment template / masks</text>
+    <text x="675" y="450">classifier / result</text>
+    <text x="860" y="450">tracker / temporal pass</text>
+    <text x="1018" y="450">ruleset / guardrails</text>
+  </g>
+
+  <g stroke="#3A5F8E" opacity="0.45">
+    <path d="M100 190H1100"/>
+    <path d="M100 510H1100"/>
+  </g>
+</svg>

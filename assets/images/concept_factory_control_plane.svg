@@ -1,0 +1,74 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#081424"/>
+      <stop offset="1" stop-color="#0B1D33"/>
+    </linearGradient>
+    <linearGradient id="line" x1="145" y1="210" x2="1030" y2="485" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#73E8FF"/>
+      <stop offset="1" stop-color="#A981FF"/>
+    </linearGradient>
+    <filter id="glow" x="0" y="0" width="1200" height="700" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="700" rx="24" fill="url(#bg)"/>
+  <rect x="36" y="36" width="1128" height="628" rx="20" stroke="#2B4A73"/>
+
+  <g opacity="0.26">
+    <rect x="95" y="86" width="1010" height="530" rx="16" stroke="#355A89"/>
+    <path d="M94 186H1106" stroke="#2A4D79"/>
+    <path d="M94 296H1106" stroke="#2A4D79"/>
+    <path d="M94 406H1106" stroke="#2A4D79"/>
+    <path d="M94 516H1106" stroke="#2A4D79"/>
+  </g>
+
+  <g>
+    <rect x="140" y="128" width="280" height="132" rx="14" fill="#10253F" stroke="#4E86C9"/>
+    <text x="162" y="168" fill="#D7E9FF" font-family="Segoe UI" font-size="24" font-weight="700">Task Governance</text>
+    <text x="162" y="202" fill="#9CC1EA" font-family="Segoe UI" font-size="17">Queue · Priority · Gate</text>
+
+    <rect x="460" y="128" width="280" height="132" rx="14" fill="#10253F" stroke="#4E86C9"/>
+    <text x="482" y="168" fill="#D7E9FF" font-family="Segoe UI" font-size="24" font-weight="700">Template Execution</text>
+    <text x="482" y="202" fill="#9CC1EA" font-family="Segoe UI" font-size="17">Steps · Routing · Controls</text>
+
+    <rect x="780" y="128" width="280" height="132" rx="14" fill="#10253F" stroke="#4E86C9"/>
+    <text x="802" y="168" fill="#D7E9FF" font-family="Segoe UI" font-size="24" font-weight="700">Training & Eval</text>
+    <text x="802" y="202" fill="#9CC1EA" font-family="Segoe UI" font-size="17">Metrics · Compare · Reports</text>
+
+    <rect x="140" y="322" width="280" height="132" rx="14" fill="#122947" stroke="#54A9D6"/>
+    <text x="162" y="362" fill="#D7E9FF" font-family="Segoe UI" font-size="24" font-weight="700">Knowledge Center</text>
+    <text x="162" y="396" fill="#9CC1EA" font-family="Segoe UI" font-size="17">Notes · Closure · Reuse</text>
+
+    <rect x="460" y="322" width="280" height="132" rx="14" fill="#122947" stroke="#54A9D6"/>
+    <text x="482" y="362" fill="#D7E9FF" font-family="Segoe UI" font-size="24" font-weight="700">Feedback Loop</text>
+    <text x="482" y="396" fill="#9CC1EA" font-family="Segoe UI" font-size="17">Failed Cases · Export</text>
+
+    <rect x="780" y="322" width="280" height="132" rx="14" fill="#122947" stroke="#54A9D6"/>
+    <text x="802" y="362" fill="#D7E9FF" font-family="Segoe UI" font-size="24" font-weight="700">Cost Routing</text>
+    <text x="802" y="396" fill="#9CC1EA" font-family="Segoe UI" font-size="17">local · balanced · cloud</text>
+
+    <rect x="365" y="520" width="470" height="102" rx="14" fill="#0E2442" stroke="#5D8BDA"/>
+    <text x="392" y="560" fill="#E3EEFF" font-family="Segoe UI" font-size="24" font-weight="700">Audit Archive Backbone</text>
+    <text x="392" y="592" fill="#A8C7EC" font-family="Segoe UI" font-size="17">Traceability · Sealability · Handover</text>
+  </g>
+
+  <g stroke="url(#line)" stroke-width="4" stroke-linecap="round" opacity="0.9">
+    <path d="M420 194H460"/>
+    <path d="M740 194H780"/>
+    <path d="M280 260V322"/>
+    <path d="M600 260V322"/>
+    <path d="M920 260V322"/>
+    <path d="M280 454L440 520"/>
+    <path d="M600 454V520"/>
+    <path d="M920 454L760 520"/>
+  </g>
+
+  <g filter="url(#glow)" opacity="0.23">
+    <circle cx="265" cy="194" r="24" fill="#73E8FF"/>
+    <circle cx="600" cy="194" r="24" fill="#73E8FF"/>
+    <circle cx="920" cy="194" r="24" fill="#A981FF"/>
+    <circle cx="600" cy="570" r="30" fill="#85A8FF"/>
+  </g>
+</svg>

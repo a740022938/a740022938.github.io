@@ -1,0 +1,46 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091527"/>
+      <stop offset="1" stop-color="#101D35"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="170" y1="310" x2="1020" y2="310" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#72E3FF"/>
+      <stop offset="1" stop-color="#B480FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" rx="24" fill="url(#bg)"/>
+  <rect x="36" y="36" width="1128" height="628" rx="20" stroke="#2D4C75"/>
+
+  <text x="92" y="110" fill="#E4EFFF" font-family="Segoe UI" font-size="30" font-weight="700">OpenClaw Future Outlook</text>
+  <text x="92" y="142" fill="#9EBDE4" font-family="Segoe UI" font-size="18">Future direction only · not yet deep integrated</text>
+
+  <rect x="90" y="188" width="1020" height="420" rx="20" fill="#0F233F" stroke="#4E79B4"/>
+
+  <g>
+    <circle cx="210" cy="310" r="72" fill="#163C63" stroke="#74DFFF" stroke-width="2"/>
+    <text x="168" y="304" fill="#DCEEFF" font-family="Segoe UI" font-size="17" font-weight="700">Digital Worker</text>
+    <text x="180" y="328" fill="#A6CAEF" font-family="Segoe UI" font-size="14">Collaboration</text>
+
+    <circle cx="450" cy="310" r="72" fill="#18486F" stroke="#7FCBFF" stroke-width="2"/>
+    <text x="418" y="304" fill="#DCEEFF" font-family="Segoe UI" font-size="17" font-weight="700">Tool Calling</text>
+    <text x="404" y="328" fill="#A6CAEF" font-family="Segoe UI" font-size="14">Controlled Boundary</text>
+
+    <circle cx="690" cy="310" r="72" fill="#1A517A" stroke="#95B8FF" stroke-width="2"/>
+    <text x="660" y="304" fill="#DCEEFF" font-family="Segoe UI" font-size="17" font-weight="700">Execution</text>
+    <text x="655" y="328" fill="#A6CAEF" font-family="Segoe UI" font-size="14">Auditable Trail</text>
+
+    <circle cx="930" cy="310" r="72" fill="#1D5B83" stroke="#B480FF" stroke-width="2"/>
+    <text x="902" y="304" fill="#DCEEFF" font-family="Segoe UI" font-size="17" font-weight="700">Plugin</text>
+    <text x="894" y="328" fill="#A6CAEF" font-family="Segoe UI" font-size="14">Composable Access</text>
+  </g>
+
+  <path d="M282 310H378" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M522 310H618" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M762 310H858" stroke="url(#accent)" stroke-width="5" stroke-linecap="round"/>
+
+  <rect x="140" y="450" width="920" height="120" rx="14" fill="#0B1E36" stroke="#4C74AA"/>
+  <text x="172" y="495" fill="#DCEEFF" font-family="Segoe UI" font-size="20" font-weight="700">Roadmap Note</text>
+  <text x="172" y="530" fill="#A9C8EB" font-family="Segoe UI" font-size="17">Current website expresses this as future outlook only; production integration remains in planning.</text>
+</svg>
