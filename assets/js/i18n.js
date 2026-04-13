@@ -111,7 +111,7 @@
       },
       agi: {
         badge: "核心模块",
-        version: "版本 1.0.0",
+        version: "版本 6.5.0（P4 Stage1 Seal）",
         desc: "本站灵魂区：面向生产的 AGI 平台，将训练流程、产物生命周期、自动评估与部署发布完整串联。",
         pipeline_1_title: "Training",
         pipeline_1_desc: "数据集 + 微调",
@@ -274,7 +274,7 @@
       },
       agi: {
         badge: "CORE MODULE",
-        version: "VERSION 1.0.0",
+        version: "VERSION 6.5.0 (P4 Stage1 Seal)",
         desc: "The centerpiece of this site: a production-minded AGI platform that connects training workflows, artifact lifecycle, automated evaluation, and release deployment.",
         pipeline_1_title: "Training",
         pipeline_1_desc: "Dataset + Fine-tune",
@@ -437,7 +437,7 @@
       },
       agi: {
         badge: "CORE MODULE",
-        version: "VERSION 1.0.0",
+        version: "VERSION 6.5.0 (P4 Stage1 Seal)",
         desc: "A production-minded AGI platform that connects training workflows, artifact lifecycle, automated evaluation, and release deployment.",
         pipeline_1_title: "Training",
         pipeline_1_desc: "Dataset + Fine-tune",
