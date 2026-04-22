@@ -5,11 +5,11 @@
   const dictionary = {
     zh: {
       meta: {
-        title: "AGI Model Factory",
-        description: "AGI Model Factory：本地优先的 AI 系统平台，聚焦任务治理、训练评估闭环、审计归档与可控扩展。"
+        title: "AegisFlow Intelligence Platform (AIP)",
+        description: "AegisFlow Intelligence Platform (AIP)：本地优先的 AI 系统平台，聚焦任务治理、训练评估闭环、审计归档与可控扩展。"
       },
       brand: {
-        name: "AGI Model Factory"
+        name: "AegisFlow Intelligence Platform (AIP)"
       },
       nav: {
         home: "首页",
@@ -26,7 +26,7 @@
       hero: {
         status_online: "AI SYSTEM ONLINE",
         status_note: "控制平面稳定",
-        title_main: "AGI Model Factory",
+        title_main: "AegisFlow Intelligence Platform (AIP)",
         title_sub: "AGI 系统 • 自动化 • 智能交付",
         subtitle: "本地优先的 AI 系统平台，围绕任务治理、模板执行、训练评估闭环、审计归档与可控扩展持续演进。",
         cta_projects: "查看平台能力面",
@@ -50,7 +50,7 @@
       },
       projects: {
         kicker: "平台能力面",
-        title: "AGI Model Factory 主线",
+        title: "AegisFlow Intelligence Platform (AIP) 主线",
         p1: {
           state: "核心平台",
           desc: "覆盖训练、评估、版本治理与自动部署的全生命周期模型平台。",
@@ -111,7 +111,7 @@
       },
       agi: {
         badge: "核心模块",
-        version: "版本 6.5.0（P4 Stage1 Seal）",
+        version: "版本 6.8.0-community.1",
         desc: "本站灵魂区：面向生产的 AGI 平台，将训练流程、产物生命周期、自动评估与部署发布完整串联。",
         pipeline_1_title: "Training",
         pipeline_1_desc: "数据集 + 微调",
@@ -133,7 +133,7 @@
         console_4_label: "RELEASE",
         console_4_value: "渐进式发布",
         console_4_desc: "safe deployment path",
-        cta: "进入 AGI Model Factory"
+        cta: "进入 AegisFlow Intelligence Platform (AIP)"
       },
       contact: {
         kicker: "联络通道",
@@ -150,7 +150,7 @@
       },
       footer: {
         desc: "以任务治理、工程执行与审计归档为基础，持续构建可交付的 AI 系统。",
-        copyright_brand: "AGI Model Factory.",
+        copyright_brand: "AegisFlow Intelligence Platform (AIP).",
         copyright_rights: "保留所有权利。",
         built: "使用 HTML、CSS、JavaScript 构建，并坚持工程化执行。"
       },
@@ -168,11 +168,11 @@
     },
     en: {
       meta: {
-        title: "AGI Model Factory",
-        description: "AGI Model Factory: a local-first AI platform focused on task governance, training-evaluation closure, auditable archives, and controlled extensibility."
+        title: "AegisFlow Intelligence Platform (AIP)",
+        description: "AegisFlow Intelligence Platform (AIP): a local-first AI platform focused on task governance, training-evaluation closure, auditable archives, and controlled extensibility."
       },
       brand: {
-        name: "AGI Model Factory"
+        name: "AegisFlow Intelligence Platform (AIP)"
       },
       nav: {
         home: "Home",
@@ -189,7 +189,7 @@
       hero: {
         status_online: "AI SYSTEM ONLINE",
         status_note: "Control Plane Stable",
-        title_main: "AGI Model Factory",
+        title_main: "AegisFlow Intelligence Platform (AIP)",
         title_sub: "AGI Systems • Automation • Intelligent Delivery",
         subtitle: "A local-first AI platform focused on task governance, template execution, training-evaluation closure, audit archives, and controlled extension.",
         cta_projects: "Explore Platform Surfaces",
@@ -213,7 +213,7 @@
       },
       projects: {
         kicker: "Platform Surfaces",
-        title: "AGI Model Factory Focus",
+        title: "AegisFlow Intelligence Platform (AIP) Focus",
         p1: {
           state: "Core Platform",
           desc: "Comprehensive model lifecycle system for training, evaluation, release governance, and deployment automation.",
@@ -274,7 +274,7 @@
       },
       agi: {
         badge: "CORE MODULE",
-        version: "VERSION 6.5.0 (P4 Stage1 Seal)",
+        version: "VERSION 6.8.0-community.1",
         desc: "The centerpiece of this site: a production-minded AGI platform that connects training workflows, artifact lifecycle, automated evaluation, and release deployment.",
         pipeline_1_title: "Training",
         pipeline_1_desc: "Dataset + Fine-tune",
@@ -296,7 +296,7 @@
         console_4_label: "RELEASE",
         console_4_value: "Progressive Rollout",
         console_4_desc: "safe deployment path",
-        cta: "Enter AGI Model Factory"
+        cta: "Open AIP Community Edition"
       },
       contact: {
         kicker: "Command Channel",
@@ -313,7 +313,7 @@
       },
       footer: {
         desc: "Building delivery-grade AI systems with clear governance, disciplined execution, and auditable outcomes.",
-        copyright_brand: "AGI Model Factory.",
+        copyright_brand: "AegisFlow Intelligence Platform (AIP).",
         copyright_rights: "All rights reserved.",
         built: "Built with HTML, CSS, JavaScript, and disciplined execution."
       },
@@ -331,11 +331,11 @@
     },
     ja: {
       meta: {
-        title: "AGI Model Factory",
-        description: "AGI Model Factory: タスク統治、学習評価の閉ループ、監査アーカイブ、制御可能な拡張に焦点を当てたローカル優先の AI プラットフォーム。"
+        title: "AegisFlow Intelligence Platform (AIP)",
+        description: "AegisFlow Intelligence Platform (AIP): タスク統治、学習評価の閉ループ、監査アーカイブ、制御可能な拡張に焦点を当てたローカル優先の AI プラットフォーム。"
       },
       brand: {
-        name: "AGI Model Factory"
+        name: "AegisFlow Intelligence Platform (AIP)"
       },
       nav: {
         home: "ホーム",
@@ -352,7 +352,7 @@
       hero: {
         status_online: "AI SYSTEM ONLINE",
         status_note: "Control Plane Stable",
-        title_main: "AGI Model Factory",
+        title_main: "AegisFlow Intelligence Platform (AIP)",
         title_sub: "AGI Systems • Automation • Intelligent Delivery",
         subtitle: "AIネイティブなシステム、オートメーション基盤、プロダクト品質の実装を重視したエンジニアリングサイトです。",
         cta_projects: "プラットフォームを見る",
@@ -376,7 +376,7 @@
       },
       projects: {
         kicker: "Platform Surfaces",
-        title: "AGI Model Factory Focus",
+        title: "AegisFlow Intelligence Platform (AIP) Focus",
         p1: {
           state: "Core Platform",
           desc: "Comprehensive model lifecycle system for training, evaluation, release governance, and deployment automation.",
@@ -437,7 +437,7 @@
       },
       agi: {
         badge: "CORE MODULE",
-        version: "VERSION 6.5.0 (P4 Stage1 Seal)",
+        version: "VERSION 6.8.0-community.1",
         desc: "A production-minded AGI platform that connects training workflows, artifact lifecycle, automated evaluation, and release deployment.",
         pipeline_1_title: "Training",
         pipeline_1_desc: "Dataset + Fine-tune",
@@ -459,7 +459,7 @@
         console_4_label: "RELEASE",
         console_4_value: "Progressive Rollout",
         console_4_desc: "safe deployment path",
-        cta: "Enter AGI Model Factory"
+        cta: "Open AIP Community Edition"
       },
       contact: {
         kicker: "Command Channel",
@@ -476,7 +476,7 @@
       },
       footer: {
         desc: "Building systems at the intersection of AI capability, software engineering, and high-reliability automation.",
-        copyright_brand: "AGI Model Factory.",
+        copyright_brand: "AegisFlow Intelligence Platform (AIP).",
         copyright_rights: "All rights reserved.",
         built: "Built with HTML, CSS, JavaScript, and disciplined execution."
       },
@@ -558,3 +558,5 @@
     supported: SUPPORTED_LANGUAGES.slice(),
   };
 })();
+
+
