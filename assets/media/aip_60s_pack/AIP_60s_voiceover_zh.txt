@@ -1,0 +1,6 @@
+【0-8s】这是天枢智治平台，AegisFlow Intelligence Platform，面向工作流编排与治理运营的社区版。
+【8-18s】你可以通过 Workflow Composer 可视化编排流程，实时追踪运行状态和结果。
+【18-28s】在 Governance Hub 里，关键治理信号被统一聚合，帮助你快速定位问题。
+【28-38s】从事件发现到处置，再到审计留痕，AIP 提供基础闭环能力。
+【38-50s】Operations Intelligence 将运营数据汇聚为可行动洞察，支持持续优化。
+【50-60s】现在就访问 GitHub，查看首发 Release，按 Quick Start 上手，并通过 Issues 参与共建。

@@ -1,0 +1,8 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#0a1631"/>
+  <text x="70" y="95" fill="#eaf7ff" font-size="46" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Operations Intelligence</text>
+  <text x="70" y="135" fill="#8fd3ff" font-size="24" font-family="Segoe UI, Microsoft YaHei, sans-serif">运营决策层 · 信号聚合 · 优先级排序</text>
+  <rect x="90" y="190" width="1020" height="390" rx="22" fill="#132748" stroke="#4ed6ff" stroke-width="2"/>
+  <polyline points="150,500 280,420 410,450 540,330 670,360 800,290 930,310 1040,240" fill="none" stroke="#56e5ff" stroke-width="6"/>
+  <circle cx="150" cy="500" r="9" fill="#56e5ff"/><circle cx="280" cy="420" r="9" fill="#56e5ff"/><circle cx="410" cy="450" r="9" fill="#56e5ff"/><circle cx="540" cy="330" r="9" fill="#56e5ff"/><circle cx="670" cy="360" r="9" fill="#56e5ff"/><circle cx="800" cy="290" r="9" fill="#56e5ff"/><circle cx="930" cy="310" r="9" fill="#56e5ff"/><circle cx="1040" cy="240" r="9" fill="#56e5ff"/>
+</svg>

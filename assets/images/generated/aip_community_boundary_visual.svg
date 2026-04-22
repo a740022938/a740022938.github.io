@@ -1,0 +1,19 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#0f1933"/>
+  <text x="70" y="95" fill="#f0f6ff" font-size="44" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Community Edition Boundary</text>
+  <text x="70" y="132" fill="#9cbbe5" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">包含 / 不包含 可视化说明</text>
+  <rect x="80" y="180" width="500" height="430" rx="20" fill="#17345c" stroke="#4cd3ff"/>
+  <rect x="620" y="180" width="500" height="430" rx="20" fill="#3a1f3a" stroke="#ff7ec9"/>
+  <text x="120" y="240" fill="#dff6ff" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif">包含 Includes</text>
+  <text x="120" y="290" fill="#c8edff" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">• Workflow Composer</text>
+  <text x="120" y="330" fill="#c8edff" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">• Governance Hub</text>
+  <text x="120" y="370" fill="#c8edff" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">• Incident / Playbook / Audit</text>
+  <text x="120" y="410" fill="#c8edff" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">• Operations Intelligence</text>
+  <text x="120" y="450" fill="#c8edff" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">• Local API + Web baseline</text>
+  <text x="660" y="240" fill="#ffe8f8" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif">不包含 Excludes</text>
+  <text x="660" y="290" fill="#ffd6f0" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">• 私有资产 Private assets</text>
+  <text x="660" y="330" fill="#ffd6f0" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">• 私有验证材料 Private validation</text>
+  <text x="660" y="370" fill="#ffd6f0" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">• 真实凭据 Real credentials</text>
+  <text x="660" y="410" fill="#ffd6f0" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">• 私有运维脚本 Private ops scripts</text>
+  <text x="660" y="450" fill="#ffd6f0" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">• 不可去敏历史产物</text>
+</svg>

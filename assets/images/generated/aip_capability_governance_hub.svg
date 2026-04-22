@@ -1,0 +1,12 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#101a36"/>
+  <text x="70" y="95" fill="#efe9ff" font-size="46" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Governance Hub</text>
+  <text x="70" y="135" fill="#b7b3ff" font-size="24" font-family="Segoe UI, Microsoft YaHei, sans-serif">治理中枢 · 统一视图 · 决策信号</text>
+  <rect x="100" y="190" width="1000" height="400" rx="24" fill="#17264a" stroke="#8a7aff"/>
+  <rect x="150" y="250" width="280" height="270" rx="16" fill="#243a68"/>
+  <rect x="470" y="250" width="280" height="270" rx="16" fill="#243a68"/>
+  <rect x="790" y="250" width="260" height="270" rx="16" fill="#243a68"/>
+  <text x="182" y="300" fill="#dfe2ff" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">运行健康</text>
+  <text x="502" y="300" fill="#dfe2ff" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">风险态势</text>
+  <text x="822" y="300" fill="#dfe2ff" font-size="22" font-family="Segoe UI, Microsoft YaHei, sans-serif">策略建议</text>
+</svg>

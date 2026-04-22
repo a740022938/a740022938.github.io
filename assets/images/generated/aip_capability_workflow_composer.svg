@@ -1,0 +1,15 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#0b1730"/>
+  <text x="70" y="95" fill="#e8f7ff" font-size="46" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">Workflow Composer</text>
+  <text x="70" y="135" fill="#95c6ff" font-size="24" font-family="Segoe UI, Microsoft YaHei, sans-serif">可视化编排 · 运行追踪 · 结果消费</text>
+  <g stroke="#5ea3ff" stroke-width="3" fill="none">
+    <rect x="90" y="220" width="210" height="120" rx="14"/>
+    <rect x="420" y="180" width="210" height="120" rx="14"/>
+    <rect x="760" y="240" width="210" height="120" rx="14"/>
+    <path d="M300 280 H420"/>
+    <path d="M630 240 H760"/>
+  </g>
+  <text x="120" y="288" fill="#d8ebff" font-size="24" font-family="Segoe UI, Microsoft YaHei, sans-serif">Source</text>
+  <text x="452" y="248" fill="#d8ebff" font-size="24" font-family="Segoe UI, Microsoft YaHei, sans-serif">Process</text>
+  <text x="794" y="308" fill="#d8ebff" font-size="24" font-family="Segoe UI, Microsoft YaHei, sans-serif">Result</text>
+</svg>

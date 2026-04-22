@@ -1,0 +1,7 @@
+shot_id,start_sec,end_sec,duration_sec,title,visual,voiceover_key,subtitle_key
+S1,0,8,8,品牌与定位,Hero主视觉+版本标识,V1,S1
+S2,8,18,10,Workflow Composer,流程节点编排图,V2,S2
+S3,18,28,10,Governance Hub,治理中枢三栏卡片图,V3,S3
+S4,28,38,10,Incident/Playbook/Audit,闭环链路图,V4,S4
+S5,38,50,12,Operations Intelligence,趋势图+决策信号图,V5,S5
+S6,50,60,10,CTA收尾,GitHub/Release/QuickStart/Issues按钮,V6,S6

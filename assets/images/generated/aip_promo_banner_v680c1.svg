@@ -1,0 +1,12 @@
+<svg width="1600" height="400" viewBox="0 0 1600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#09172e"/>
+      <stop offset="100%" stop-color="#16274a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="400" fill="url(#b)"/>
+  <text x="100" y="150" fill="#eef8ff" font-size="58" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">天枢智治平台 · AIP Community Edition</text>
+  <text x="100" y="210" fill="#a9d4ff" font-size="32" font-family="Segoe UI, Microsoft YaHei, sans-serif">Workflow · Governance · Incident/Audit · Operations Intelligence</text>
+  <text x="100" y="270" fill="#89b4df" font-size="26" font-family="Segoe UI, Microsoft YaHei, sans-serif">v6.8.0-community.1 · GitHub Public Launch</text>
+</svg>

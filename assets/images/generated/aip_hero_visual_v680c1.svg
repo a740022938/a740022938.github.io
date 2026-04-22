@@ -1,0 +1,42 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071326"/>
+      <stop offset="100%" stop-color="#111f3b"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#47d9ff"/>
+      <stop offset="100%" stop-color="#a985ff"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#5fa8ff">
+    <path d="M0 120 H1600"/><path d="M0 240 H1600"/><path d="M0 360 H1600"/><path d="M0 480 H1600"/><path d="M0 600 H1600"/><path d="M0 720 H1600"/>
+    <path d="M200 0 V900"/><path d="M400 0 V900"/><path d="M600 0 V900"/><path d="M800 0 V900"/><path d="M1000 0 V900"/><path d="M1200 0 V900"/><path d="M1400 0 V900"/>
+  </g>
+  <rect x="120" y="150" width="1360" height="600" rx="28" fill="#0d1d36" stroke="#4f8fff" stroke-opacity="0.5"/>
+  <text x="180" y="250" fill="#e8f5ff" font-size="62" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-weight="700">天枢智治平台 AIP</text>
+  <text x="180" y="305" fill="#9ed0ff" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif">AegisFlow Intelligence Platform · Community Edition · v6.8.0-community.1</text>
+  <g transform="translate(180 380)">
+    <rect x="0" y="0" width="360" height="220" rx="20" fill="#122846" stroke="#47d9ff"/>
+    <text x="24" y="52" fill="#dff4ff" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif">Workflow Composer</text>
+    <path d="M34 110 L330 110" stroke="url(#line)" stroke-width="3"/>
+    <circle cx="70" cy="150" r="12" fill="#47d9ff"/><circle cx="180" cy="150" r="12" fill="#47d9ff"/><circle cx="290" cy="150" r="12" fill="#47d9ff"/>
+  </g>
+  <g transform="translate(610 380)">
+    <rect x="0" y="0" width="360" height="220" rx="20" fill="#122846" stroke="#8f7bff"/>
+    <text x="24" y="52" fill="#e7e2ff" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif">Governance Hub</text>
+    <path d="M34 110 L330 110" stroke="url(#line)" stroke-width="3"/>
+    <rect x="52" y="138" width="70" height="44" rx="8" fill="#6d76ff"/>
+    <rect x="146" y="126" width="70" height="56" rx="8" fill="#4ca0ff"/>
+    <rect x="240" y="146" width="70" height="36" rx="8" fill="#47d9ff"/>
+  </g>
+  <g transform="translate(1040 380)">
+    <rect x="0" y="0" width="360" height="220" rx="20" fill="#122846" stroke="#55f0c2"/>
+    <text x="24" y="52" fill="#dffef2" font-size="30" font-family="Segoe UI, Microsoft YaHei, sans-serif">Operations Intelligence</text>
+    <path d="M34 110 L330 110" stroke="url(#line)" stroke-width="3"/>
+    <circle cx="90" cy="160" r="30" fill="#29d8a6"/><circle cx="190" cy="150" r="22" fill="#47d9ff"/><circle cx="276" cy="164" r="34" fill="#5d7cff"/>
+  </g>
+  <text x="180" y="700" fill="#9ab5d6" font-size="26" font-family="Segoe UI, Microsoft YaHei, sans-serif">Workflow · Governance · Incident/Audit · Operations Intelligence · Local API + Web Baseline</text>
+</svg>
