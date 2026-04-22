@@ -499,6 +499,18 @@ a:hover {
   animation: revealUp 720ms ease both;
 }
 
+.hero-visual {
+  margin: 1rem 0 1.2rem;
+  padding: 0.6rem;
+}
+
+.hero-visual-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+}
+
 .system-status {
   display: inline-flex;
   align-items: center;
@@ -629,6 +641,31 @@ a:hover {
   text-align: center;
 }
 
+.boundary-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.boundary-copy {
+  text-align: left;
+}
+
+.boundary-visual {
+  margin: 0;
+  padding: 0.6rem;
+}
+
+.boundary-visual-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
 .about-grid {
   margin-top: 0.9rem;
   display: flex;
@@ -653,6 +690,37 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.video-kicker {
+  text-align: left;
+}
+
+.demo-video {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(112, 180, 255, 0.42);
+  background: #050a14;
+}
+
+.video-cta-copy {
+  margin-top: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.video-cta-row {
+  margin-top: 0.5rem;
+}
+
+.promo-banner {
+  margin-bottom: 1rem;
+}
+
+.promo-banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.95rem;
 }
 
 .project-card {
@@ -871,6 +939,15 @@ a:hover {
 .cap-card {
   padding: 0.72rem;
   transition: transform var(--transition-fast), box-shadow var(--transition-normal), border-color var(--transition-fast);
+}
+
+.cap-visual {
+  width: 100%;
+  height: auto;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(112, 180, 255, 0.34);
+  margin-bottom: 0.7rem;
+  background: rgba(7, 12, 24, 0.9);
 }
 
 .cap-card h4 {
@@ -1350,6 +1427,10 @@ a:hover {
   .concept-visual-grid {
     grid-template-columns: 1fr;
   }
+
+  .boundary-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1430,6 +1511,10 @@ a:hover {
   .console-grid,
   .concept-visual-grid {
     grid-template-columns: 1fr;
+  }
+
+  .boundary-visual-img {
+    min-height: 180px;
   }
 
   .showcase-node {

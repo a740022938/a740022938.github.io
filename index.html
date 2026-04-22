@@ -77,6 +77,14 @@
                 <p class="hero-subtitle" data-i18n="hero.subtitle">
                     面向工作流编排、治理中枢与运营决策的本地可运行平台。外部用户可直接查看源码、下载首发版本并按最小路径上手。
                 </p>
+                <figure class="hero-visual mini-card">
+                    <img
+                        src="assets/images/generated/aip_hero_visual_v680c1.svg"
+                        alt="AIP Hero Visual - Workflow Governance Operations"
+                        class="hero-visual-img"
+                        loading="eager"
+                    >
+                </figure>
 
                 <div class="cta-buttons">
                     <a href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank" class="btn btn-primary" data-i18n="hero.cta_projects">View on GitHub</a>
@@ -158,21 +166,25 @@
 
                 <div class="showcase-capabilities">
                     <article class="cap-card mini-card">
+                        <img src="assets/images/generated/aip_capability_workflow_composer.svg" alt="Workflow Composer capability visual" class="cap-visual" loading="lazy">
                         <h4>Workflow Composer</h4>
                         <p>可视化流程编排、运行追踪与结果面板。</p>
                         <span class="cap-status">ACTIVE</span>
                     </article>
                     <article class="cap-card mini-card">
+                        <img src="assets/images/generated/aip_capability_governance_hub.svg" alt="Governance Hub capability visual" class="cap-visual" loading="lazy">
                         <h4>Governance Hub</h4>
                         <p>治理中枢视图，聚合关键运营状态。</p>
                         <span class="cap-status">READY</span>
                     </article>
                     <article class="cap-card mini-card">
+                        <img src="assets/images/generated/aip_capability_incident_playbook_audit.svg" alt="Incident Playbook Audit capability visual" class="cap-visual" loading="lazy">
                         <h4>Incident / Playbook / Audit</h4>
                         <p>事件、操作与审计基础链路，支持问题追踪。</p>
                         <span class="cap-status">RUNNING</span>
                     </article>
                     <article class="cap-card mini-card">
+                        <img src="assets/images/generated/aip_capability_operations_intelligence.svg" alt="Operations Intelligence capability visual" class="cap-visual" loading="lazy">
                         <h4>Operations Intelligence</h4>
                         <p>统一运营决策层最小能力，聚合关键运营信号。</p>
                         <span class="cap-status">STANDBY</span>
@@ -218,13 +230,20 @@
             <p class="section-kicker">Community Edition Boundary</p>
             <h2 class="section-title">社区版边界说明</h2>
             <div class="about-content panel-card">
-                <p>包含：Workflow Composer、Governance Hub、Incident/Playbook/Audit、Operations Intelligence、Local API + Web runnable baseline。</p>
-                <p>不包含：私有资产、私有验证材料、真实凭据。高级集成（如完整 OpenClaw 生产集成）需用户自行配置。</p>
-                <div class="about-grid">
-                    <span class="about-chip">No Private Assets</span>
-                    <span class="about-chip">No Real Credentials</span>
-                    <span class="about-chip">Self-Configured Integrations</span>
-                    <span class="about-chip">Community Safe Baseline</span>
+                <div class="boundary-layout">
+                    <div class="boundary-copy">
+                        <p>包含：Workflow Composer、Governance Hub、Incident/Playbook/Audit、Operations Intelligence、Local API + Web runnable baseline。</p>
+                        <p>不包含：私有资产、私有验证材料、真实凭据。高级集成（如完整 OpenClaw 生产集成）需用户自行配置。</p>
+                        <div class="about-grid">
+                            <span class="about-chip">No Private Assets</span>
+                            <span class="about-chip">No Real Credentials</span>
+                            <span class="about-chip">Self-Configured Integrations</span>
+                            <span class="about-chip">Community Safe Baseline</span>
+                        </div>
+                    </div>
+                    <figure class="boundary-visual mini-card">
+                        <img src="assets/images/generated/aip_community_boundary_visual.svg" alt="AIP Community Edition boundary include and exclude overview" class="boundary-visual-img" loading="lazy">
+                    </figure>
                 </div>
             </div>
         </div>
@@ -238,13 +257,15 @@
 
             <div class="projects-grid" style="grid-template-columns: 1fr;">
                 <article class="project-card panel-card">
-                    <h3>AIP Community Edition Demo</h3>
-                    <p>最小演示视频入口：先支持播放与替换，后续可更新正式成片。</p>
-                    <video controls preload="metadata" poster="assets/images/concept_factory_control_plane.svg" style="width:100%; border-radius:12px; border:1px solid rgba(112, 180, 255, 0.42); background:#050a14;">
+                    <p class="section-kicker video-kicker">AIP 60s Product Story</p>
+                    <h3>天枢智治平台（AIP）Community Edition：从编排到治理的 60 秒总览</h3>
+                    <p>定位：面向 Workflow Composer、Governance Hub 与 Operations Intelligence 的社区版可运行平台。你可以从视频快速理解产品边界、能力面与上手路径。</p>
+                    <video controls preload="metadata" poster="assets/images/generated/aip_promo_banner_v680c1.svg" class="demo-video">
                         <source src="assets/media/aip-demo.mp4" type="video/mp4">
                         当前浏览器不支持 video 标签，请使用下方链接观看。
                     </video>
-                    <div class="showcase-cta" style="margin-top: 1rem;">
+                    <p class="video-cta-copy">CTA：进入 GitHub 查看源码，按 Quick Start 本地跑起，基于 Release 版本持续升级。</p>
+                    <div class="showcase-cta video-cta-row">
                         <a href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank" class="btn btn-primary">View on GitHub</a>
                         <a href="https://github.com/a740022938/aegisflow-intelligence-platform/blob/main/README.md" target="_blank" class="btn btn-secondary">Read Quick Start</a>
                         <a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v6.8.0-community.1" target="_blank" class="btn btn-secondary">Open Release Notes</a>
@@ -280,6 +301,9 @@
         <div class="container">
             <p class="section-kicker">Version & Release</p>
             <h2 class="section-title">当前版本与后续方向</h2>
+            <figure class="promo-banner panel-card">
+                <img src="assets/images/generated/aip_promo_banner_v680c1.svg" alt="AIP promo banner for GitHub release and quick start" class="promo-banner-img" loading="lazy">
+            </figure>
             <div class="projects-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
                 <article class="project-card panel-card">
                     <h3>v6.8.0-community.1</h3>
