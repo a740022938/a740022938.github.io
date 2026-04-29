@@ -1,373 +1,188 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta.title">天枢智治平台（AIP）- Community Edition</title>
-    <meta name="description" content="天枢智治平台（AegisFlow Intelligence Platform, AIP）Community Edition：Workflow Composer、Governance Hub、Operations Intelligence 与本地可运行 API + Web 基线。" data-i18n-content="meta.description">
-    <meta name="keywords" content="portfolio, AI, AGI, developer, projects, dark tech, futuristic">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/variables.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="天枢智治平台（AIP）- Community Edition" data-i18n-content="meta.title">
-    <meta property="og:description" content="天枢智治平台（AegisFlow Intelligence Platform, AIP）Community Edition：Workflow Composer、Governance Hub、Operations Intelligence 与本地可运行 API + Web 基线。" data-i18n-content="meta.description">
-    <meta property="og:type" content="website">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title">AIP v7.2.1 Stable</title>
+  <meta name="description" content="AIP v7.2.1 Stable - local-first AI governance and model-factory control plane." data-i18n-content="meta.description">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .lite-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .lite-hero h1{font-size:clamp(30px,5vw,54px);line-height:1.1;margin-bottom:12px}
+    .lite-sub{max-width:920px;margin:0 auto 20px}
+    .lite-buttons{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+    .lite-code{overflow:auto;white-space:pre;word-break:normal}
+    .lite-card h3{margin-bottom:8px}
+    .lite-card p,.lite-card li{opacity:.9}
+    .lite-list{margin:0;padding-left:18px}
+    .lite-footer-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    @media (max-width: 980px){.lite-grid{grid-template-columns:1fr}}
+    @media (max-width: 480px){.container{padding-inline:14px}.nav-links{display:none}.lite-code{font-size:12px}}
+  </style>
 </head>
 <body>
-    <canvas id="particleCanvas" aria-hidden="true"></canvas>
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-noise" aria-hidden="true"></div>
-    <div class="bg-pulse" aria-hidden="true"></div>
-    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
-    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#home" class="logo">
-                <span class="logo-mark">AIP</span>
-                <span class="logo-text" data-i18n="brand.name">天枢智治平台 · AIP</span>
-            </a>
-
-            <div class="nav-right">
-                <ul class="nav-links">
-                    <li class="nav-item"><a href="#home" class="is-active" data-nav-target="home" data-i18n="nav.home">首页</a></li>
-                    <li class="nav-item"><a href="#showcase" data-nav-target="showcase" data-i18n="nav.about">能力</a></li>
-                    <li class="nav-item"><a href="#video-demo" data-nav-target="video-demo" data-i18n="nav.projects">演示</a></li>
-                    <li class="nav-item"><a href="#onboarding" data-nav-target="onboarding" data-i18n="nav.contact">上手</a></li>
-                </ul>
-
-                <div class="nav-actions">
-                    <div class="lang-switch" role="group" aria-label="Language Switcher" data-i18n-aria-label="nav.lang_switch_aria">
-                        <button type="button" class="lang-btn is-active" data-lang="zh">ZH</button>
-                        <button type="button" class="lang-btn" data-lang="en">EN</button>
-                        <button type="button" class="lang-btn" data-lang="ja">JP</button>
-                    </div>
-                    <button id="wechatTrigger" class="btn btn-secondary nav-wechat" type="button" data-i18n="nav.wechat">WeChat</button>
-                    <button id="themeToggle" class="btn btn-secondary theme-btn" type="button" aria-label="Switch theme">Light UI</button>
-                </div>
-            </div>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-mark">AIP</span>
+        <span class="logo-text" data-i18n="brand.name">AIP v7.2.1 Stable</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="#home" data-nav-target="home" class="is-active" data-i18n="nav.home">Home</a></li>
+          <li class="nav-item"><a href="#quickstart" data-nav-target="quickstart" data-i18n="nav.quickstart">Quick Start</a></li>
+          <li class="nav-item"><a href="#download" data-nav-target="download" data-i18n="nav.download">Download</a></li>
+          <li class="nav-item"><a href="#verification" data-nav-target="verification" data-i18n="nav.verification">Verification</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="lang-switch" role="group" aria-label="Language Switcher" data-i18n-aria-label="nav.lang_switch_aria">
+            <button type="button" class="lang-btn is-active" data-lang="zh">ZH</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="ja">JP</button>
+          </div>
+          <button id="wechatTrigger" class="btn btn-secondary nav-wechat" type="button" data-i18n="nav.wechat">WeChat</button>
+          <button id="themeToggle" class="btn btn-secondary theme-btn" type="button" aria-label="Switch theme">Light UI</button>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero section-shell">
-        <div class="hero-stream hero-stream-a" aria-hidden="true"></div>
-        <div class="hero-stream hero-stream-b" aria-hidden="true"></div>
-        <div class="container">
-            <div class="hero-content panel-card">
-                <div class="system-status">
-                    <span class="status-dot" aria-hidden="true"></span>
-                    <span class="status-label" data-i18n="hero.status_online">AIP COMMUNITY EDITION ONLINE</span>
-                    <span class="status-divider" aria-hidden="true"></span>
-                    <span class="status-note" data-i18n="hero.status_note">v6.8.0-community.1 · Public Launch</span>
-                </div>
-
-                <h1 class="hero-title">
-                    <span class="hero-title-main" data-i18n="hero.title_main">天枢智治平台（AIP）</span>
-                    <span class="hero-title-sub" data-i18n="hero.title_sub">AegisFlow Intelligence Platform · Community Edition</span>
-                </h1>
-
-                <p class="hero-subtitle" data-i18n="hero.subtitle">
-                    面向工作流编排、治理中枢与运营决策的本地可运行平台。外部用户可直接查看源码、下载首发版本并按最小路径上手。
-                </p>
-                <figure class="hero-visual mini-card">
-                    <img
-                        src="assets/images/generated/aip_hero_visual_v680c1.svg"
-                        alt="AIP Hero Visual - Workflow Governance Operations"
-                        class="hero-visual-img"
-                        loading="eager"
-                    >
-                </figure>
-
-                <div class="cta-buttons">
-                    <a href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank" class="btn btn-primary" data-i18n="hero.cta_projects">View on GitHub</a>
-                    <a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v6.8.0-community.1" target="_blank" class="btn btn-secondary" data-i18n="hero.cta_contact">Open Release Notes</a>
-                    <a href="https://github.com/a740022938/aegisflow-intelligence-platform/blob/main/docs/public-release/F0_NEW_USER_ONBOARDING.md" target="_blank" class="btn btn-secondary">Quick Start</a>
-                </div>
-
-                <div class="hero-metrics">
-                    <article class="metric mini-card">
-                        <span class="metric-label" data-i18n="hero.metric_uptime_label">Factory Uptime</span>
-                        <strong data-i18n="hero.metric_uptime_value">v6.8.0-community.1</strong>
-                    </article>
-                    <article class="metric mini-card">
-                        <span class="metric-label" data-i18n="hero.metric_tracks_label">Active Build Tracks</span>
-                        <strong data-i18n="hero.metric_tracks_value">Community Edition</strong>
-                    </article>
-                    <article class="metric mini-card">
-                        <span class="metric-label" data-i18n="hero.metric_mode_label">Execution Mode</span>
-                        <strong data-i18n="hero.metric_mode_value">Local API + Web Runnable</strong>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AGI Showcase Section -->
-    <section id="showcase" class="section agi-showcase section-shell">
-        <div class="container">
-            <div class="showcase-main panel-card">
-                <div class="showcase-header">
-                    <span class="showcase-pill" data-i18n="showcase.pill">Product Core</span>
-                    <span class="showcase-version">v6.8.0-community.1</span>
-                </div>
-                <h2 class="showcase-title">AIP Core Capability Surface</h2>
-                <p class="showcase-subtitle" data-i18n="showcase.subtitle_zh">Workflow · Governance · Operations Intelligence</p>
-                <p class="showcase-description" data-i18n="showcase.description">
-                    面向外部用户的最小可运行能力集：Workflow Composer、Governance Hub、Incident/Playbook/Audit、Operations Intelligence、Local API + Web 基线。
-                </p>
-                <div class="concept-visual-grid">
-                    <figure class="concept-visual-card mini-card">
-                        <img
-                            src="assets/images/concept_factory_control_plane.svg?v=20260414"
-                            alt="AIP control plane concept visual"
-                            class="concept-visual-img"
-                            loading="lazy"
-                        >
-                    </figure>
-                    <figure class="concept-visual-card mini-card">
-                        <img
-                            src="assets/images/concept_pipeline_lineage.svg?v=20260414"
-                            alt="Vision mainline pipeline concept visual"
-                            class="concept-visual-img"
-                            loading="lazy"
-                        >
-                    </figure>
-                </div>
-
-                <div class="showcase-flow" aria-label="Training Artifact Evaluation Deployment">
-                    <div class="showcase-node">
-                        <span class="node-dot"></span>
-                        <strong data-i18n="showcase.flow.training">Training</strong>
-                    </div>
-                    <div class="showcase-link"></div>
-                    <div class="showcase-node">
-                        <span class="node-dot"></span>
-                        <strong data-i18n="showcase.flow.artifact">Artifact</strong>
-                    </div>
-                    <div class="showcase-link"></div>
-                    <div class="showcase-node">
-                        <span class="node-dot"></span>
-                        <strong data-i18n="showcase.flow.evaluation">Evaluation</strong>
-                    </div>
-                    <div class="showcase-link"></div>
-                    <div class="showcase-node">
-                        <span class="node-dot"></span>
-                        <strong data-i18n="showcase.flow.deployment">Deployment</strong>
-                    </div>
-                </div>
-
-                <div class="showcase-capabilities">
-                    <article class="cap-card mini-card">
-                        <img src="assets/images/generated/aip_capability_workflow_composer.svg" alt="Workflow Composer capability visual" class="cap-visual" loading="lazy">
-                        <h4>Workflow Composer</h4>
-                        <p>可视化流程编排、运行追踪与结果面板。</p>
-                        <span class="cap-status">ACTIVE</span>
-                    </article>
-                    <article class="cap-card mini-card">
-                        <img src="assets/images/generated/aip_capability_governance_hub.svg" alt="Governance Hub capability visual" class="cap-visual" loading="lazy">
-                        <h4>Governance Hub</h4>
-                        <p>治理中枢视图，聚合关键运营状态。</p>
-                        <span class="cap-status">READY</span>
-                    </article>
-                    <article class="cap-card mini-card">
-                        <img src="assets/images/generated/aip_capability_incident_playbook_audit.svg" alt="Incident Playbook Audit capability visual" class="cap-visual" loading="lazy">
-                        <h4>Incident / Playbook / Audit</h4>
-                        <p>事件、操作与审计基础链路，支持问题追踪。</p>
-                        <span class="cap-status">RUNNING</span>
-                    </article>
-                    <article class="cap-card mini-card">
-                        <img src="assets/images/generated/aip_capability_operations_intelligence.svg" alt="Operations Intelligence capability visual" class="cap-visual" loading="lazy">
-                        <h4>Operations Intelligence</h4>
-                        <p>统一运营决策层最小能力，聚合关键运营信号。</p>
-                        <span class="cap-status">STANDBY</span>
-                    </article>
-                    <article class="cap-card mini-card">
-                        <h4>Local API + Web Baseline</h4>
-                        <p>社区版可本地运行，支持快速启动与验证。</p>
-                        <span class="cap-status">SYNCED</span>
-                    </article>
-                    <article class="cap-card mini-card">
-                        <h4>Community Feedback Ready</h4>
-                        <p>已接入 issue 模板、贡献规则与反馈入口。</p>
-                        <span class="cap-status">AVAILABLE</span>
-                    </article>
-                </div>
-
-                <div class="showcase-console mini-card">
-                    <div class="console-row">
-                        <span data-i18n="showcase.console.system">SYSTEM STATUS</span>
-                        <strong data-i18n="showcase.console.system_value">ONLINE</strong>
-                    </div>
-                    <div class="console-grid">
-                        <div><span data-i18n="showcase.console.training">Training</span><strong data-i18n="showcase.console.training_value">ACTIVE</strong></div>
-                        <div><span data-i18n="showcase.console.artifacts">Artifacts</span><strong data-i18n="showcase.console.artifacts_value">READY</strong></div>
-                        <div><span data-i18n="showcase.console.evaluation">Evaluation</span><strong data-i18n="showcase.console.evaluation_value">RUNNING</strong></div>
-                        <div><span data-i18n="showcase.console.deployment">Deployment</span><strong data-i18n="showcase.console.deployment_value">STANDBY</strong></div>
-                    </div>
-                    <p class="console-version">version: v6.8.0-community.1</p>
-                </div>
-
-                <div class="showcase-cta">
-                    <a href="#community-boundary" class="btn btn-primary">Community Boundary</a>
-                    <a href="#video-demo" class="btn btn-secondary">Watch Demo</a>
-                    <a href="#onboarding" class="btn btn-secondary">Start Here</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community Boundary -->
-    <section id="community-boundary" class="section about section-shell">
-        <div class="container">
-            <p class="section-kicker">Community Edition Boundary</p>
-            <h2 class="section-title">社区版边界说明</h2>
-            <div class="about-content panel-card">
-                <div class="boundary-layout">
-                    <div class="boundary-copy">
-                        <p>包含：Workflow Composer、Governance Hub、Incident/Playbook/Audit、Operations Intelligence、Local API + Web runnable baseline。</p>
-                        <p>不包含：私有资产、私有验证材料、真实凭据。高级集成（如完整 OpenClaw 生产集成）需用户自行配置。</p>
-                        <div class="about-grid">
-                            <span class="about-chip">No Private Assets</span>
-                            <span class="about-chip">No Real Credentials</span>
-                            <span class="about-chip">Self-Configured Integrations</span>
-                            <span class="about-chip">Community Safe Baseline</span>
-                        </div>
-                    </div>
-                    <figure class="boundary-visual mini-card">
-                        <img src="assets/images/generated/aip_community_boundary_visual.svg" alt="AIP Community Edition boundary include and exclude overview" class="boundary-visual-img" loading="lazy">
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Demo Section -->
-    <section id="video-demo" class="section projects section-shell">
-        <div class="container">
-            <p class="section-kicker">Product Demo</p>
-            <h2 class="section-title">60 秒了解 AIP</h2>
-
-            <div class="projects-grid" style="grid-template-columns: 1fr;">
-                <article class="project-card panel-card">
-                    <p class="section-kicker video-kicker">AIP 60s Product Story</p>
-                    <h3>天枢智治平台（AIP）Community Edition：从编排到治理的 60 秒总览</h3>
-                    <p>定位：面向 Workflow Composer、Governance Hub 与 Operations Intelligence 的社区版可运行平台。你可以从视频快速理解产品边界、能力面与上手路径。</p>
-                    <video controls preload="metadata" poster="assets/images/generated/aip_promo_banner_v680c1.svg" class="demo-video">
-                        <source src="assets/media/aip-demo.mp4" type="video/mp4">
-                        当前浏览器不支持 video 标签，请使用下方链接观看。
-                    </video>
-                    <p class="video-cta-copy">CTA：进入 GitHub 查看源码，按 Quick Start 本地跑起，基于 Release 版本持续升级。</p>
-                    <div class="showcase-cta video-cta-row">
-                        <a href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank" class="btn btn-primary">View on GitHub</a>
-                        <a href="https://github.com/a740022938/aegisflow-intelligence-platform/blob/main/README.md" target="_blank" class="btn btn-secondary">Read Quick Start</a>
-                        <a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v6.8.0-community.1" target="_blank" class="btn btn-secondary">Open Release Notes</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Onboarding Section -->
-    <section id="onboarding" class="section contact section-shell">
-        <div class="container">
-            <p class="section-kicker">First Run Path</p>
-            <h2 class="section-title">第一次如何开始</h2>
-            <div class="contact-form panel-card">
-                <p class="contact-intro">1) clone + install → 2) db:init + dev → 3) Workflow Composer 导入模板运行 → 4) Workflow Jobs 查看结果。</p>
-                <div class="about-grid" style="margin-bottom: 1rem;">
-                    <span class="about-chip">首跑模板：front-chain-light.json</span>
-                    <span class="about-chip">推荐模板：minimal-full-chain-flywheel.json</span>
-                    <span class="about-chip">进阶模板：existing-dataset-flywheel.json</span>
-                </div>
-                <div class="showcase-cta">
-                    <a href="https://github.com/a740022938/aegisflow-intelligence-platform/blob/main/docs/public-release/F0_NEW_USER_ONBOARDING.md" target="_blank" class="btn btn-primary">Open Onboarding</a>
-                    <a href="https://github.com/a740022938/aegisflow-intelligence-platform/issues/new/choose" target="_blank" class="btn btn-secondary">Issues / Feedback</a>
-                    <a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v6.8.0-community.1" target="_blank" class="btn btn-secondary">Current Release</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Version and Release Section -->
-    <section id="release-info" class="section projects section-shell">
-        <div class="container">
-            <p class="section-kicker">Version & Release</p>
-            <h2 class="section-title">当前版本与后续方向</h2>
-            <figure class="promo-banner panel-card">
-                <img src="assets/images/generated/aip_promo_banner_v680c1.svg" alt="AIP promo banner for GitHub release and quick start" class="promo-banner-img" loading="lazy">
-            </figure>
-            <div class="projects-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
-                <article class="project-card panel-card">
-                    <h3>v6.8.0-community.1</h3>
-                    <p>AIP Community Edition 首发版本，已完成对外同步与反馈入口接入。</p>
-                    <div class="project-tags">
-                        <span class="tag">GitHub Public Launch</span>
-                        <span class="tag">Community Edition</span>
-                        <span class="tag">Runnable Baseline</span>
-                    </div>
-                </article>
-                <article class="project-card panel-card">
-                    <h3>Next Community Patch</h3>
-                    <p>优先修复新手上手阻塞与反馈闭环细节，持续提升外部可读性与可用性。</p>
-                    <div class="project-tags">
-                        <span class="tag">Onboarding Clarity</span>
-                        <span class="tag">FAQ</span>
-                        <span class="tag">Feedback Quality</span>
-                    </div>
-                </article>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-line" aria-hidden="true"></div>
-                <h3 data-i18n="brand.name">天枢智治平台 · AIP</h3>
-                <p data-i18n="footer.desc">
-                    AegisFlow Intelligence Platform（AIP）Community Edition：对外展示、快速上手、问题反馈与持续迭代入口。
-                </p>
-                <ul class="social-links">
-                    <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank" title="GitHub">GH</a></li>
-                    <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v6.8.0-community.1" target="_blank" title="Release">RL</a></li>
-                    <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/blob/main/README.md" target="_blank" title="Quick Start">QS</a></li>
-                    <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/issues/new/choose" target="_blank" title="Issues">IS</a></li>
-                </ul>
-                <p class="copyright">
-                    © <span id="currentYear">2026</span> <span data-i18n="footer.copyright_brand">天枢智治平台 · AIP.</span> <span data-i18n="footer.copyright_rights">All rights reserved.</span>
-                    <br>
-                    <span data-i18n="footer.built">Built with HTML, CSS, JavaScript, and community-driven iteration.</span>
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WeChat Modal -->
-    <div id="wechatModal" class="wechat-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="wechatModalTitle">
-        <div class="wechat-modal__backdrop" data-wechat-close></div>
-        <div class="wechat-modal__panel panel-card">
-            <button type="button" id="wechatModalClose" class="wechat-modal__close" data-wechat-close aria-label="Close" data-i18n-aria-label="wechat.close_aria">✕</button>
-            <h3 id="wechatModalTitle" data-i18n="wechat.modal_title">WeChat</h3>
-            <p class="wechat-modal__hint" data-i18n="wechat.scan_hint">Scan to connect</p>
-            <div class="wechat-qr-wrap">
-                <img id="wechatQrImage" src="" data-qr-src="assets/images/wechat_qr.png" alt="WeChat QR" loading="lazy" data-i18n-alt="wechat.qr_alt" referrerpolicy="no-referrer">
-                <p id="wechatQrFallback" class="wechat-qr-fallback" hidden data-i18n="wechat.image_missing">Please place your QR image at assets/images/wechat_qr.png</p>
-            </div>
-        </div>
+      </div>
     </div>
+  </nav>
 
-    <!-- JavaScript -->
-    <script src="assets/js/i18n.js"></script>
-    <script src="assets/js/main.js"></script>
+  <section id="home" class="hero section-shell lite-hero">
+    <div class="container">
+      <div class="hero-content panel-card">
+        <p class="section-kicker" data-i18n="hero.kicker">AIP v7.2.1 Stable · Build 2026.04.29</p>
+        <h1 data-i18n="hero.title">AIP v7.2.1 Stable</h1>
+        <p class="hero-subtitle lite-sub" data-i18n="hero.subtitle">The local-first AI governance and model-factory control plane.</p>
+        <p class="hero-subtitle lite-sub" data-i18n="hero.subtitle_zh">本地优先的 AI 治理与模型工厂平台，覆盖工作流编排、治理中枢、插件池、响应式驾驶舱与可审计运行链路。</p>
+        <div class="lite-buttons">
+          <a class="btn btn-primary" href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank" data-i18n="hero.cta_github">GitHub</a>
+          <a class="btn btn-secondary" href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.2.1-stable" target="_blank" data-i18n="hero.cta_download">Download v7.2.1</a>
+          <a class="btn btn-secondary" href="#quickstart" data-i18n="hero.cta_quickstart">Quick Start</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quickstart" class="section section-shell">
+    <div class="container">
+      <h2 class="section-title" data-i18n="quickstart.title">Quick Start</h2>
+      <div class="panel-card lite-card">
+<pre class="lite-code"><code>git clone https://github.com/a740022938/aegisflow-intelligence-platform.git
+cd aegisflow-intelligence-platform
+pnpm install
+pnpm run db:init
+pnpm run dev
+
+aip start
+aip status
+aip health
+aip open</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="section section-shell">
+    <div class="container">
+      <h2 class="section-title" data-i18n="download.title">Download / Release</h2>
+      <div class="lite-grid">
+        <article class="panel-card lite-card">
+          <h3 data-i18n="download.release">GitHub Release</h3>
+          <p><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.2.1-stable" target="_blank">v7.2.1-stable</a></p>
+          <p data-i18n="download.repo">Repo: aegisflow-intelligence-platform</p>
+        </article>
+        <article class="panel-card lite-card">
+          <h3 data-i18n="download.assets">Assets</h3>
+          <ul class="lite-list">
+            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.2.1-stable" target="_blank">AIP_v7.2.1_stable_final_20260429.zip</a></li>
+            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.2.1-stable" target="_blank">AIP_v7.2.1_stable_final_20260429.sha256.txt</a></li>
+            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/tree/v7.2.1-stable" target="_blank" data-i18n="download.source">Source code</a></li>
+          </ul>
+          <p data-i18n="download.note">ZIP is a clean source release package and excludes node_modules, logs, db, models, datasets, and private credentials.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="capabilities" class="section section-shell">
+    <div class="container">
+      <h2 class="section-title" data-i18n="cap.title">What It Does</h2>
+      <div class="lite-grid">
+        <article class="panel-card lite-card"><h3>Workflow Composer</h3></article>
+        <article class="panel-card lite-card"><h3>Governance Hub</h3></article>
+        <article class="panel-card lite-card"><h3>Responsive Dashboard</h3></article>
+        <article class="panel-card lite-card"><h3>WorkspaceGrid Responsive Gate</h3></article>
+        <article class="panel-card lite-card"><h3>Plugin Pool</h3></article>
+        <article class="panel-card lite-card"><h3>OpenClaw Bridge</h3></article>
+        <article class="panel-card lite-card"><h3>Smoke Test + JWT</h3></article>
+        <article class="panel-card lite-card"><h3>Release Package + SHA256</h3></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="verification" class="section section-shell">
+    <div class="container">
+      <h2 class="section-title" data-i18n="verify.title">Verification</h2>
+      <div class="panel-card lite-card">
+        <ul class="lite-list">
+          <li>lint PASS</li>
+          <li>build PASS</li>
+          <li>db:doctor PASS</li>
+          <li>smoke test PASS: 9 passed, 0 failed</li>
+          <li>CLI/Core/status/health 7.2.1</li>
+          <li>PC + Mobile UI OK</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap" class="section section-shell">
+    <div class="container">
+      <h2 class="section-title" data-i18n="roadmap.title">Roadmap</h2>
+      <div class="panel-card lite-card">
+        <ul class="lite-list">
+          <li>packages/* stub cleanup</li>
+          <li>B-class responsive polish</li>
+          <li>project continuity docs</li>
+          <li>OpenClaw collaboration polish</li>
+          <li>website demo/docs improvements</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer-content panel-card">
+        <h3 data-i18n="footer.title">AIP v7.2.1 Stable</h3>
+        <div class="lite-footer-links">
+          <a href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank">GitHub</a>
+          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.2.1-stable" target="_blank">Release</a>
+          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/blob/main/README.md" target="_blank">README</a>
+          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/issues" target="_blank">Issues</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="wechatModal" class="wechat-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="wechatModalTitle">
+    <div class="wechat-modal__backdrop" data-wechat-close></div>
+    <div class="wechat-modal__panel panel-card">
+      <button type="button" id="wechatModalClose" class="wechat-modal__close" data-wechat-close aria-label="Close" data-i18n-aria-label="wechat.close_aria">✕</button>
+      <h3 id="wechatModalTitle" data-i18n="wechat.modal_title">WeChat</h3>
+      <p class="wechat-modal__hint" data-i18n="wechat.scan_hint">Scan to connect</p>
+      <div class="wechat-qr-wrap">
+        <img id="wechatQrImage" src="" data-qr-src="assets/images/wechat_qr.png" alt="WeChat QR" loading="lazy" data-i18n-alt="wechat.qr_alt" referrerpolicy="no-referrer">
+        <p id="wechatQrFallback" class="wechat-qr-fallback" hidden data-i18n="wechat.image_missing">Please place your QR image at assets/images/wechat_qr.png</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
