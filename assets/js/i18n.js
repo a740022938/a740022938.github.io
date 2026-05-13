@@ -5,10 +5,10 @@
   const dictionary = {
     zh: {
       meta: {
-        title: "AIP v7.2.1 Stable",
-        description: "AIP v7.2.1 Stable：本地优先 AI 治理与模型工厂控制平面。"
+        title: "AIP v7.3.0-rc1 Assistant Center Readonly Baseline",
+        description: "AIP v7.3.0-rc1：本地优先 AI 治理平台的 Assistant Center 只读候选版。"
       },
-      brand: { name: "AIP v7.2.1 Stable" },
+      brand: { name: "AIP v7.3.0-rc1" },
       nav: {
         home: "首页",
         quickstart: "快速开始",
@@ -22,12 +22,12 @@
         theme_to_dark_aria: "切换到深色界面"
       },
       hero: {
-        kicker: "AIP v7.2.1 Stable · Build 2026.04.29 · Tag v7.2.1-stable",
-        title: "AIP v7.2.1 Stable",
+        kicker: "AIP v7.3.0-rc1 · Build 2026.05.12 · Pre-release",
+        title: "AIP v7.3.0-rc1 Assistant Center",
         subtitle: "The local-first AI governance and model-factory control plane.",
-        subtitle_zh: "本地优先的 AI 治理与模型工厂平台，覆盖工作流编排、治理中枢、插件池、响应式驾驶舱与可审计运行链路。",
+        subtitle_zh: "只读 Assistant Center 候选版，覆盖服务状态总览、全栈体检、任务包生成、报告/备份摘要与安全边界可视化。",
         cta_github: "GitHub",
-        cta_download: "下载 v7.2.1",
+        cta_download: "打开 v7.3.0-rc1 Release",
         cta_quickstart: "快速开始"
       },
       quickstart: { title: "Quick Start" },
@@ -37,12 +37,12 @@
         repo: "仓库: aegisflow-intelligence-platform",
         assets: "发布资产",
         source: "源代码",
-        note: "ZIP 为 clean source release package，不包含 node_modules、logs、db、models、datasets、private credentials。"
+        note: "v7.3.0-rc1 使用 GitHub 自动生成源码包，不包含 node_modules、logs、db、models、datasets、private credentials。"
       },
       cap: { title: "能力说明" },
       verify: { title: "验证结果" },
       roadmap: { title: "Roadmap" },
-      footer: { title: "AIP v7.2.1 Stable" },
+      footer: { title: "AIP v7.3.0-rc1" },
       wechat: {
         modal_title: "WeChat 联系",
         scan_hint: "扫码建立连接",
@@ -57,10 +57,10 @@
     },
     en: {
       meta: {
-        title: "AIP v7.2.1 Stable",
-        description: "AIP v7.2.1 Stable: the local-first AI governance and model-factory control plane."
+        title: "AIP v7.3.0-rc1 Assistant Center Readonly Baseline",
+        description: "AIP v7.3.0-rc1: Assistant Center readonly release candidate for local-first AI governance."
       },
-      brand: { name: "AIP v7.2.1 Stable" },
+      brand: { name: "AIP v7.3.0-rc1" },
       nav: {
         home: "Home",
         quickstart: "Quick Start",
@@ -74,12 +74,12 @@
         theme_to_dark_aria: "Switch to dark interface"
       },
       hero: {
-        kicker: "AIP v7.2.1 Stable · Build 2026.04.29 · Tag v7.2.1-stable",
-        title: "AIP v7.2.1 Stable",
+        kicker: "AIP v7.3.0-rc1 · Build 2026.05.12 · Pre-release",
+        title: "AIP v7.3.0-rc1 Assistant Center",
         subtitle: "The local-first AI governance and model-factory control plane.",
-        subtitle_zh: "A local-first AI governance and model-factory platform with workflow orchestration, governance hub, plugin pool, responsive cockpit, and auditable run chain.",
+        subtitle_zh: "Readonly Assistant Center baseline with service status, full stack health check, task package generation, report and backup summaries, and visible safety boundaries.",
         cta_github: "GitHub",
-        cta_download: "Download v7.2.1",
+        cta_download: "Open v7.3.0-rc1 Release",
         cta_quickstart: "Quick Start"
       },
       quickstart: { title: "Quick Start" },
@@ -89,12 +89,12 @@
         repo: "Repo: aegisflow-intelligence-platform",
         assets: "Release Assets",
         source: "Source code",
-        note: "ZIP is a clean source release package and excludes node_modules, logs, db, models, datasets, and private credentials."
+        note: "v7.3.0-rc1 uses GitHub-generated source archives and excludes node_modules, logs, db, models, datasets, and private credentials."
       },
       cap: { title: "What It Does" },
       verify: { title: "Verification" },
       roadmap: { title: "Roadmap" },
-      footer: { title: "AIP v7.2.1 Stable" },
+      footer: { title: "AIP v7.3.0-rc1" },
       wechat: {
         modal_title: "WeChat Contact",
         scan_hint: "Scan to connect",
@@ -109,10 +109,10 @@
     },
     ja: {
       meta: {
-        title: "AIP v7.2.1 Stable",
-        description: "AIP v7.2.1 Stable: ローカル優先の AI ガバナンスとモデルファクトリー制御プレーン。"
+        title: "AIP v7.3.0-rc1 Assistant Center Readonly Baseline",
+        description: "AIP v7.3.0-rc1: Assistant Center readonly release candidate for local-first AI governance."
       },
-      brand: { name: "AIP v7.2.1 Stable" },
+      brand: { name: "AIP v7.3.0-rc1" },
       nav: {
         home: "ホーム",
         quickstart: "クイックスタート",
@@ -126,12 +126,12 @@
         theme_to_dark_aria: "ダーク画面に切り替え"
       },
       hero: {
-        kicker: "AIP v7.2.1 Stable · Build 2026.04.29 · Tag v7.2.1-stable",
-        title: "AIP v7.2.1 Stable",
+        kicker: "AIP v7.3.0-rc1 · Build 2026.05.12 · Pre-release",
+        title: "AIP v7.3.0-rc1 Assistant Center",
         subtitle: "The local-first AI governance and model-factory control plane.",
-        subtitle_zh: "ワークフロー編成、ガバナンス中枢、プラグインプール、レスポンシブ運用画面、監査可能な実行チェーンを備えたローカル優先プラットフォーム。",
+        subtitle_zh: "Readonly Assistant Center baseline with service status, full stack health check, task package generation, report and backup summaries, and visible safety boundaries.",
         cta_github: "GitHub",
-        cta_download: "v7.2.1 をダウンロード",
+        cta_download: "v7.3.0-rc1 Release",
         cta_quickstart: "クイックスタート"
       },
       quickstart: { title: "Quick Start" },
@@ -141,12 +141,12 @@
         repo: "Repo: aegisflow-intelligence-platform",
         assets: "リリース資産",
         source: "ソースコード",
-        note: "ZIP は clean source release package で、node_modules / logs / db / models / datasets / private credentials は含みません。"
+        note: "v7.3.0-rc1 uses GitHub-generated source archives and excludes node_modules / logs / db / models / datasets / private credentials."
       },
       cap: { title: "What It Does" },
       verify: { title: "Verification" },
       roadmap: { title: "Roadmap" },
-      footer: { title: "AIP v7.2.1 Stable" },
+      footer: { title: "AIP v7.3.0-rc1" },
       wechat: {
         modal_title: "WeChat Contact",
         scan_hint: "Scan to connect",

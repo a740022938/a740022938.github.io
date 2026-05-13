@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="meta.title">AIP v7.2.1 Stable</title>
-  <meta name="description" content="AIP v7.2.1 Stable - local-first AI governance and model-factory control plane." data-i18n-content="meta.description">
+  <title data-i18n="meta.title">AIP v7.3.0-rc1 Assistant Center Readonly Baseline</title>
+  <meta name="description" content="AIP v7.3.0-rc1 - Assistant Center readonly release candidate for local-first AI governance." data-i18n-content="meta.description">
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
@@ -30,7 +30,7 @@
     <div class="container nav-container">
       <a href="#home" class="logo">
         <span class="logo-mark">AIP</span>
-        <span class="logo-text" data-i18n="brand.name">AIP v7.2.1 Stable</span>
+        <span class="logo-text" data-i18n="brand.name">AIP v7.3.0-rc1</span>
       </a>
       <div class="nav-right">
         <ul class="nav-links">
@@ -55,13 +55,13 @@
   <section id="home" class="hero section-shell lite-hero">
     <div class="container">
       <div class="hero-content panel-card">
-        <p class="section-kicker" data-i18n="hero.kicker">AIP v7.2.1 Stable · Build 2026.04.29</p>
-        <h1 data-i18n="hero.title">AIP v7.2.1 Stable</h1>
+        <p class="section-kicker" data-i18n="hero.kicker">AIP v7.3.0-rc1 · Build 2026.05.12 · Pre-release</p>
+        <h1 data-i18n="hero.title">AIP v7.3.0-rc1 Assistant Center</h1>
         <p class="hero-subtitle lite-sub" data-i18n="hero.subtitle">The local-first AI governance and model-factory control plane.</p>
-        <p class="hero-subtitle lite-sub" data-i18n="hero.subtitle_zh">本地优先的 AI 治理与模型工厂平台，覆盖工作流编排、治理中枢、插件池、响应式驾驶舱与可审计运行链路。</p>
+        <p class="hero-subtitle lite-sub" data-i18n="hero.subtitle_zh">只读 Assistant Center 候选版，覆盖服务状态总览、全栈体检、任务包生成、报告/备份摘要与安全边界可视化。</p>
         <div class="lite-buttons">
           <a class="btn btn-primary" href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank" data-i18n="hero.cta_github">GitHub</a>
-          <a class="btn btn-secondary" href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.2.1-stable" target="_blank" data-i18n="hero.cta_download">Download v7.2.1</a>
+          <a class="btn btn-secondary" href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.3.0-rc1" target="_blank" data-i18n="hero.cta_download">Open v7.3.0-rc1 Release</a>
           <a class="btn btn-secondary" href="#quickstart" data-i18n="hero.cta_quickstart">Quick Start</a>
         </div>
       </div>
@@ -92,15 +92,15 @@ aip open</code></pre>
       <div class="lite-grid">
         <article class="panel-card lite-card">
           <h3 data-i18n="download.release">GitHub Release</h3>
-          <p><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.2.1-stable" target="_blank">v7.2.1-stable</a></p>
+          <p><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.3.0-rc1" target="_blank">v7.3.0-rc1</a></p>
           <p data-i18n="download.repo">Repo: aegisflow-intelligence-platform</p>
         </article>
         <article class="panel-card lite-card">
           <h3 data-i18n="download.assets">Assets</h3>
           <ul class="lite-list">
-            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.2.1-stable" target="_blank">AIP_v7.2.1_stable_final_20260429.zip</a></li>
-            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.2.1-stable" target="_blank">AIP_v7.2.1_stable_final_20260429.sha256.txt</a></li>
-            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/tree/v7.2.1-stable" target="_blank" data-i18n="download.source">Source code</a></li>
+            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.3.0-rc1" target="_blank">GitHub Release v7.3.0-rc1</a></li>
+            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/archive/refs/tags/v7.3.0-rc1.zip" target="_blank">Source code ZIP</a></li>
+            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/tree/v7.3.0-rc1" target="_blank" data-i18n="download.source">Source code</a></li>
           </ul>
           <p data-i18n="download.note">ZIP is a clean source release package and excludes node_modules, logs, db, models, datasets, and private credentials.</p>
         </article>
@@ -133,8 +133,10 @@ aip open</code></pre>
           <li>build PASS</li>
           <li>db:doctor PASS</li>
           <li>smoke test PASS: 9 passed, 0 failed</li>
-          <li>CLI/Core/status/health 7.2.1</li>
-          <li>PC + Mobile UI OK</li>
+          <li>CLI/Core/status/health 7.3.0-rc1</li>
+          <li>Assistant Center full-check warning/medium</li>
+          <li>autoFixAllowed=false, requiresHumanApproval=true</li>
+          <li>OpenAxiom readonly, OpenClaw live, Claude Proxy ok</li>
         </ul>
       </div>
     </div>
@@ -145,11 +147,10 @@ aip open</code></pre>
       <h2 class="section-title" data-i18n="roadmap.title">Roadmap</h2>
       <div class="panel-card lite-card">
         <ul class="lite-list">
-          <li>packages/* stub cleanup</li>
-          <li>B-class responsive polish</li>
-          <li>project continuity docs</li>
-          <li>OpenClaw collaboration polish</li>
-          <li>website demo/docs improvements</li>
+          <li>Observe v7.3.0-rc1 before final v7.3.0</li>
+          <li>Keep Assistant Center readonly by default</li>
+          <li>Continue report and backup visibility polish</li>
+          <li>Keep OpenAxiom/OpenClaw integration safety-gated</li>
         </ul>
       </div>
     </div>
@@ -158,10 +159,10 @@ aip open</code></pre>
   <footer id="contact" class="footer">
     <div class="container">
       <div class="footer-content panel-card">
-        <h3 data-i18n="footer.title">AIP v7.2.1 Stable</h3>
+        <h3 data-i18n="footer.title">AIP v7.3.0-rc1</h3>
         <div class="lite-footer-links">
           <a href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank">GitHub</a>
-          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.2.1-stable" target="_blank">Release</a>
+          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.3.0-rc1" target="_blank">Release</a>
           <a href="https://github.com/a740022938/aegisflow-intelligence-platform/blob/main/README.md" target="_blank">README</a>
           <a href="https://github.com/a740022938/aegisflow-intelligence-platform/issues" target="_blank">Issues</a>
         </div>
