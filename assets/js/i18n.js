@@ -5,15 +5,15 @@
   const dictionary = {
     zh: {
       meta: {
-        title: "AIP v7.3.0-rc1 Assistant Center Readonly Baseline",
-        description: "AIP v7.3.0-rc1：本地优先 AI 治理平台的 Assistant Center 只读候选版。"
+        title: "OpenAIP v7.62.0 正式发布",
+        description: "OpenAIP v7.62.0 是当前稳定 GitHub Release，面向本地优先 AI 治理、工作流与运营控制台。"
       },
-      brand: { name: "AIP v7.3.0-rc1" },
+      brand: { name: "OpenAIP v7.62.0" },
       nav: {
         home: "首页",
-        quickstart: "快速开始",
-        download: "下载",
+        release: "发布",
         verification: "验证",
+        roadmap: "维护路线",
         wechat: "WeChat",
         lang_switch_aria: "语言切换",
         theme_to_light: "浅色",
@@ -22,27 +22,58 @@
         theme_to_dark_aria: "切换到深色界面"
       },
       hero: {
-        kicker: "AIP v7.3.0-rc1 · Build 2026.05.12 · Pre-release",
-        title: "AIP v7.3.0-rc1 Assistant Center",
-        subtitle: "The local-first AI governance and model-factory control plane.",
-        subtitle_zh: "只读 Assistant Center 候选版，覆盖服务状态总览、全栈体检、任务包生成、报告/备份摘要与安全边界可视化。",
-        cta_github: "GitHub",
-        cta_download: "打开 v7.3.0-rc1 Release",
-        cta_quickstart: "快速开始"
+        kicker: "正式 GitHub Release · Final seal complete",
+        title: "OpenAIP v7.62.0",
+        subtitle: "AIP 当前稳定正式版：本地优先的 AI 治理、工作流与运营控制平面。",
+        boundary: "Stage C 保持禁用，feature flag 保持关闭；v7.63 仅是 maintenance / cleanup 路线，不是已发布版本。",
+        cta_release: "打开 v7.62.0 Release",
+        cta_github: "GitHub 仓库",
+        cta_verification: "查看验证"
       },
-      quickstart: { title: "Quick Start" },
-      download: {
-        title: "下载 / 发布",
-        release: "GitHub Release",
-        repo: "仓库: aegisflow-intelligence-platform",
-        assets: "发布资产",
-        source: "源代码",
-        note: "v7.3.0-rc1 使用 GitHub 自动生成源码包，不包含 node_modules、logs、db、models、datasets、private credentials。"
+      proof: {
+        version_label: "稳定版本",
+        tag_label: "Release tag",
+        head_label: "Final seal HEAD"
       },
-      cap: { title: "能力说明" },
-      verify: { title: "验证结果" },
-      roadmap: { title: "Roadmap" },
-      footer: { title: "AIP v7.3.0-rc1" },
+      strip: {
+        auth_label: "授权",
+        auth_value: "已归档",
+        tests_label: "Smoke tests",
+        release_label: "GitHub Release",
+        release_value: "已发布",
+        status_label: "状态",
+        status_value: "稳定版"
+      },
+      release: {
+        title: "Release Center",
+        current_title: "当前稳定版本",
+        current_body: "OpenAIP v7.62.0 是当前稳定线的正式 GitHub Release。官网展示已从旧稳定版和候选版信息更新到正式发布状态。",
+        source_link: "Tag 源码树",
+        quickstart_title: "Quick start"
+      },
+      cap: {
+        title: "平台重点",
+        workflow: "用发布安全的控制界面构建和检查本地 AI 工作流。",
+        governance: "让执行边界、授权记录和安全门禁始终可见。",
+        operations: "清晰呈现运行状态、验证结果和运营上下文。",
+        audit: "支持证据驱动的验证，不把维护任务伪装成正式发布。"
+      },
+      verify: {
+        title: "发布验证",
+        pipeline_title: "流水线结果",
+        boundary_title: "发布边界"
+      },
+      roadmap: {
+        title: "维护路线",
+        body: "已发布稳定线是 v7.62.0。后续工作应按 v7.63 maintenance / cleanup 规划，不能描述成已经发布。",
+        item_one: "保持 v7.62.0 作为公开稳定版本。",
+        item_two: "用 v7.63 处理后续清理和既有脏工作。",
+        item_three: "tag、GitHub Release、发布动作必须继续显式授权。"
+      },
+      footer: {
+        title: "OpenAIP v7.62.0",
+        summary: "当前稳定 OpenAIP 版本的官方发布页。"
+      },
       wechat: {
         modal_title: "WeChat 联系",
         scan_hint: "扫码建立连接",
@@ -57,15 +88,15 @@
     },
     en: {
       meta: {
-        title: "AIP v7.3.0-rc1 Assistant Center Readonly Baseline",
-        description: "AIP v7.3.0-rc1: Assistant Center readonly release candidate for local-first AI governance."
+        title: "OpenAIP v7.62.0 Official Release",
+        description: "OpenAIP v7.62.0 is the current stable GitHub Release for the local-first AI governance, workflow, and operations control plane."
       },
-      brand: { name: "AIP v7.3.0-rc1" },
+      brand: { name: "OpenAIP v7.62.0" },
       nav: {
         home: "Home",
-        quickstart: "Quick Start",
-        download: "Download",
+        release: "Release",
         verification: "Verification",
+        roadmap: "Roadmap",
         wechat: "WeChat",
         lang_switch_aria: "Language Switch",
         theme_to_light: "Light UI",
@@ -74,27 +105,58 @@
         theme_to_dark_aria: "Switch to dark interface"
       },
       hero: {
-        kicker: "AIP v7.3.0-rc1 · Build 2026.05.12 · Pre-release",
-        title: "AIP v7.3.0-rc1 Assistant Center",
-        subtitle: "The local-first AI governance and model-factory control plane.",
-        subtitle_zh: "Readonly Assistant Center baseline with service status, full stack health check, task package generation, report and backup summaries, and visible safety boundaries.",
-        cta_github: "GitHub",
-        cta_download: "Open v7.3.0-rc1 Release",
-        cta_quickstart: "Quick Start"
+        kicker: "Official GitHub Release · Final seal complete",
+        title: "OpenAIP v7.62.0",
+        subtitle: "The current stable release of AIP: a local-first AI governance, workflow, and operations control plane.",
+        boundary: "Stage C remains disabled, the feature flag remains off, and v7.63 is a maintenance / cleanup track rather than a published release.",
+        cta_release: "Open v7.62.0 Release",
+        cta_github: "GitHub Repository",
+        cta_verification: "Verification"
       },
-      quickstart: { title: "Quick Start" },
-      download: {
-        title: "Download / Release",
-        release: "GitHub Release",
-        repo: "Repo: aegisflow-intelligence-platform",
-        assets: "Release Assets",
-        source: "Source code",
-        note: "v7.3.0-rc1 uses GitHub-generated source archives and excludes node_modules, logs, db, models, datasets, and private credentials."
+      proof: {
+        version_label: "Stable version",
+        tag_label: "Release tag",
+        head_label: "Final seal HEAD"
       },
-      cap: { title: "What It Does" },
-      verify: { title: "Verification" },
-      roadmap: { title: "Roadmap" },
-      footer: { title: "AIP v7.3.0-rc1" },
+      strip: {
+        auth_label: "Authorization",
+        auth_value: "Filed",
+        tests_label: "Smoke tests",
+        release_label: "GitHub Release",
+        release_value: "Published",
+        status_label: "Status",
+        status_value: "Stable"
+      },
+      release: {
+        title: "Release Center",
+        current_title: "Current stable release",
+        current_body: "OpenAIP v7.62.0 is the official GitHub Release for the current stable line. It replaces older stable and release-candidate public messaging.",
+        source_link: "Source tree at tag",
+        quickstart_title: "Quick start"
+      },
+      cap: {
+        title: "Platform Focus",
+        workflow: "Build and inspect local AI workflows with a release-safe control surface.",
+        governance: "Keep execution boundaries, approvals, and safety gates visible.",
+        operations: "Surface runtime status, checks, and operational context clearly.",
+        audit: "Support evidence-led verification without presenting maintenance work as a release."
+      },
+      verify: {
+        title: "Release Verification",
+        pipeline_title: "Pipeline result",
+        boundary_title: "Release boundaries"
+      },
+      roadmap: {
+        title: "Maintenance Track",
+        body: "The released line is v7.62.0. Future work should be planned as v7.63 maintenance / cleanup and should not be described as already published.",
+        item_one: "Keep v7.62.0 as the public stable release.",
+        item_two: "Use v7.63 for follow-up cleanup of pre-existing dirty work.",
+        item_three: "Keep release actions, tags, and GitHub Releases explicitly authorized."
+      },
+      footer: {
+        title: "OpenAIP v7.62.0",
+        summary: "Official release page for the current stable OpenAIP line."
+      },
       wechat: {
         modal_title: "WeChat Contact",
         scan_hint: "Scan to connect",
@@ -109,15 +171,15 @@
     },
     ja: {
       meta: {
-        title: "AIP v7.3.0-rc1 Assistant Center Readonly Baseline",
-        description: "AIP v7.3.0-rc1: Assistant Center readonly release candidate for local-first AI governance."
+        title: "OpenAIP v7.62.0 Official Release",
+        description: "OpenAIP v7.62.0 is the current stable GitHub Release for the local-first AI governance, workflow, and operations control plane."
       },
-      brand: { name: "AIP v7.3.0-rc1" },
+      brand: { name: "OpenAIP v7.62.0" },
       nav: {
         home: "ホーム",
-        quickstart: "クイックスタート",
-        download: "ダウンロード",
-        verification: "検証",
+        release: "Release",
+        verification: "Verification",
+        roadmap: "Roadmap",
         wechat: "WeChat",
         lang_switch_aria: "言語切替",
         theme_to_light: "ライト",
@@ -126,27 +188,58 @@
         theme_to_dark_aria: "ダーク画面に切り替え"
       },
       hero: {
-        kicker: "AIP v7.3.0-rc1 · Build 2026.05.12 · Pre-release",
-        title: "AIP v7.3.0-rc1 Assistant Center",
-        subtitle: "The local-first AI governance and model-factory control plane.",
-        subtitle_zh: "Readonly Assistant Center baseline with service status, full stack health check, task package generation, report and backup summaries, and visible safety boundaries.",
-        cta_github: "GitHub",
-        cta_download: "v7.3.0-rc1 Release",
-        cta_quickstart: "クイックスタート"
+        kicker: "Official GitHub Release · Final seal complete",
+        title: "OpenAIP v7.62.0",
+        subtitle: "The current stable release of AIP: a local-first AI governance, workflow, and operations control plane.",
+        boundary: "Stage C remains disabled, the feature flag remains off, and v7.63 is a maintenance / cleanup track rather than a published release.",
+        cta_release: "v7.62.0 Release",
+        cta_github: "GitHub Repository",
+        cta_verification: "Verification"
       },
-      quickstart: { title: "Quick Start" },
-      download: {
-        title: "Download / Release",
-        release: "GitHub Release",
-        repo: "Repo: aegisflow-intelligence-platform",
-        assets: "リリース資産",
-        source: "ソースコード",
-        note: "v7.3.0-rc1 uses GitHub-generated source archives and excludes node_modules / logs / db / models / datasets / private credentials."
+      proof: {
+        version_label: "Stable version",
+        tag_label: "Release tag",
+        head_label: "Final seal HEAD"
       },
-      cap: { title: "What It Does" },
-      verify: { title: "Verification" },
-      roadmap: { title: "Roadmap" },
-      footer: { title: "AIP v7.3.0-rc1" },
+      strip: {
+        auth_label: "Authorization",
+        auth_value: "Filed",
+        tests_label: "Smoke tests",
+        release_label: "GitHub Release",
+        release_value: "Published",
+        status_label: "Status",
+        status_value: "Stable"
+      },
+      release: {
+        title: "Release Center",
+        current_title: "Current stable release",
+        current_body: "OpenAIP v7.62.0 is the official GitHub Release for the current stable line. It replaces older stable and release-candidate public messaging.",
+        source_link: "Source tree at tag",
+        quickstart_title: "Quick start"
+      },
+      cap: {
+        title: "Platform Focus",
+        workflow: "Build and inspect local AI workflows with a release-safe control surface.",
+        governance: "Keep execution boundaries, approvals, and safety gates visible.",
+        operations: "Surface runtime status, checks, and operational context clearly.",
+        audit: "Support evidence-led verification without presenting maintenance work as a release."
+      },
+      verify: {
+        title: "Release Verification",
+        pipeline_title: "Pipeline result",
+        boundary_title: "Release boundaries"
+      },
+      roadmap: {
+        title: "Maintenance Track",
+        body: "The released line is v7.62.0. Future work should be planned as v7.63 maintenance / cleanup and should not be described as already published.",
+        item_one: "Keep v7.62.0 as the public stable release.",
+        item_two: "Use v7.63 for follow-up cleanup of pre-existing dirty work.",
+        item_three: "Keep release actions, tags, and GitHub Releases explicitly authorized."
+      },
+      footer: {
+        title: "OpenAIP v7.62.0",
+        summary: "Official release page for the current stable OpenAIP line."
+      },
       wechat: {
         modal_title: "WeChat Contact",
         scan_hint: "Scan to connect",

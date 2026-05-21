@@ -3,22 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="meta.title">AIP v7.3.0-rc1 Assistant Center Readonly Baseline</title>
-  <meta name="description" content="AIP v7.3.0-rc1 - Assistant Center readonly release candidate for local-first AI governance." data-i18n-content="meta.description">
+  <title data-i18n="meta.title">OpenAIP v7.62.0 Official Release</title>
+  <meta name="description" content="OpenAIP v7.62.0 is the current stable GitHub Release for the local-first AI governance and workflow control plane." data-i18n-content="meta.description">
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    .lite-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-    .lite-hero h1{font-size:clamp(30px,5vw,54px);line-height:1.1;margin-bottom:12px}
-    .lite-sub{max-width:920px;margin:0 auto 20px}
-    .lite-buttons{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-    .lite-code{overflow:auto;white-space:pre;word-break:normal}
-    .lite-card h3{margin-bottom:8px}
-    .lite-card p,.lite-card li{opacity:.9}
-    .lite-list{margin:0;padding-left:18px}
-    .lite-footer-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-    @media (max-width: 980px){.lite-grid{grid-template-columns:1fr}}
-    @media (max-width: 480px){.container{padding-inline:14px}.nav-links{display:none}.lite-code{font-size:12px}}
+    .release-hero{min-height:92vh;padding-top:104px}
+    .release-hero .container{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:22px;align-items:center}
+    .hero-copy{padding:2.15rem;text-align:left}
+    .hero-copy .section-kicker{text-align:left}
+    .hero-copy h1{font-size:clamp(38px,6vw,72px);line-height:1.02;margin-bottom:16px}
+    .hero-lead{font-size:1.1rem;max-width:780px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 0}
+    .release-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}
+    .proof-tile{padding:1rem;border-radius:14px;border:1px solid rgba(110,170,255,.4);background:rgba(7,15,31,.72)}
+    .proof-tile span{display:block;font-family:var(--font-mono);font-size:.72rem;color:#93b4df;margin-bottom:4px}
+    .proof-tile strong{display:block;color:#eef8ff;font-size:.92rem}
+    .hero-asset{padding:.72rem}
+    .hero-asset img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid rgba(112,180,255,.36);background:#050a14}
+    .release-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-22px}
+    .release-strip .panel-card{padding:1rem}
+    .release-strip span{display:block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#9fc0ea}
+    .release-strip strong{display:block;margin-top:5px;color:#eef8ff;font-size:.98rem}
+    .release-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .info-card{padding:1.25rem}
+    .info-card p:last-child{margin-bottom:0}
+    .clean-list{margin:0;padding-left:18px}
+    .clean-list li{margin:.36rem 0;color:var(--text-secondary)}
+    .status-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .status-list li{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:.85rem .95rem;border-radius:12px;border:1px solid rgba(104,151,240,.34);background:rgba(8,16,33,.62)}
+    .status-list span{color:var(--text-secondary)}
+    .status-list strong{font-family:var(--font-mono);font-size:.78rem;color:#7ff5ff;white-space:nowrap}
+    .capability-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .capability-card{padding:1rem}
+    .capability-card img{display:block;width:100%;height:auto;margin-bottom:.8rem;border-radius:12px;border:1px solid rgba(112,180,255,.32);background:rgba(6,12,24,.75)}
+    .capability-card h3{font-size:1rem;margin-bottom:.35rem}
+    .capability-card p{font-size:.9rem;margin-bottom:0}
+    .code-panel{overflow:auto;white-space:pre;word-break:normal}
+    .footer-content{padding:1.35rem}
+    .footer-content h3,.footer-content p,.footer-content a{position:relative;z-index:1}
+    .footer-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    @media (max-width: 1040px){
+      .release-hero .container,.release-grid{grid-template-columns:1fr}
+      .release-strip,.capability-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width: 620px){
+      .container{padding-inline:14px}
+      .navbar{padding:.7rem 0}
+      .nav-container{align-items:flex-start;flex-wrap:wrap}
+      .nav-right{width:100%;margin-left:0}
+      .nav-actions{width:100%;justify-content:space-between}
+      .lang-switch{flex:1;justify-content:center;max-width:112px}
+      .nav-wechat,.theme-btn{min-width:auto}
+      .release-hero{padding-top:138px}
+      .hero-copy{padding:1.35rem}
+      .release-proof,.release-strip,.capability-grid{grid-template-columns:1fr}
+      .hero-actions .btn{width:100%}
+      .code-panel{font-size:12px}
+      .nav-links{display:none}
+    }
   </style>
 </head>
 <body>
@@ -30,14 +73,14 @@
     <div class="container nav-container">
       <a href="#home" class="logo">
         <span class="logo-mark">AIP</span>
-        <span class="logo-text" data-i18n="brand.name">AIP v7.3.0-rc1</span>
+        <span class="logo-text" data-i18n="brand.name">OpenAIP v7.62.0</span>
       </a>
       <div class="nav-right">
         <ul class="nav-links">
           <li class="nav-item"><a href="#home" data-nav-target="home" class="is-active" data-i18n="nav.home">Home</a></li>
-          <li class="nav-item"><a href="#quickstart" data-nav-target="quickstart" data-i18n="nav.quickstart">Quick Start</a></li>
-          <li class="nav-item"><a href="#download" data-nav-target="download" data-i18n="nav.download">Download</a></li>
+          <li class="nav-item"><a href="#release" data-nav-target="release" data-i18n="nav.release">Release</a></li>
           <li class="nav-item"><a href="#verification" data-nav-target="verification" data-i18n="nav.verification">Verification</a></li>
+          <li class="nav-item"><a href="#roadmap" data-nav-target="roadmap" data-i18n="nav.roadmap">Roadmap</a></li>
         </ul>
         <div class="nav-actions">
           <div class="lang-switch" role="group" aria-label="Language Switcher" data-i18n-aria-label="nav.lang_switch_aria">
@@ -52,57 +95,59 @@
     </div>
   </nav>
 
-  <section id="home" class="hero section-shell lite-hero">
+  <section id="home" class="hero release-hero section-shell">
     <div class="container">
-      <div class="hero-content panel-card">
-        <p class="section-kicker" data-i18n="hero.kicker">AIP v7.3.0-rc1 · Build 2026.05.12 · Pre-release</p>
-        <h1 data-i18n="hero.title">AIP v7.3.0-rc1 Assistant Center</h1>
-        <p class="hero-subtitle lite-sub" data-i18n="hero.subtitle">The local-first AI governance and model-factory control plane.</p>
-        <p class="hero-subtitle lite-sub" data-i18n="hero.subtitle_zh">只读 Assistant Center 候选版，覆盖服务状态总览、全栈体检、任务包生成、报告/备份摘要与安全边界可视化。</p>
-        <div class="lite-buttons">
-          <a class="btn btn-primary" href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank" data-i18n="hero.cta_github">GitHub</a>
-          <a class="btn btn-secondary" href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.3.0-rc1" target="_blank" data-i18n="hero.cta_download">Open v7.3.0-rc1 Release</a>
-          <a class="btn btn-secondary" href="#quickstart" data-i18n="hero.cta_quickstart">Quick Start</a>
+      <div class="hero-copy panel-card">
+        <p class="section-kicker" data-i18n="hero.kicker">Official GitHub Release · Final seal complete</p>
+        <h1 data-i18n="hero.title">OpenAIP v7.62.0</h1>
+        <p class="hero-lead" data-i18n="hero.subtitle">The current stable release of AIP: a local-first AI governance, workflow, and operations control plane.</p>
+        <p class="hero-lead" data-i18n="hero.boundary">Stage C remains disabled, the feature flag remains off, and v7.63 is a maintenance / cleanup track rather than a published release.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.62.0" target="_blank" rel="noopener" data-i18n="hero.cta_release">Open v7.62.0 Release</a>
+          <a class="btn btn-secondary" href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank" rel="noopener" data-i18n="hero.cta_github">GitHub Repository</a>
+          <a class="btn btn-secondary" href="#verification" data-i18n="hero.cta_verification">Verification</a>
+        </div>
+        <div class="release-proof" aria-label="Release facts">
+          <div class="proof-tile"><span data-i18n="proof.version_label">Stable version</span><strong>v7.62.0</strong></div>
+          <div class="proof-tile"><span data-i18n="proof.tag_label">Release tag</span><strong>e6be163</strong></div>
+          <div class="proof-tile"><span data-i18n="proof.head_label">Final seal HEAD</span><strong>451f8d0</strong></div>
         </div>
       </div>
+      <figure class="hero-asset panel-card">
+        <img src="assets/images/generated/aip_hero_visual_v680c1.svg" alt="OpenAIP operations control plane visual">
+      </figure>
     </div>
   </section>
 
-  <section id="quickstart" class="section section-shell">
-    <div class="container">
-      <h2 class="section-title" data-i18n="quickstart.title">Quick Start</h2>
-      <div class="panel-card lite-card">
-<pre class="lite-code"><code>git clone https://github.com/a740022938/aegisflow-intelligence-platform.git
-cd aegisflow-intelligence-platform
-pnpm install
-pnpm run db:init
-pnpm run dev
-
-aip start
-aip status
-aip health
-aip open</code></pre>
-      </div>
+  <section class="section-shell">
+    <div class="container release-strip">
+      <div class="panel-card"><span data-i18n="strip.auth_label">Authorization</span><strong data-i18n="strip.auth_value">Filed</strong></div>
+      <div class="panel-card"><span data-i18n="strip.tests_label">Smoke tests</span><strong>9/9 PASS</strong></div>
+      <div class="panel-card"><span data-i18n="strip.release_label">GitHub Release</span><strong data-i18n="strip.release_value">Published</strong></div>
+      <div class="panel-card"><span data-i18n="strip.status_label">Status</span><strong data-i18n="strip.status_value">Stable</strong></div>
     </div>
   </section>
 
-  <section id="download" class="section section-shell">
+  <section id="release" class="section section-shell">
     <div class="container">
-      <h2 class="section-title" data-i18n="download.title">Download / Release</h2>
-      <div class="lite-grid">
-        <article class="panel-card lite-card">
-          <h3 data-i18n="download.release">GitHub Release</h3>
-          <p><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.3.0-rc1" target="_blank">v7.3.0-rc1</a></p>
-          <p data-i18n="download.repo">Repo: aegisflow-intelligence-platform</p>
-        </article>
-        <article class="panel-card lite-card">
-          <h3 data-i18n="download.assets">Assets</h3>
-          <ul class="lite-list">
-            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.3.0-rc1" target="_blank">GitHub Release v7.3.0-rc1</a></li>
-            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/archive/refs/tags/v7.3.0-rc1.zip" target="_blank">Source code ZIP</a></li>
-            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/tree/v7.3.0-rc1" target="_blank" data-i18n="download.source">Source code</a></li>
+      <h2 class="section-title" data-i18n="release.title">Release Center</h2>
+      <div class="release-grid">
+        <article class="panel-card info-card">
+          <h3 data-i18n="release.current_title">Current stable release</h3>
+          <p data-i18n="release.current_body">OpenAIP v7.62.0 is the official GitHub Release for the current stable line. It replaces older stable and release-candidate public messaging.</p>
+          <ul class="clean-list">
+            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.62.0" target="_blank" rel="noopener">GitHub Release v7.62.0</a></li>
+            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/archive/refs/tags/v7.62.0.zip" target="_blank" rel="noopener">Source code ZIP</a></li>
+            <li><a href="https://github.com/a740022938/aegisflow-intelligence-platform/tree/v7.62.0" target="_blank" rel="noopener" data-i18n="release.source_link">Source tree at tag</a></li>
           </ul>
-          <p data-i18n="download.note">ZIP is a clean source release package and excludes node_modules, logs, db, models, datasets, and private credentials.</p>
+        </article>
+        <article class="panel-card info-card">
+          <h3 data-i18n="release.quickstart_title">Quick start</h3>
+<pre class="code-panel"><code>git clone https://github.com/a740022938/aegisflow-intelligence-platform.git
+cd aegisflow-intelligence-platform
+git checkout v7.62.0
+pnpm install
+pnpm run dev</code></pre>
         </article>
       </div>
     </div>
@@ -110,61 +155,84 @@ aip open</code></pre>
 
   <section id="capabilities" class="section section-shell">
     <div class="container">
-      <h2 class="section-title" data-i18n="cap.title">What It Does</h2>
-      <div class="lite-grid">
-        <article class="panel-card lite-card"><h3>Workflow Composer</h3></article>
-        <article class="panel-card lite-card"><h3>Governance Hub</h3></article>
-        <article class="panel-card lite-card"><h3>Responsive Dashboard</h3></article>
-        <article class="panel-card lite-card"><h3>WorkspaceGrid Responsive Gate</h3></article>
-        <article class="panel-card lite-card"><h3>Plugin Pool</h3></article>
-        <article class="panel-card lite-card"><h3>OpenClaw Bridge</h3></article>
-        <article class="panel-card lite-card"><h3>Smoke Test + JWT</h3></article>
-        <article class="panel-card lite-card"><h3>Release Package + SHA256</h3></article>
+      <h2 class="section-title" data-i18n="cap.title">Platform Focus</h2>
+      <div class="capability-grid">
+        <article class="panel-card capability-card">
+          <img src="assets/images/generated/aip_capability_workflow_composer.svg" alt="Workflow composer">
+          <h3>Workflow Composer</h3>
+          <p data-i18n="cap.workflow">Build and inspect local AI workflows with a release-safe control surface.</p>
+        </article>
+        <article class="panel-card capability-card">
+          <img src="assets/images/generated/aip_capability_governance_hub.svg" alt="Governance hub">
+          <h3>Governance Hub</h3>
+          <p data-i18n="cap.governance">Keep execution boundaries, approvals, and safety gates visible.</p>
+        </article>
+        <article class="panel-card capability-card">
+          <img src="assets/images/generated/aip_capability_operations_intelligence.svg" alt="Operations intelligence">
+          <h3>Operations Intelligence</h3>
+          <p data-i18n="cap.operations">Surface runtime status, checks, and operational context clearly.</p>
+        </article>
+        <article class="panel-card capability-card">
+          <img src="assets/images/generated/aip_capability_incident_playbook_audit.svg" alt="Audit playbooks">
+          <h3>Audit Playbooks</h3>
+          <p data-i18n="cap.audit">Support evidence-led verification without presenting maintenance work as a release.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="verification" class="section section-shell">
     <div class="container">
-      <h2 class="section-title" data-i18n="verify.title">Verification</h2>
-      <div class="panel-card lite-card">
-        <ul class="lite-list">
-          <li>lint PASS</li>
-          <li>build PASS</li>
-          <li>db:doctor PASS</li>
-          <li>smoke test PASS: 9 passed, 0 failed</li>
-          <li>CLI/Core/status/health 7.3.0-rc1</li>
-          <li>Assistant Center full-check warning/medium</li>
-          <li>autoFixAllowed=false, requiresHumanApproval=true</li>
-          <li>OpenAxiom readonly, OpenClaw live, Claude Proxy ok</li>
-        </ul>
+      <h2 class="section-title" data-i18n="verify.title">Release Verification</h2>
+      <div class="release-grid">
+        <article class="panel-card info-card">
+          <h3 data-i18n="verify.pipeline_title">Pipeline result</h3>
+          <ul class="status-list">
+            <li><span>Typecheck</span><strong>PASS</strong></li>
+            <li><span>Build</span><strong>PASS</strong></li>
+            <li><span>Lint</span><strong>PASS</strong></li>
+            <li><span>Smoke tests</span><strong>9/9 PASS</strong></li>
+            <li><span>Pre-tag verification</span><strong>PASS</strong></li>
+          </ul>
+        </article>
+        <article class="panel-card info-card">
+          <h3 data-i18n="verify.boundary_title">Release boundaries</h3>
+          <ul class="status-list">
+            <li><span>Stage C</span><strong>DISABLED</strong></li>
+            <li><span>Feature flag</span><strong>OFF</strong></li>
+            <li><span>Restore execution</span><strong>NO</strong></li>
+            <li><span>Runtime DB write</span><strong>NO</strong></li>
+            <li><span>Next line</span><strong>v7.63 maintenance</strong></li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="roadmap" class="section section-shell">
     <div class="container">
-      <h2 class="section-title" data-i18n="roadmap.title">Roadmap</h2>
-      <div class="panel-card lite-card">
-        <ul class="lite-list">
-          <li>Observe v7.3.0-rc1 before final v7.3.0</li>
-          <li>Keep Assistant Center readonly by default</li>
-          <li>Continue report and backup visibility polish</li>
-          <li>Keep OpenAxiom/OpenClaw integration safety-gated</li>
+      <h2 class="section-title" data-i18n="roadmap.title">Maintenance Track</h2>
+      <article class="panel-card info-card">
+        <p data-i18n="roadmap.body">The released line is v7.62.0. Future work should be planned as v7.63 maintenance / cleanup and should not be described as already published.</p>
+        <ul class="clean-list">
+          <li data-i18n="roadmap.item_one">Keep v7.62.0 as the public stable release.</li>
+          <li data-i18n="roadmap.item_two">Use v7.63 for follow-up cleanup of pre-existing dirty work.</li>
+          <li data-i18n="roadmap.item_three">Keep release actions, tags, and GitHub Releases explicitly authorized.</li>
         </ul>
-      </div>
+      </article>
     </div>
   </section>
 
   <footer id="contact" class="footer">
     <div class="container">
       <div class="footer-content panel-card">
-        <h3 data-i18n="footer.title">AIP v7.3.0-rc1</h3>
-        <div class="lite-footer-links">
-          <a href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank">GitHub</a>
-          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.3.0-rc1" target="_blank">Release</a>
-          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/blob/main/README.md" target="_blank">README</a>
-          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/issues" target="_blank">Issues</a>
+        <h3 data-i18n="footer.title">OpenAIP v7.62.0</h3>
+        <p data-i18n="footer.summary">Official release page for the current stable OpenAIP line.</p>
+        <div class="footer-links">
+          <a href="https://github.com/a740022938/aegisflow-intelligence-platform" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/releases/tag/v7.62.0" target="_blank" rel="noopener">Release</a>
+          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/blob/main/README.md" target="_blank" rel="noopener">README</a>
+          <a href="https://github.com/a740022938/aegisflow-intelligence-platform/issues" target="_blank" rel="noopener">Issues</a>
         </div>
       </div>
     </div>
@@ -173,7 +241,7 @@ aip open</code></pre>
   <div id="wechatModal" class="wechat-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="wechatModalTitle">
     <div class="wechat-modal__backdrop" data-wechat-close></div>
     <div class="wechat-modal__panel panel-card">
-      <button type="button" id="wechatModalClose" class="wechat-modal__close" data-wechat-close aria-label="Close" data-i18n-aria-label="wechat.close_aria">✕</button>
+      <button type="button" id="wechatModalClose" class="wechat-modal__close" data-wechat-close aria-label="Close" data-i18n-aria-label="wechat.close_aria">x</button>
       <h3 id="wechatModalTitle" data-i18n="wechat.modal_title">WeChat</h3>
       <p class="wechat-modal__hint" data-i18n="wechat.scan_hint">Scan to connect</p>
       <div class="wechat-qr-wrap">
